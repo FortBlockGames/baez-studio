@@ -152,11 +152,6 @@ nav{
   display:flex;flex-direction:column;justify-content:flex-end;
   background:var(--ink);
 }
-.hero-bg-text{
-  position:absolute;right:-20px;top:50%;transform:translateY(-55%);
-  font-family:'Bebas Neue',sans-serif;font-size:min(34vw,420px);line-height:1;
-  color:rgba(255,255,255,0.045);pointer-events:none;user-select:none;
-}
 #hero-mascot{
   position:absolute;inset:0;
   mix-blend-mode:screen;pointer-events:none;
@@ -209,6 +204,13 @@ body.loaded #hero-mascot{opacity:1;}
 .hero-actions{
   display:flex;align-items:center;gap:16px;flex-wrap:wrap;
   opacity:0;transform:translateY(10px);transition:opacity .7s ease .65s,transform .7s ease .65s;
+}
+.hero-trust{
+  margin-top:26px;
+  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(205,208,219,0.4);
+  display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;
+  opacity:0;transform:translateY(10px);transition:opacity .7s ease .8s,transform .7s ease .8s;
 }
 .btn-primary{
   font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;
@@ -303,7 +305,7 @@ body.loaded .hero-reel-cta{opacity:1;}
 }
 
 body.loaded .hero-eyebrow,body.loaded .hero-h1,body.loaded .hero-sub,
-body.loaded .hero-actions{opacity:1;transform:translateY(0);}
+body.loaded .hero-actions,body.loaded .hero-trust{opacity:1;transform:translateY(0);}
 
 /* ── MARQUEE ── */
 .marquee-strip{
@@ -452,9 +454,10 @@ body.loaded .hero-actions{opacity:1;transform:translateY(0);}
 .pkg-tier-sep{height:1px;background:var(--border);margin:36px -36px 36px;}
 /* ── PACKAGE ACCORDION CARDS ── */
 .pkg-acc-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:20px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
   max-width:1240px;margin:0 auto;
 }
+@media(max-width:900px){.pkg-acc-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:768px){.pkg-acc-grid{grid-template-columns:1fr;}}
 .pkg-acc-wrap{
   position:relative;border-radius:12px;padding:2px;overflow:hidden;
@@ -935,16 +938,17 @@ footer{
 
   /* hero */
   #hero{justify-content:flex-end;min-height:100svh;}
-  .hero-bg-text{font-size:min(60vw,300px);right:-10px;}
   #hero-mascot{opacity:1 !important;} /* skip load fade on mobile */
   /* mobile overlay — text sits at the bottom so protect that band strongly */
   #hero::after{
     background:linear-gradient(to top,rgba(8,10,15,1) 0%,rgba(8,10,15,0.85) 35%,rgba(8,10,15,0.25) 60%,transparent 100%);
   }
-  .hero-content{padding:0 24px 48px;max-width:100%;position:relative;z-index:2;}
+  .hero-content{padding:0 24px 40px;max-width:100%;position:relative;z-index:2;}
   .hero-h1{font-size:min(18vw,72px);}
   .hero-sub{font-size:14px;max-width:100%;}
-  .hero-actions{flex-direction:column;align-items:flex-start;gap:12px;}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:12px;}
+  .hero-actions .hero-reel-cta,.hero-actions .btn-primary{width:100%;justify-content:center;}
+  .hero-trust{font-size:9px;gap:6px 12px;margin-top:20px;}
 
   /* showreel */
   .reel-header{padding:72px 24px 36px;flex-direction:column;align-items:flex-start;gap:20px;}
@@ -1132,13 +1136,6 @@ body{font-size:16px;line-height:1.6;}
     "itemListElement": [
       {
         "@type": "Offer",
-        "name": "Spark Pack",
-        "description": "Two short videos up to 10 seconds, three image posters, and a five-image sticker pack. Entry-level content creation package.",
-        "price": "850",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
         "name": "Single Shot",
         "description": "One polished video up to 30 seconds with original music, sound design, and two revision rounds. Delivered in 5–7 business days.",
         "price": "1500",
@@ -1180,7 +1177,7 @@ body{font-size:16px;line-height:1.6;}
       "name": "What does a cinematic AI launch video cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BAEZ.AI.STUDIO offers five packages: the Spark Pack starts at $850 (two short videos up to 10 seconds, three image posters, and a five-image sticker pack), the Single Shot starts at $1,500 (one polished video up to 30 seconds with music and two revisions), the Hook Pack starts at $2,500 (one 30-second hero spot plus two cutdowns), the Brand Film starts at $5,000 (one 60–90 second hero film plus four derivatives), and the Retainer starts at $7,500/month for always-on production."
+        "text": "BAEZ.AI.STUDIO offers four packages: the Single Shot starts at $1,500 (one polished video up to 30 seconds with music and two revisions), the Hook Pack starts at $2,500 (one 30-second hero spot plus two cutdowns), the Brand Film starts at $5,000 (one 60–90 second hero film plus four derivatives), and the Retainer starts at $7,500/month for always-on production."
       }
     },
     {
@@ -1327,9 +1324,6 @@ body{font-size:16px;line-height:1.6;}
 
 <!-- ══ HERO ══ -->
 <section id="hero">
-  <p class="hero-eyebrow" style="position:absolute;top:80px;left:40px;z-index:2;">An AI Video Production Studio · US → Worldwide</p>
-  <div class="hero-bg-text">AI</div>
-
   <div id="hero-mascot">
     <video autoplay loop muted playsinline poster="fly-poster.jpg">
       <source src="fly-hero.mp4" type="video/mp4">
@@ -1337,6 +1331,7 @@ body{font-size:16px;line-height:1.6;}
   </div>
 
   <div class="hero-content">
+    <p class="hero-eyebrow">An AI Video Production Studio · US → Worldwide</p>
     <h1 class="hero-h1">
       Your brand,<br>
       <em>unleashed.</em>
@@ -1350,7 +1345,10 @@ body{font-size:16px;line-height:1.6;}
         </span>
         <span class="cta-label">Watch Demo Reel</span>
       </button>
+      <button class="btn-primary" onclick="openBooking()">Book a Free Call →</button>
     </div>
+
+    <p class="hero-trust">7–14 Day Turnaround · US-Based Studio · Clients Worldwide</p>
   </div>
 
 </section>
@@ -1615,35 +1613,6 @@ body{font-size:16px;line-height:1.6;}
   <!-- PACKAGE ACCORDION CARDS -->
   <div class="pkg-acc-grid reveal">
 
-    <!-- SPARK PACK -->
-    <div class="pkg-acc-wrap" id="acc-spark">
-      <div class="pkg-acc-inner">
-        <button class="pkg-acc-header" onclick="toggleAcc('acc-spark')">
-          <div class="pkg-acc-header-text">
-            <span class="pkg-acc-name">Spark Pack</span>
-            <span class="pkg-acc-desc">2× short-form videos, posters, and a sticker pack — ready in days.</span>
-          </div>
-          <span class="pkg-acc-toggle">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg>
-          </span>
-        </button>
-        <div class="pkg-acc-body">
-          <div class="pkg-acc-content">
-            <div class="pkg-price-line">From $850</div>
-            <div class="pkg-price-hint">Per project</div>
-            <ul class="pkg-list">
-              <li>2× short videos up to 10 seconds each</li>
-              <li>3× image posters (social-ready)</li>
-              <li>5-image sticker pack</li>
-              <li>Delivered in 3–5 business days</li>
-              <li>Platform-ready exports included</li>
-            </ul>
-            <button class="pkg-btn" onclick="openBooking()">Start a Spark Pack →</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- SINGLE SHOT -->
     <div class="pkg-acc-wrap" id="acc-single">
       <div class="pkg-acc-inner">
@@ -1889,7 +1858,6 @@ body{font-size:16px;line-height:1.6;}
           <label>Package Interest</label>
           <select name="package">
             <option value="">Select a package</option>
-              <option value="spark-pack">Spark Pack ($850)</option>
               <option value="single-shot">Single Shot ($1,500)</option>
             <option value="Hook Pack">Hook Pack — From $2,500</option>
             <option value="Brand Film">Brand Film — From $5,000</option>
@@ -1971,14 +1939,14 @@ body{font-size:16px;line-height:1.6;}
     <details>
       <summary>What does a cinematic AI launch video cost?</summary>
       <div class="faq-answer">
-        Five packages. The <strong>Spark Pack</strong> starts at $850: two short videos up to 10 seconds, three image posters, and a five-image sticker pack, delivered in 3–5 business days. The <strong>Single Shot</strong> starts at $1,500: one polished video up to 30 seconds with original music, sound design, and two revision rounds, delivered in 5–7 business days. The <strong>Hook Pack</strong> starts at $2,500: one 30-second hero spot plus two cutdowns, built for social launches and paid campaigns. The <strong>Brand Film</strong> starts at $5,000: one 60–90 second hero film plus four short-form derivatives, the signature launch piece. The <strong>Retainer</strong> starts at $7,500/month for always-on production: up to 8 finished assets, ≈4 minutes of runtime.
+        Four packages. The <strong>Single Shot</strong> starts at $1,500: one polished video up to 30 seconds with original music, sound design, and two revision rounds, delivered in 5–7 business days. The <strong>Hook Pack</strong> starts at $2,500: one 30-second hero spot plus two cutdowns, built for social launches and paid campaigns. The <strong>Brand Film</strong> starts at $5,000: one 60–90 second hero film plus four short-form derivatives, the signature launch piece. The <strong>Retainer</strong> starts at $7,500/month for always-on production: up to 8 finished assets, ≈4 minutes of runtime.
       </div>
     </details>
 
     <details>
       <summary>How long does it take to produce?</summary>
       <div class="faq-answer">
-        Spark Pack: 3–5 business days. Hook Pack: 7–10 business days. Brand Film: 14–21 business days. Retainer clients get a first draft within 5 business days of brief lock, with same-week turnaround on urgent cuts. Launch dates are real constraints. If you have a hard deadline, say so upfront and we'll work the calendar backwards together.
+        Single Shot: 5–7 business days. Hook Pack: 7–10 business days. Brand Film: 14–21 business days. Retainer clients get a first draft within 5 business days of brief lock, with same-week turnaround on urgent cuts. Launch dates are real constraints. If you have a hard deadline, say so upfront and we'll work the calendar backwards together.
       </div>
     </details>
 
