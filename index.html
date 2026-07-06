@@ -2239,4 +2239,21 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   requestAnimationFrame(() => setTimeout(tryStart, 0));
 
   // Pause when scrolled out of view, resume when back in
-  const io = new
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        if (!raf) draw();
+      } else if (raf) {
+        cancelAnimationFrame(raf);
+        raf = null;
+      }
+    });
+  }, {threshold: 0});
+  io.observe(section);
+
+  window.addEventListener('resize', resize);
+})();
+</script>
+
+</body>
+</html>
