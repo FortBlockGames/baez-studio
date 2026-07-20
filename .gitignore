@@ -5,3 +5,6 @@ Thumbs.db
 client-acquisition/
 .~lock*
 contact-mascot-original.mp4
+
+# Takeover manga — internal lore source (do not publish)
+takeover-manga/lore-master.txt
