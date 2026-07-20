@@ -9,9 +9,29 @@ Comic-style manga adaptations of the **FBG Universe / Makooor** "Takeover" lore
 2. **Script** → per-chapter page/panel breakdown (`chapters/chNN/script.md`).
 3. **Character design** → reusable model sheets in `characters/` used as visual
    references so the cast stays consistent panel-to-panel.
-4. **Panels** → generated via Higgsfield (Nano Banana Pro), authentic B&W manga
-   (ink + screentone).
-5. **Assembly** → a lightweight comic-reader page renders the chapter.
+4. **Panels** → generated with **Makooor Studio** (`studio/`) — our own
+   character-consistency panel generator (see below) — or directly via Higgsfield
+   (Nano Banana Pro). Authentic B&W manga (ink + screentone).
+5. **Assembly** → the storyboard in Makooor Studio collects and exports panels.
+
+## Makooor Studio (`studio/index.html`)
+Our own take on makooor.com, purpose-built for the manga. A self-contained,
+client-side web tool — no server, no build step — that mirrors Makooor's core:
+**identity from references** + **layout from composition** + a
+**resemblance ↔ adaptation** dial.
+
+- **Characters** — lock each character from reference art; "Load Takeover cast"
+  seeds the canonical 8-faction roster + Rae.
+- **Compose** — cast the panel, pick composition/mood/style, dial resemblance,
+  and generate a B&W manga panel. The tool assembles a structured prompt from the
+  character refs + shot + style.
+- **Storyboard** — collect kept panels, export/download.
+- **Backends** — ships with an offline **Demo** renderer (always works), plus
+  pluggable **Google Gemini (Nano Banana)** and **custom-endpoint** adapters.
+  API keys live in the browser only (localStorage) and go straight to the
+  provider — nothing routes through BAEZ servers. Project data
+  import/exports as JSON.
+- Verified end-to-end in headless Chromium (`noindex`, not served in sitemap).
 
 ## Structure
 ```
