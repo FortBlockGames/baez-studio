@@ -26,12 +26,25 @@ ideas: **identity from references** + **layout from composition** + a
   and generate a B&W manga panel. The tool assembles a structured prompt from the
   character refs + shot + style.
 - **Storyboard** — collect kept panels, export/download.
-- **Backends** — ships with an offline **Demo** renderer (always works), plus
-  pluggable **Google Gemini (Nano Banana)** and **custom-endpoint** adapters.
-  API keys live in the browser only (localStorage) and go straight to the
-  provider — nothing routes through BAEZ servers. Project data
-  import/exports as JSON.
+- **Backends** — **Higgsfield (BAEZ)** is the default engine: the studio POSTs to
+  a serverless proxy at **`/api/generate`** (`../../api/generate.js`) that holds the
+  Higgsfield key server-side and submits/polls the Higgsfield Cloud API. Also ships
+  an offline **Demo** renderer (always works; auto-fallback when `/api/generate`
+  isn't reachable, e.g. opening the local file) and a **custom-endpoint** adapter.
+  Project data import/exports as JSON.
 - Verified end-to-end in headless Chromium (`noindex`, not served in sitemap).
+
+### Deploy config (Higgsfield backend)
+The `/api/generate` proxy needs, in Vercel → Project → Settings → Environment Variables:
+
+| Var | Required | Notes |
+| --- | --- | --- |
+| `HIGGSFIELD_API_KEY` | yes | `KEY_ID:KEY_SECRET` — create at https://platform.higgsfield.ai |
+| `HIGGSFIELD_MODEL` | no | Cloud API model path (default `nano-banana/text-to-image`) |
+| `HIGGSFIELD_BASE` | no | API base (default `https://platform.higgsfield.ai`) |
+
+The key is read only server-side and never shipped to the browser. Until it's set,
+the deployed studio returns a clear error on Generate; the local file falls back to Demo.
 
 ## Structure
 ```
