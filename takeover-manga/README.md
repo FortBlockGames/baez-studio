@@ -1,6 +1,6 @@
 # TAKEOVER — Manga
 
-Comic-style manga adaptations of the **FBG Universe / Makooor** "Takeover" lore
+Comic-style manga adaptations of the **FBG Universe "Takeover"** lore
 (world year 2577 PE), produced with BAEZ Studio's AI generation pipeline.
 
 ## Pipeline
@@ -9,15 +9,15 @@ Comic-style manga adaptations of the **FBG Universe / Makooor** "Takeover" lore
 2. **Script** → per-chapter page/panel breakdown (`chapters/chNN/script.md`).
 3. **Character design** → reusable model sheets in `characters/` used as visual
    references so the cast stays consistent panel-to-panel.
-4. **Panels** → generated with **Makooor Studio** (`studio/`) — our own
+4. **Panels** → generated with **Takeover Studio** (`studio/`) — our own
    character-consistency panel generator (see below) — or directly via Higgsfield
    (Nano Banana Pro). Authentic B&W manga (ink + screentone).
-5. **Assembly** → the storyboard in Makooor Studio collects and exports panels.
+5. **Assembly** → the storyboard in Takeover Studio collects and exports panels.
 
-## Makooor Studio (`studio/index.html`)
-Our own take on makooor.com, purpose-built for the manga. A self-contained,
-client-side web tool — no server, no build step — that mirrors Makooor's core:
-**identity from references** + **layout from composition** + a
+## Takeover Studio (`studio/index.html`)
+Our own character-consistency generator, purpose-built for the manga. A
+self-contained, client-side web tool — no server, no build step — built on three
+ideas: **identity from references** + **layout from composition** + a
 **resemblance ↔ adaptation** dial.
 
 - **Characters** — lock each character from reference art; "Load Takeover cast"

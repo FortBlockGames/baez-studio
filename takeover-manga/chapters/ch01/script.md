@@ -1,11 +1,11 @@
 # TAKEOVER — Chapter 1: "COLLATERAL"
 
-*A Makooor / FBG Universe manga. World year 2577 PE. Setting: Merica City, a brand-war
+*An FBG Universe "Takeover" manga. World year 2577 PE. Setting: Merica City, a brand-war
 metropolis on the south bank of the great estuary, fought over district by district.*
 
 **Format:** authentic black-and-white manga (ink linework + screentone), read left-to-right.
 **Length:** 8 pages. **POV:** Rae Marlo, 19 — arcade rat and ace remote bot-pilot.
-**Purpose:** introduce the world, the citizen-combat economy (the Makooor product layer),
+**Purpose:** introduce the world, the citizen-combat economy (the game's product layer),
 the eight-faction war, and hook a returning reader.
 
 ---
@@ -170,7 +170,7 @@ that four hundred years couldn't put out.
 ## NOTES FOR REVIEW (open creative decisions)
 
 1. **Protagonist** — "Rae Marlo," 19, original POV character (an everyman on-ramp, mirrors the
-   player enlisting via Makooor). Name/gender/design all easily swapped. Character sheet generated.
+   player enlisting into the war). Name/gender/design all easily swapped. Character sheet generated.
 2. **Faction pick** — the script has Rae join *the Resistance* generically and teases LoG at the
    end. We can lock this to a specific faction (PUF / LoG / Sentioids) — or make faction choice
    the ongoing hook of the series. Your call.

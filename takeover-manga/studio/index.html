@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Makooor Studio — Takeover Manga Engine</title>
+<title>Takeover Studio — Manga Engine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -168,7 +168,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;heigh
 <div class="app">
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <div class="brand">MAKOOOR<small>STUDIO · TAKEOVER ENGINE</small></div>
+    <div class="brand">TAKEOVER<small>STUDIO · MANGA ENGINE</small></div>
     <nav class="nav" id="nav">
       <button data-view="characters" class="active"><span class="ic">◈</span> Characters</button>
       <button data-view="compose"><span class="ic">▦</span> Compose</button>
@@ -369,7 +369,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;heigh
 
 <script>
 /* ============ STATE ============ */
-const LS='makooor.studio.v1';
+const LS='takeover.studio.v1';
 const uid=()=>Math.random().toString(36).slice(2,10);
 let S=load();
 function load(){try{return JSON.parse(localStorage.getItem(LS))||seed()}catch(e){return seed()}}
@@ -564,7 +564,7 @@ function genDemo(spec){
         x.fillStyle='#0b0d13';x.fill();x.strokeStyle='#f0f2f8';x.lineWidth=3;x.stroke();
         x.fillStyle='#fff';x.fillText('“'+spec.dlg+'”',72,H-108)}
       x.fillStyle='rgba(58,64,85,0.9)';x.font='300 16px "DM Mono",monospace';
-      x.fillText('MAKOOOR STUDIO · '+(100-(+fRes.value))+'% FAITHFUL · '+(style.color?'COLOR':'B&W MANGA'),48,H-38);
+      x.fillText('TAKEOVER STUDIO · '+(100-(+fRes.value))+'% FAITHFUL · '+(style.color?'COLOR':'B&W MANGA'),48,H-38);
       res(cv.toDataURL('image/png'));
     }
   });
@@ -633,7 +633,7 @@ document.getElementById('btnWipe').onclick=()=>{if(confirm('Wipe ALL local chara
 
 /* ============ IMPORT / EXPORT ============ */
 document.getElementById('btnExport').onclick=()=>{const blob=new Blob([JSON.stringify(S,null,2)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='makooor-project.json';a.click();toast('Project exported')};
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='takeover-project.json';a.click();toast('Project exported')};
 document.getElementById('btnImport').onclick=()=>document.getElementById('importFile').click();
 document.getElementById('importFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();
   r.onload=()=>{try{const j=JSON.parse(r.result);if(!j.characters)throw 0;S=Object.assign(seed(),j);save();renderChars();renderSb();loadSettings();toast('Project imported')}catch(err){toast('Invalid project file',true)}};r.readAsText(f)};
