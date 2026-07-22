@@ -37,10 +37,10 @@ composite the source PNG (Standard §2).**
 | --- | --- | --- | --- |
 | **Bots McClaine — realistic PFP** | `bots-mclaine` | `0e3f46dd-1df1-4ff1-83e3-a29fae9fbbdb` | cowboy-hat 3D render register |
 | **Bots McClaine — anime** | `Bots-McClaine-Anime` | `076d353a-eec9-475a-a985-5190e88d2df6` | per Standard registry; *not visible in this workspace's element list — confirm workspace before use* |
-| **Bots McClaine — manga** | *(to cut — pending founder approval of anchor)* | — | candidate anchor: model-sheet job `647d2808-e6d3-4c35-9e68-113f81c19464` (Standard §4A re-anchor flow) |
+| **Bots McClaine — manga** | `McClaine-Manga` | `e1de9d8d-d52d-4edd-af87-e4140aed7d66` | ✅ CUT (founder-approved anchor, job `647d2808`); use for ALL manga-register McClaine incl. narrator pages |
 | BOT-Captain (generic archetype) | `BOT-Captain` | `998d1657-ce6a-4298-8b09-6a9c50101d79` | use for any Captain-grade unit in panels |
 | BOT-SOLDIER (generic archetype) | `BOT-SOLDIER` | `bfd9815d-109c-486c-b950-f2e30bc88ae7` | use for any Soldier unit in panels; faction = color lock + composited logo |
-| Rae Marlo — manga (original cast) | *(to cut — pending founder approval of anchor)* | — | candidate anchor: model-sheet job `4d19fbe2-e263-4a3a-b218-f041a1c27161`; until cut, pass the job ID as image reference |
+| Rae Marlo — manga (original cast) | `Rae-Manga` | `2bd84b66-8305-42dd-bc5f-1aad68b275d7` | ✅ CUT (founder-approved anchor, job `4d19fbe2`); embed `<<<id>>>` — job-ID reference method retired |
 | Rose / Patch / ELI / Papa / ma | per Standard registry | `698bdfa5…` / `58594ee9…` / `db34eda0…` / `389ed70f…` / `f9fd9298…` | team cast |
 | red-soldier-01 / red-1 / big-boi / soldier2100PE | legacy | see Standard registry | reconcile vs Armory roster or retire |
 
