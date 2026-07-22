@@ -139,6 +139,9 @@ champion-comic model).
    pre-registrations). Pair arc finales with a video beat for spikes.
 
 ## Production pipeline (per chapter)
+*(Governed by `VISUAL-CONSISTENCY-STANDARD.md` — Prime Law: anchor identity via
+Elements, style via preset, composite exact marks in post; founder eyeball gate
+(Standard §10) before any page ships.)*
 1. Beat sheet from this plan → panel script (`chapters/chNN/script.md`)
 2. Character/bot refs locked from the OFFICIAL asset registry (`ASSETS.md`) —
    faction logos and established designs (e.g. McClaine) are embedded as
