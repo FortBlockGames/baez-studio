@@ -48,6 +48,10 @@ Seedream, Kling, Cinema Studio).
 ## Usage rules
 1. Faction banners/emblems/paint: embed the faction's `<<<element_id>>>` in the prompt.
 2. McClaine appearances: ALWAYS embed `<<<0e3f46dd-1df1-4ff1-83e3-a29fae9fbbdb>>>` — never re-invent the design.
+   **McClaine is the series' recurring NARRATOR/HOST (owner-locked):** every narration
+   role — chapter openers/recaps, title pages, fourth-wall host panels, "previously on"
+   frames, promo voiceover visuals — is fronted by McClaine rendered from this element,
+   with "reproduce the design exactly, do not redesign" stated in the prompt.
 3. Rae appearances: pass the model-sheet job ID as an image reference.
 4. New recurring characters: generate a model sheet once, save it as a reference
    element in Higgsfield, add it to this table, then reference it everywhere.

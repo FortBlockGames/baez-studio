@@ -42,6 +42,11 @@ bot sorties, the exact thing players do in-game.
 - Faction coding without color: corps = hard geometric silhouettes + heavy blacks; resistance = rounder improvised shapes + white space. One 1cm-survivable emblem per faction — reused as the game's faction icons.
 - SFX hand-drawn, katakana-stroke styled; dialogue lettered in a separate pass (never trust generation for balloon text at scale).
 - Chapter title pages are in-universe real estate: faction propaganda posters, bot spec sheets.
+- **McClaine is the series narrator/host (owner-locked):** chapter openers, recaps,
+  title-page hosting and promo narration are fronted by McClaine, always generated
+  from the official `bots-mclaine` element (`ASSETS.md`) — a consistent, merchandisable
+  mascot voice that carries the reader between chapters (and doubles as the game's
+  hype-man in social cuts).
 
 ## Series architecture — ~150 chapters, 3 seasons
 Factions enter **arc-by-arc through conflict, never exposition** — mirroring how
