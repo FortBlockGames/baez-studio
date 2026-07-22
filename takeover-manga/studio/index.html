@@ -308,8 +308,9 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;heigh
             <option value="custom">Custom endpoint — your own proxy / worker</option>
           </select>
         </label>
-        <label class="fld" id="wrapHf" style="display:none">
-          <p class="hint" style="margin:0">Generates via Higgsfield using BAEZ's account. No key needed here — it lives in the Vercel env var <code>HIGGSFIELD_API_KEY</code> (format <code>KEY_ID:KEY_SECRET</code>), with optional <code>HIGGSFIELD_MODEL</code>. Only works on the deployed site; opening the local file falls back to Demo.</p>
+        <label class="fld" id="wrapHf" style="display:none"><span>Access code <span style="color:var(--dim)">(only if the server requires one)</span></span>
+          <input type="text" id="sAccessCode" placeholder="leave blank unless given a code" autocomplete="off">
+          <p class="hint">Generates via Higgsfield using BAEZ's account through <code>/api/generate</code> (key lives server-side in Vercel env <code>HIGGSFIELD_API_KEY</code>). Strict rate limits apply per user. Only works on the deployed site; the local file falls back to Demo.</p>
         </label>
         <label class="fld" id="wrapKey" style="display:none"><span>API key</span>
           <input type="text" id="sKey" placeholder="paste key — stored locally only" autocomplete="off">
@@ -376,7 +377,7 @@ const LS='takeover.studio.v1';
 const uid=()=>Math.random().toString(36).slice(2,10);
 let S=load();
 function load(){try{return JSON.parse(localStorage.getItem(LS))||seed()}catch(e){return seed()}}
-function seed(){return{characters:[],panels:[],settings:{provider:'higgsfield',key:'',model:'',endpoint:''}}}
+function seed(){return{characters:[],panels:[],settings:{provider:'higgsfield',key:'',model:'',endpoint:'',accessCode:''}}}
 function save(){try{localStorage.setItem(LS,JSON.stringify(S))}catch(e){toast('Storage full — export & trim panels',true)}refreshStats()}
 function toast(m,err){const t=document.getElementById('toast');t.textContent=m;t.className='toast show'+(err?' err':'');setTimeout(()=>t.className='toast',2600)}
 
@@ -580,12 +581,16 @@ function roundRect(x,X,Y,w,h,r){x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+w,Y,X+w,
 /* Higgsfield via BAEZ serverless proxy (/api/generate) — key stays server-side */
 async function genHiggsfield(spec,refs){
   let r;
+  const hdrs={'Content-Type':'application/json'};
+  if(S.settings.accessCode)hdrs['x-access-code']=S.settings.accessCode;
   try{
-    r=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({prompt:spec.prompt,aspect_ratio:'3:4',images:refs,resemblance:spec.res})});
+    r=await fetch('/api/generate',{method:'POST',headers:hdrs,
+      body:JSON.stringify({prompt:spec.prompt,aspect_ratio:'3:4'})});
   }catch(e){toast('Higgsfield endpoint unreachable — using Demo',true);return genDemo(spec);}
   if(r.status===404){toast('No /api/generate here (local file?) — using Demo',true);return genDemo(spec);}
   const j=await r.json().catch(()=>({}));
+  if(r.status===429){const w=j.retry_after?Math.ceil(j.retry_after/60)+' min':'a bit';throw new Error('Rate limit reached — try again in '+w)}
+  if(r.status===401)throw new Error('Access code required — add it in Settings');
   if(!r.ok||!j.image)throw new Error(j.error||('Higgsfield '+r.status));
   return j.image;
 }
@@ -617,7 +622,8 @@ document.getElementById('btnDownloadAll').onclick=()=>{if(!S.panels.length)retur
 /* ============ SETTINGS ============ */
 const sProv=document.getElementById('sProvider'),sKey=document.getElementById('sKey'),
   sModel=document.getElementById('sModel'),sEnd=document.getElementById('sEndpoint');
-function loadSettings(){sProv.value=S.settings.provider;sKey.value=S.settings.key;sModel.value=S.settings.model;sEnd.value=S.settings.endpoint||'';provUI()}
+function loadSettings(){sProv.value=S.settings.provider;sKey.value=S.settings.key;sModel.value=S.settings.model;sEnd.value=S.settings.endpoint||'';
+  document.getElementById('sAccessCode').value=S.settings.accessCode||'';provUI()}
 function provUI(){const p=sProv.value;
   document.getElementById('wrapHf').style.display=p==='higgsfield'?'block':'none';
   document.getElementById('wrapKey').style.display='none';
@@ -625,7 +631,8 @@ function provUI(){const p=sProv.value;
   document.getElementById('wrapEndpoint').style.display=p==='custom'?'block':'none';
 }
 sProv.onchange=provUI;
-document.getElementById('sSave').onclick=()=>{S.settings={provider:sProv.value,key:sKey.value.trim(),model:sModel.value.trim(),endpoint:sEnd.value.trim()};
+document.getElementById('sSave').onclick=()=>{S.settings={provider:sProv.value,key:sKey.value.trim(),model:sModel.value.trim(),endpoint:sEnd.value.trim(),
+  accessCode:document.getElementById('sAccessCode').value.trim()};
   save();document.getElementById('saveState').textContent='saved';toast('Settings saved')};
 document.getElementById('btnWipe').onclick=()=>{if(confirm('Wipe ALL local characters, panels and settings? This cannot be undone.')){localStorage.removeItem(LS);S=seed();renderChars();renderSb();loadSettings();refreshStats();toast('Local data wiped')}};
 
