@@ -130,7 +130,10 @@ champion-comic model).
 
 ## Production pipeline (per chapter)
 1. Beat sheet from this plan → panel script (`chapters/chNN/script.md`)
-2. Character/bot refs locked in Takeover Studio (identity-from-references)
+2. Character/bot refs locked from the OFFICIAL asset registry (`ASSETS.md`) —
+   faction logos and established designs (e.g. McClaine) are embedded as
+   Higgsfield reference elements, NEVER re-invented — plus Takeover Studio
+   identity-from-references for the manga-original cast
 3. Pages generated (Higgsfield, Nano Banana Pro, 2:3, ref-conditioned)
 4. Lettering pass (balloon text typeset, never generated) — *pipeline TODO*
 5. Paged master → vertical re-cut → reader page + platform exports
