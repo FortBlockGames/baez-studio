@@ -60,3 +60,9 @@ Chapter 1 fully regenerated in the locked treatment with official logo elements 
   opener template): job `03671b8e-1601-4774-b386-400c3e5d600d` — IN READER after cover
 - PENDING ASSET: official **TAKEOVER title logo** — not yet in the Elements library;
   cover still uses hand-lettered title until the logo is provided/saved as `takeover-logo`.
+
+## Official-logo cover
+- **Cover v2** (official takeover-logo-blue element locked in the title lockup,
+  strict reproduce-exactly rule): job `62161a87-e841-4e95-9516-67faaa511b01` — IN READER
+- Pending-asset note above is now CLOSED: takeover-logo-blue / takeover-logo-white
+  elements created from the official Drive folder and registered in ASSETS.md.
