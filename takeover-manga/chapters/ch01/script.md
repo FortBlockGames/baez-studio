@@ -16,7 +16,7 @@ the eight-faction war, and hook a returning reader.
 Two standardized combat BOTS tear down a shopping boulevard mid-firefight — one in **red-and-yellow
 Chickows paint**, one in **chrome yellow/red Dollar Holler paint**. Sparks, debris, a toppled
 "GAMERS PARADISE" arcade sign. Holo-billboards blare cheerful ads over the carnage.
-> CAPTION: *Merica City. Year 2577. District 12.*
+> CAPTION: *Merica City. Year 2577 PE. District 12.*
 > CAPTION: *The corporations have been at war for nearly five hundred years.*
 
 **Panel 2:** Street level. Civilians scramble for cover behind a noodle stand as a bot's stray
@@ -145,7 +145,7 @@ the glowing **zone-perimeter line**, two blocks away.
 
 **Panel 2:** POV SLAM — Rae's vision jacks into the bot. The dead district resolves into a live
 **Battlefront**: the smoke, the rubble, enemy bots advancing in corpo colors.
-> CAPTION: *Two corpos were fighting over District 12. Tonight, a third banner entered the event.*
+> CAPTION: *LoG had a claim open on District 12. Tonight it got its first pair of hands.*
 > SFX: **SYNC**
 
 **Panel 3:** Rae's Soldier bot moves — and it moves *differently*. Fluid, uncanny, alive. The
@@ -194,7 +194,13 @@ that four hundred years couldn't put out.
    barrier doctrine), Skullface (hologram overlay = his personal signature), the Naturalization
    Office (Merica City branch — invented, logged for approval), the Armory (Hazy Barrens per
    canon), Citizen Passport, Basic Soldier, soulbound units, Battlefronts.
-6. **Lore-audit status:** audited against the lore bible; all violations fixed (Ritual assigns
+6. **Invented-but-benign log (founder approval queue):** District 12 numbering; Merica
+   City Naturalization Office branch; Ritual assignment mechanism staged as an
+   aptitude/history scan; Armory maglev / holo-requisition delivery; paint job
+   auto-resolving on gauntlet sync; arcade back-alley civilian drone dueling as a sport.
+   P.8 "four hundred years" line is art-direction prose only — NEVER letter it as a
+   neutral caption (neutral narration says "nearly five hundred years").
+7. **Lore-audit status:** audited against the lore bible; all violations fixed (Ritual assigns
    banner; Armory located in Hazy Barrens; Rae pilots from outside the zone perimeter; faction
    mixup corrected; "Stack 'Em Deep" restaged; forfeiture includes payout; "nearly five hundred
    years" in neutral narration). Invented-but-benign items logged: District 12 numbering,
