@@ -6,6 +6,16 @@ the official assets below** (Higgsfield reference elements — embed as
 `<<<element_id>>>` inside the prompt; works with Nano Banana Pro/2, GPT Image 2,
 Seedream, Kling, Cinema Studio).
 
+## Title logo (official — MANDATORY on covers/title pages)
+| Asset | Element name | Element ID |
+| --- | --- | --- |
+| TAKEOVER logo (blue, transparent) | `takeover-logo-blue` | `3a882097-1113-45df-8bab-38e2fcd6aa56` |
+| TAKEOVER logo (white, transparent) | `takeover-logo-white` | `c135d080-623f-4900-a601-bc5693a78771` |
+
+Source of truth: Drive folder `1K468n1HJTz5aFqMFUUwlkP1jK32Xh15R` (also holds blue/white
+banner variants). Never hand-letter the title — embed one of these elements with the
+"reproduce exactly, do not re-letter" rule.
+
 ## Faction logos (official)
 | Faction | Element name | Element ID |
 | --- | --- | --- |
