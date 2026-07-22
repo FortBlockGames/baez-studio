@@ -76,3 +76,11 @@ Chapter 1 fully regenerated in the locked treatment with official logo elements 
   `Rae-Manga` = `2bd84b66-8305-42dd-bc5f-1aad68b275d7`.
 - PENDING (Standard §2 retrofit): hero-mark composite pass over cover title +
   ritual banners — requires an environment with CDN access (Comic Builder or founder-side).
+
+## QA-gate corrections (first live guard run)
+- **Narrator page v3** — lore-guard-passed copy ("EIGHT BANNERS FIGHT OVER EVERY
+  DISTRICT — ALL OF THEM WITH BOTS LIKE ME"), blank banner plates, canon-constants
+  lead, full negative block. Job `11afcae7-60cb-4a35-8e0d-ff0c86a7a156` — IN READER.
+  (v2 `01fb0704` superseded — copy violated the Bot Conscription Framework.)
+- Cover + ritual page regenerations QUEUED behind founder registry decisions
+  (8 color locks, PUF pick, FBG wordmark) per qa/ch01-consistency-audit.md.
