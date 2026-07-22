@@ -66,3 +66,13 @@ Chapter 1 fully regenerated in the locked treatment with official logo elements 
   strict reproduce-exactly rule): job `62161a87-e841-4e95-9516-67faaa511b01` — IN READER
 - Pending-asset note above is now CLOSED: takeover-logo-blue / takeover-logo-white
   elements created from the official Drive folder and registered in ASSETS.md.
+
+## Standard-conformant regeneration (post v1.3 adoption)
+- **Narrator page v2** — first fully Standard-conformant generation: McClaine-Manga
+  Element anchor (`e1de9d8d`), hard face rules as guardrail, emotion-in-body,
+  treatment lock + in-prompt negatives. Job `01fb0704-9b6d-4a87-9007-716dc41b1201` — IN READER.
+  This prompt is the assembly template for all future manga generations.
+- Style Elements cut (founder-approved anchors): `McClaine-Manga` = `e1de9d8d-d52d-4edd-af87-e4140aed7d66`,
+  `Rae-Manga` = `2bd84b66-8305-42dd-bc5f-1aad68b275d7`.
+- PENDING (Standard §2 retrofit): hero-mark composite pass over cover title +
+  ritual banners — requires an environment with CDN access (Comic Builder or founder-side).
