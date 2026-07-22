@@ -29,10 +29,15 @@ For EVERY generation prompt, verify:
    background-lettering negatives. Missing either half = VIOLATION. Remind the
    founder checklist to sweep the FULL frame for hallucinated words — prompt-level
    guards reduce but cannot eliminate them; only composited text is exact.
-3. **Marks (Standard §2)** — hero marks (title logo, readable banners, anything a fan
-   would screenshot) must be declared as BLANK PLATES for post-composite, never
-   model-generated. Element-embedded logos are acceptable ONLY for ambient use and
-   must be tagged as ambient. Prompts asking the model to draw/letter a wordmark = VIOLATION.
+3. **Marks (Standard §2) — HARD, updated 2026-07-22.** NEVER embed a logo/mark
+   Element as a `<<<...-logo>>>` token: Higgsfield injects the literal string
+   "@element-name" into the prompt and the model DRAWS it as text on the art (this
+   shipped as "@dh-logo" printed on a bot). Any mark-Element token in a generation
+   prompt = VIOLATION. Hero marks are BLANK PLATES + post-composite. Faction/brand
+   COLOR comes from the logo passed as a color-reference image (medias role:image,
+   "colors only, no logo/text") or a locked hex — never from a mark token. The
+   earlier "ambient element embed is OK" allowance is REVOKED for anything with a
+   name that could render as text.
 4. **Faction colors are locked values** — banners, bot paint, emblems must name the
    faction AND its exact locked color; "corporate blue-ish" vibes = VIOLATION.
    Note the open canon question (zones.js vs lore-bible palettes) — until resolved,

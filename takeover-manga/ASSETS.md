@@ -89,5 +89,11 @@ the manga follows the lore-bible palettes it shipped with.
    sweeps for stray words on every render.**
 4. Fold the Standard's negative blocks (B1 base / B2 lettering / B3 portrait / mark-plate)
    into generations where the API allows; otherwise express as in-prompt prohibitions.
-5. **Founder eyeball gate before anything ships** — the sandbox cannot see the CDN, so
+5. **SEPARATED LETTERING LAW (learned 2026-07-22 — "RASULSH"/"@dh-logo"):** pages
+   are generated as TEXTLESS ART PLATES (prompt forbids all bubbles/captions/
+   nameplates/letters/numbers/symbols; reserves negative space). Dialogue is added
+   as a typeset/HTML overlay layer authored by a human — never generated into the
+   art. NEVER embed a `<<<*-logo>>>` mark token (it prints "@name"); marks are blank
+   plate + composite; brand color via color-reference image or locked hex.
+6. **Founder eyeball gate before anything ships** — the sandbox cannot see the CDN, so
    acceptance (Standard §10) happens in your browser/Higgsfield panel. No exceptions.

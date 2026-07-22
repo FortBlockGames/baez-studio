@@ -22,7 +22,11 @@ per page or per batch; a FAIL verdict blocks the step it guards.*
 ## Gate rules
 1. **Gate 1 — Lore.** `lore-guard` audits the page's script, captions, and dialogue
    against `lore-master.txt`. Any VIOLATION = rewrite before prompting.
-2. **Gate 2 — Prompt.** `consistency-guard` audits the assembled generation prompt
+2. **Gate 1.5 — Text.** `text-guard` audits script copy (spelling/grammar/voice) AND
+   enforces the separated-lettering law: the prompt must generate a TEXTLESS ART
+   PLATE (no bubbles/captions/text) and embed NO logo tokens. Dialogue is typeset as
+   an overlay after art, authored and verified by a human.
+2b. **Gate 2 — Prompt.** `consistency-guard` audits the assembled generation prompt
    against the Standard + registry: anchored Elements (right per-style IDs), McClaine
    face-rule guardrail, hero marks as blank plates (composite in post — never
    generated), exact faction color locks, treatment lock, negatives. FAIL = fix the
