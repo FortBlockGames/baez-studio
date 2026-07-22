@@ -84,3 +84,9 @@ Chapter 1 fully regenerated in the locked treatment with official logo elements 
   (v2 `01fb0704` superseded — copy violated the Bot Conscription Framework.)
 - Cover + ritual page regenerations QUEUED behind founder registry decisions
   (8 color locks, PUF pick, FBG wordmark) per qa/ch01-consistency-audit.md.
+
+- **Narrator page v4** — Color Law + Stray-Text Law applied: McClaine-Manga +
+  McClaine-Color-Master dual anchor, canonical profile as the page's only color
+  (cyan-teal glow, no orange, no faction accents), all non-caption surfaces
+  declared blank. Job `3f50eba7-97da-415e-97a8-342fb03e3e60` — IN READER.
+  (v3 `11afcae7` superseded — founder eyeball caught off-profile orange + stray words.)
