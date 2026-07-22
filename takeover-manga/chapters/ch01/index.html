@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>TAKEOVER — Ch. 1 "Collateral"</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#080a0f;--paper:#0d1018;--blue:#2B7FFF;--dim:#1c2030;--muted:#3a4055;--text:#cdd0db;--white:#f0f2f8;--border:rgba(255,255,255,0.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ink);color:var(--text);font-family:'DM Sans',sans-serif}
+header{position:sticky;top:0;z-index:10;background:rgba(8,10,15,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;padding:14px 22px}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:4px;color:var(--white)}
+.logo small{color:var(--blue);font-size:12px;letter-spacing:3px;margin-left:10px}
+.meta{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.reader{max-width:820px;margin:0 auto;padding:26px 12px 90px}
+.page{margin:0 0 26px;position:relative}
+.page img{width:100%;display:block;border-radius:6px;border:1px solid var(--border);background:#05060a;min-height:200px}
+.pnum{position:absolute;top:10px;left:10px;background:rgba(8,10,15,.8);border:1px solid var(--border);color:var(--muted);
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;padding:4px 9px;border-radius:6px}
+.endcard{text-align:center;padding:60px 20px;border:1px dashed var(--dim);border-radius:12px}
+.endcard h2{font-family:'Bebas Neue',sans-serif;font-size:44px;letter-spacing:3px;color:var(--white)}
+.endcard p{font-weight:300;font-size:14px;color:var(--muted);margin:12px auto 26px;max-width:420px;line-height:1.6}
+.cta{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-family:'DM Mono',monospace;
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:15px 30px;border-radius:9px}
+.cta:hover{background:#1f6ef0}
+footer{text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);padding:30px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">TAKEOVER<small>CH. 1 — COLLATERAL</small></div>
+  <div class="meta">FBG Universe · 2577 PE</div>
+</header>
+<div class="reader" id="reader"></div>
+<footer>A FORT BLOCK GAMES MANGA · MADE WITH TAKEOVER STUDIO</footer>
+<script>
+// PAGES is populated at build time with the generated art URLs (cover first).
+const CDN='https://d8j0ntlcm91z4.cloudfront.net/user_367Twnt1CjgstYSJuY3u52mI2QL/';
+const PAGES = [
+  CDN+'hf_20260722_163237_0c80e9d3-4f8e-4d4f-b3cf-159afed302d5.png', // cover
+  CDN+'hf_20260722_163129_0a5390c2-5a92-4fd9-a61c-71dbdf41bf2b.png', // p1 cold open
+  CDN+'hf_20260722_163142_52cf794d-6ee8-4361-8e10-79c959e97be4.png', // p2 meet Rae
+  CDN+'hf_20260722_163149_eb23f0da-6998-4505-80e6-f3eafcdf5a71.png', // p3 collateral
+  CDN+'hf_20260722_163154_60c7af12-f71a-4427-918d-70c82526db39.png', // p4 the choice
+  CDN+'hf_20260722_163206_44d39785-c3e7-4b18-b7c9-3e0f18521993.png', // p5 citizenship ritual
+  CDN+'hf_20260722_163213_7c5e2baf-c073-402f-a3c3-680759c38bd6.png', // p6 the armory
+  CDN+'hf_20260722_163219_e0daf18a-4369-4636-a137-e61a138cdbde.png', // p7 first deployment
+  CDN+'hf_20260722_163224_14c2bf0a-ad5c-4dd2-9d81-953a33b8a3ed.png', // p8 the hook
+];
+const reader=document.getElementById('reader');
+PAGES.forEach((u,i)=>{
+  const d=document.createElement('div');d.className='page';
+  d.innerHTML=`<div class="pnum">${i===0?'COVER':'PAGE '+i+' / '+(PAGES.length-1)}</div><img loading="lazy" src="${u}" alt="${i===0?'Chapter cover':'Page '+i}">`;
+  reader.appendChild(d);
+});
+const end=document.createElement('div');end.className='endcard';
+end.innerHTML=`<h2>THE WAR NEEDS HANDS.</h2>
+<p>Rae picked a side. Every citizen gets one free, soulbound bot — whose banner will yours fight under? The Takeover is live.</p>
+<a class="cta" href="https://www.fortblockgames.com/" target="_blank" rel="noopener">ENLIST YOUR BOT →</a>`;
+reader.appendChild(end);
+</script>
+</body>
+</html>
