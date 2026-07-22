@@ -32,3 +32,15 @@ Studio as a character reference).
     corp's signage, turkey-day decorations for the festive nod. McClaine as a name is
     canon-approved (citizens may nickname soulbound bots; paint/wear only, no hardware
     mods; he's a Basic — growth stays narrative unless an in-canon Prime upgrade beat lands).
+
+## Canon-fix + official-asset regenerations (post lore-audit)
+- **Page 3 v2** (Stack 'Em Deep as barricade doctrine, Dollar Holler Captain): job `6ae07781-5680-4131-bfd6-9b2fd16dec5b` — IN READER
+- **Page 5 v3** (Ritual ASSIGNS banner; all 8 OFFICIAL faction logos embedded as elements): job `af027a8b-07e2-4fda-b393-d648021e60e7` — IN READER
+  - (v2 interim `bc3894f6-2bef-4d7a-a254-00b5eff5cdc6` used invented emblems — superseded)
+- **McClaine manga model sheet** (from OFFICIAL `bots-mclaine` element): job `647d2808-e6d3-4c35-9e68-113f81c19464`
+- **Character treatment triptychs** (B&W / spot color / full color, official logos embedded):
+  - Rae Marlo (LoG emblem): `02224b3f-da7b-4d32-b7c4-bdd302914873`
+  - General Chickow (Chickows logo): `35132475-448c-4950-9ecd-61af6ee79f4b`
+  - Skullface (LoG logo): `0e704a5f-5b45-4bab-b0b5-46ea615dca59`
+  - Captain PAT (Sentioids logo): `0f6dabd9-a6ba-4d78-a2e6-a94ac252b6ba`
+  - (earlier no-logo triptychs `f4e16761`, `834ba37b`, `1cc12b55`, `343132c2` — superseded)
