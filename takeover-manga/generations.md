@@ -44,3 +44,11 @@ Studio as a character reference).
   - Skullface (LoG logo): `0e704a5f-5b45-4bab-b0b5-46ea615dca59`
   - Captain PAT (Sentioids logo): `0f6dabd9-a6ba-4d78-a2e6-a94ac252b6ba`
   - (earlier no-logo triptychs `f4e16761`, `834ba37b`, `1cc12b55`, `343132c2` — superseded)
+
+## Spot-color edition (treatment lock: color on uniforms/gear/paint/emblems only; faces & hair B&W)
+Chapter 1 fully regenerated in the locked treatment with official logo elements — IN READER:
+- Cover `bb4848d3` · p1 `708b62a0` · p2 `84ab88ff` · p3 `1c9838d6` · p4 `41807a2a`
+- p5 `7cb722a0` (all 8 official banners) · p6 `50ba4e5e` · p7 `72605d43` · p8 `740daef6`
+- **McClaine MegaMart last-stand splash** (official bots-mclaine design + DH signage,
+  canon-true Takeover zone, turkey-day nod): `76135f54-ea85-4214-aaa1-b04078cfe281`
+- Pure-B&W v1 pages retained above as the archive edition.
