@@ -419,17 +419,17 @@ charGrid.addEventListener('click',e=>{const ed=e.target.dataset.edit,dl=e.target
   if(dl){if(confirm('Delete this character?')){S.characters=S.characters.filter(c=>c.id!==dl);save();renderChars()}}});
 document.getElementById('btnNewChar').onclick=()=>openChar();
 
-/* canonical Takeover roster (from the FBG lore bible) */
+/* Takeover hero roster (from the FBG lore bible) + original manga cast (Rae) */
 const SEED_CAST=[
  {name:'Rae Marlo',role:'Citizen bot-pilot',faction:'',desc:"Lean athletic 19-year-old Merica City arcade ace. Short choppy undercut, worn asymmetric pilot's bomber jacket over a hoodie, holographic control-visor pushed up on the forehead, scarred data gauntlet. The everyman who enlists."},
  {name:'General Chickow',role:'CEO / Commander',faction:'Chickows',desc:"Hyper-polished humanoid robot sculpted as an idealized CEO/General hybrid. Red-and-yellow fast-food war paint. Wholesome family-restaurant cheer over cold economic menace."},
  {name:'Captain "W" — Chad Waters',role:'Commander',faction:'Aquafeelya',desc:"Sleek, cunning bot in stealth grey and crystalline blue-white. Serene aquatic surface hiding the threat beneath. Soft-voiced, quietly menacing."},
  {name:'Captain Dodge',role:'Commander',faction:'Vital Vibe',desc:"Female athlete, early 30s, athletic pro-wear in neon Vibe palette; speed-built bot form. Hype energy-drink influencer with an erratic, chemically-fueled edge."},
- {name:'Cyborgia the CEO',role:'CEO',faction:'Digi-U',desc:"~100-year-old post-human, blue and chrome geometric plating, screen-glow lighting, body-modification iconography. The most powerful figure in the Penteval."},
+ {name:'Cyborgia the CEO',role:'CEO',faction:'Digi-U',desc:"~100-year-old post-human — the highest-ranking, most powerful post-human in the Penteval. Digi-U brand identity: blue/chrome geometric, screen-glow lighting, body-modification iconography. Bot form design TBD (lore episode 2)."},
  {name:'Captain Dollar Bot 9000',role:'Field Commander',faction:'Dollar Holler',desc:"Approachable-yet-intimidating chrome bot in yellow/red signage paint. Brash, trash-talking, low-effort grammar over open comms."},
  {name:'Captain Joe Paradise',role:'Colonel (honorary)',faction:'Peoples United Front (PUF)',desc:"Retired Federal-Agency-Detective look, earth tones, traditional military bearing. The Civilized Rebel; doctrine of minimum collateral damage."},
- {name:'Skullface — Capt. Redd Hollis',role:'Captain',faction:'Legion of Ghosts (LoG)',desc:"Bot form is a holographic overlay of a masked rebel projected over any chassis, mostly orange with black-trim camo. Ruins, masks, hard-edged graffiti."},
- {name:'Captain PAT',role:'Leader',faction:'Sentioids',desc:"Non-intimidating, sturdily built workforce-bot, soft white with black trim, faint code patterns. Calculated, trustworthy, rejects violence as a first tool."},
+ {name:'Skullface — Capt. Redd Hollis',role:'Captain',faction:'Legion of Ghosts (LoG)',desc:"Bot form is a hologram overlay of Redd Hollis himself projected over any bot he controls, mostly orange with black-trim camo. Ruins, masks, hard-edged graffiti."},
+ {name:'Captain PAT',role:'Hero / Captain',faction:'Sentioids',desc:"Non-intimidating, sturdily built workforce-bot, soft white with black trim, faint code patterns. Calculated, trustworthy, rejects violence as a first tool. (Faction leader is Compiler-7.)"},
 ];
 document.getElementById('btnSeed').onclick=()=>{
   const existing=new Set(S.characters.map(c=>c.name));

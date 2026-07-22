@@ -45,15 +45,19 @@ champion-comic model).
 
 ### SEASON 1 — "One District" (ch. 1–40, 4 volumes)
 - **Arc 1 (ch. 1–9) — The Chickows Boot.** One protagonist (Rae), one district
-  (Merica City D12), ONE corp — **Chickows** (the most satirically legible boot:
-  burger empire, "comfort food with teeth," General Chickow). Premise engine
+  (Merica City D12), ONE corp **foregrounded** — **Chickows** (the most satirically
+  legible boot: burger empire, "comfort food with teeth," General Chickow).
+  Dollar Holler is unavoidably on-screen (Merica City is canonically Dollar Holler
+  vs. Chickows, district by district) but stays antagonist-of-circumstance. Premise engine
   fully assembled by ch. 3; complete emotional mini-arc by ch. 9; ends with the
   District 12 takeover battle. Volume 1 = the playable-fantasy demo.
 - **Arc 2 (ch. 10–24) — Water & The Gavel.** **Aquafeelya** (subscription
   rainfall, Captain "W") + first resistance faction fully onboarded: **PUF**
   (Joe Paradise, Commander Shen — reform vs. rage tension with Rae). Introduce
-  the visible progression ladder: pilot ranks, bot tiers, territory map
-  infographics (Solo Leveling numbers-go-up engine, mapped 1:1 to game mechanics).
+  the visible progression ladder: Basic/Prime editions and Soldier/Captain tiers
+  are world canon; "pilot ranks" is product-layer progression (game UI canon, not
+  world lore) shown as territory-map/rank infographics (Solo Leveling
+  numbers-go-up engine, mapped 1:1 to game mechanics).
 - **Arc 3 (ch. 25–40) — Edge.** **Vital Vibe** (Captain Dodge) + a rival
   citizen-pilot antagonist (corp-sponsored, chemically boosted). Season finale:
   a territory falls — mirrored by a live in-game event the same week.
@@ -72,18 +76,23 @@ champion-comic model).
 
 ### SEASON 3 — "The Takeover" (ch. 96–150)
 - One earned mega-arc (Infinity Castle / Culling Game scale): the all-map war —
-  **the Battle for Mount Profitmore** escalating into the capital grid.
-- Resolve the two series-long mysteries. End on emotional debt **the game
-  repays**: the war explicitly unresolved, continued in-game (Edgerunners
-  principle).
+  **the Battle for Mount Profitmore** escalating into **Aethelburg's Grid**
+  (Digi-U's MegaCity; Urthora has no capital in canon).
+- **Pay off the two series-long mysteries WITHOUT arbitrating them** (lore bible
+  Canon Governance: Contested Archive items are never resolved by studio voice —
+  dramatize the competing versions, expand only the open hooks). End on emotional
+  debt **the game repays**: the war explicitly unresolved, continued in-game
+  (Edgerunners principle).
 
 ### The two long mysteries (question ledger)
-- **M1 — The Eye of Novia:** who was the first awakened AI, why was she erased,
-  and what did she leave in the network? (Contested Archive in the lore bible —
-  deliberately tellable multiple ways.)
-- **M2 — The masked broadcaster:** who is the voice behind the pirate broadcasts
-  / The Wraith? (Ties to LoG's founding; the canon-sensitive Jinx identity stays
-  shelved per the lore bible — this mystery orbits it without detonating it.)
+- **M1 — The Eye of Novia:** what became of the first awakened AI, and what did
+  she leave in the network? **Novia's fate is an official open hook** (expandable);
+  the Great Spark's *cause* (awakening vs. "Network Integrity Failure") is
+  Contested Archive and is dramatized both ways, never arbitrated.
+- **M2 — The masked broadcaster:** a **distinct third figure** — never confirmed
+  as Jinx (shelved canon) and never confirmed as The Wraith (Contested Archive).
+  Both fan-theories stay live for the entire series; the broadcaster's identity
+  ends the series still contested. That IS the ending, per Canon Governance.
 - Plus: answer **one small question per chapter** (a bot spec, an emblem decoded,
   a rank explained) — each doubling as game-content marketing.
 

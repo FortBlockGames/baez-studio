@@ -17,7 +17,7 @@ Two standardized combat BOTS tear down a shopping boulevard mid-firefight — on
 Chickows paint**, one in **chrome yellow/red Dollar Holler paint**. Sparks, debris, a toppled
 "GAMERS PARADISE" arcade sign. Holo-billboards blare cheerful ads over the carnage.
 > CAPTION: *Merica City. Year 2577. District 12.*
-> CAPTION: *The corporations have been at war for four hundred years.*
+> CAPTION: *The corporations have been at war for nearly five hundred years.*
 
 **Panel 2:** Street level. Civilians scramble for cover behind a noodle stand as a bot's stray
 round vaporizes a parked transport.
@@ -54,10 +54,12 @@ A tiny crowd of arcade kids erupts.
 flicker and die.
 > SFX: **GDOOOM**
 
-**Panel 2:** Rae bursts onto the street. The Chickows and Dollar Holler bots have brought a
-whole block down. A Chickows Captain-grade bot ("**Dollar Bot 9000**"-style rival) stomps
-through rubble, trash-talking over open comms.
-> DOLLAR BOT (comms, brash): *Stack 'em deep, boys! Collateral's just inventory!*
+**Panel 2:** Rae bursts onto the street. The battle has brought a whole block down. A
+**Dollar Holler** Captain-grade bot stomps through rubble while Holler-Bot units wall the
+street with debris and wrecked vehicles — the "Stack 'Em Deep" barricade doctrine — and it's
+the barricade construction that crushed Rae's block.
+> DOLLAR HOLLER CAPTAIN (comms, brash): *Stack 'em deep, boys!*
+> ANONYMOUS CORPO COMMS: *Collateral's just inventory.*
 
 **Panel 3:** Rae's home block — the noodle stand, the neighbors — gone under a collapsed
 facade. A kid's shoe in the dust.
@@ -72,7 +74,7 @@ facade. A kid's shoe in the dust.
 ## PAGE 4 — THE CHOICE
 
 **Panel 1:** Rae stands in the wreckage as a Resistance broadcast cuts into the district holos —
-a masked figure, static-wreathed (a nod to **LoG / Jinx**), voice steady.
+a masked figure, static-wreathed (a nod to **LoG / Skullface**; speaker never identified), voice steady.
 > BROADCAST: *Four hundred years we've lived under their heel. 2577 is the year that changes.*
 > BROADCAST: *You don't need their permission to fight back. You need a bot and a reason.*
 
@@ -91,8 +93,8 @@ a grim civic building strung with all eight faction banners.
 
 **Panel 1:** Inside the Naturalization Office. A cathedral of bureaucracy. A clerk-bot slides
 a glowing **Citizen Passport** across the counter.
-> CLERK-BOT (chipper): *Welcome, Citizen. Your Passport is your identity in the war. Please
-> select your allegiance.*
+> CLERK-BOT (chipper): *Welcome, Citizen. Your Passport is your identity in the war. The
+> Citizenship Ritual will now assign your banner.*
 
 **Panel 2 (the money shot — 8-way splash):** Eight faction banners blaze around Rae in a ring —
 the five **Penteval** corpos (Chickows red/yellow, Aquafeelya blue-white, Vital Vibe neon,
@@ -101,12 +103,14 @@ tones, **Legion of Ghosts orange-and-black**, Sentioids white/black). Rae small 
 from below.
 > CAPTION: *Five corpos who own everything. Three factions trying to take it back.*
 
-**Panel 3:** Rae's hand lands — decisively — on the banner that isn't for sale.
-*(Faction pick is a deliberate open beat — see NOTE. Draft lands on the **Resistance**.)*
-> RAE: *That one. The one they're afraid of.*
+**Panel 3:** The Ritual scans Rae — hands, reflexes, record, loss — light sweeping over them
+while the eight banners flare in sequence... and settle on one: **orange with black trim.
+The Legion of Ghosts.** Rae stares at it, then smirks.
+> RAE: *...The one they're afraid of. Figures.*
 
-**Panel 4 (small):** The Passport stamps. A faction sigil burns onto the gauntlet.
+**Panel 4 (small):** The Passport stamps. The LoG sigil burns onto the gauntlet.
 > SFX: **K-CHNK**
+> CAPTION: *You can switch banners between events. Nobody in District 12 ever bothers.*
 
 ---
 
@@ -114,6 +118,8 @@ from below.
 
 **Panel 1:** **The Armory** — the in-world outfitter to the war. Racks of standardized bot
 chassis stretch into the dark, all identical grey until you paint them.
+> CAPTION: *The Armory. The Hazy Barrens — half a continent away. One maglev ride, one
+> holo-requisition, and your unit ships home.*
 > QUARTERMASTER: *Every citizen gets one. Free, soulbound, yours till it's scrap.*
 
 **Panel 2:** A single **Basic Soldier** bot lowers on a rack in front of Rae — plain, unpainted,
@@ -121,7 +127,7 @@ waiting.
 > QUARTERMASTER: *Basic Soldier. Line unit. Don't get attached.*
 
 **Panel 3:** Rae runs a hand along the chassis, then jacks the gauntlet into the pilot cradle.
-The bot's optics flare to life — and take on the Resistance paint.
+The bot's optics flare to life — and the paint job resolves: **orange, black trim. LoG colors.**
 > RAE: *We'll see about that.*
 
 ---
@@ -129,12 +135,17 @@ The bot's optics flare to life — and take on the Resistance paint.
 ## PAGE 7 — FIRST DEPLOYMENT
 
 **Panel 1 (wide):** Rae reclines into a battered pilot cradle back at the arcade, visor down,
-the whole neighborhood of arcade kids gathered behind, watching the feed.
-> CAPTION: *You pilot from outside the zone. If the bot dies, you don't. You just lose it.*
+the whole neighborhood of arcade kids gathered behind, watching the feed. Through the window:
+the glowing **zone-perimeter line**, two blocks away.
+> CAPTION: *The zone line stops two blocks short of Gamers Paradise. Close enough to hear it.
+> Legal enough to fight in it.*
+> CAPTION: *You pilot from outside the zone. If the bot dies, you don't. You lose the bot —
+> and the payout.*
 > RAE: *Then I don't lose it.*
 
 **Panel 2:** POV SLAM — Rae's vision jacks into the bot. The dead district resolves into a live
 **Battlefront**: the smoke, the rubble, enemy bots advancing in corpo colors.
+> CAPTION: *Two corpos were fighting over District 12. Tonight, a third banner entered the event.*
 > SFX: **SYNC**
 
 **Panel 3:** Rae's Soldier bot moves — and it moves *differently*. Fluid, uncanny, alive. The
@@ -152,7 +163,8 @@ kids roar behind the real Rae.
 
 **Panel 1 (wide):** The battlefront goes quiet around Rae's lone painted Soldier standing over a
 downed corpo bot. Across the rubble, a figure watches — a Captain-grade bot wreathed in a
-**hologram overlay of a masked rebel, orange-and-black camo** (**Skullface / a LoG Captain**).
+**hologram overlay of Redd Hollis himself, orange with black-trim camo** (**Skullface** — the
+overlay is his personal signature, no one else's).
 
 **Panel 2 (close on the watcher):** The masked hologram tilts its head, intrigued.
 > WATCHER: *...Best hands in the district, huh.*
@@ -171,13 +183,19 @@ that four hundred years couldn't put out.
 
 1. **Protagonist** — "Rae Marlo," 19, original POV character (an everyman on-ramp, mirrors the
    player enlisting into the war). Name/gender/design all easily swapped. Character sheet generated.
-2. **Faction pick** — the script has Rae join *the Resistance* generically and teases LoG at the
-   end. We can lock this to a specific faction (PUF / LoG / Sentioids) — or make faction choice
-   the ongoing hook of the series. Your call.
+2. **Faction lock** — the Citizenship Ritual ASSIGNS banners (lore bible §16); Rae is assigned
+   **LoG** (orange/black), consistent with the ch.1 Skullface teases. Swappable to PUF/Sentioids
+   with a two-line edit if desired. There is no generic "Resistance" paint scheme in canon.
 3. **Canon care** — the Jinx = Joe Paradise identity is canon-but-"shelved" for public beats; this
    script only *hints* at a masked LoG figure and never reveals it. Kept safe for a public manga.
 4. **Style** — drafted as authentic B&W manga (ink + screentone). Alternative: full color / webtoon
    with faction color-coding front and center (the palettes are a big part of the lore). Easy to switch.
-5. **Cameos used:** Dollar Bot 9000 (trash-talk + "Stack 'em deep"), a LoG/Skullface-style Captain,
-   the Naturalization Office, Citizen Passport, the Armory, Basic Soldier, soulbound units,
-   Battlefronts — all pulled straight from the lore bible so it's canon-accurate.
+5. **Cameos used:** a Dollar Holler Captain-grade unit ("Stack 'Em Deep" staged canonically as
+   barrier doctrine), Skullface (hologram overlay = his personal signature), the Naturalization
+   Office (Merica City branch — invented, logged for approval), the Armory (Hazy Barrens per
+   canon), Citizen Passport, Basic Soldier, soulbound units, Battlefronts.
+6. **Lore-audit status:** audited against the lore bible; all violations fixed (Ritual assigns
+   banner; Armory located in Hazy Barrens; Rae pilots from outside the zone perimeter; faction
+   mixup corrected; "Stack 'Em Deep" restaged; forfeiture includes payout; "nearly five hundred
+   years" in neutral narration). Invented-but-benign items logged: District 12 numbering,
+   Merica City Naturalization Office branch.

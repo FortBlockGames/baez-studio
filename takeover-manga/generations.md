@@ -22,7 +22,13 @@ Studio as a character reference).
 
 ## Scenes
 - **"McClaine" bot — Die Hard homage** (our first bot scene) · Nano Banana Pro · B&W manga splash · 3:4 2k
-  - A lone battle-worn Resistance combat bot makes a defiant last stand in a besieged
-    Penteval corporate skyscraper lobby (subtle holiday-lights nod). Low-angle hero shot.
+  - A lone battle-worn combat bot makes a defiant last stand in a corporate tower lobby.
   - Panel A: job `e1f3ca74-8a00-4c42-8e5c-2c76fab3d384`
   - Panel B: job `ad5b405f-9593-4f50-85f7-2bfe702bf513`
+  - **LORE-AUDIT NOTE:** as staged, this scene sits outside the legal Takeover frame
+    (corp strongholds aren't contested commercial zones, "Penteval" owns no buildings,
+    and no Christmas-analog holiday exists in canon). Canon-true restaging for future use:
+    **the central MegaMart of a zone under Takeover** (MegaMart lobby = Nakatomi), a named
+    corp's signage, turkey-day decorations for the festive nod. McClaine as a name is
+    canon-approved (citizens may nickname soulbound bots; paint/wear only, no hardware
+    mods; he's a Basic — growth stays narrative unless an in-canon Prime upgrade beat lands).
