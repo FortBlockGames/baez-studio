@@ -19,6 +19,16 @@ For EVERY generation prompt, verify:
 2. **McClaine hard face rules** — if McClaine is in the prompt: sealed mouthplate,
    NO mouth, NO teeth must be restated as a guardrail; emotion must be staged in
    body/camera, never the face. Missing guardrail = VIOLATION.
+2b. **McClaine COLOR LAW** — any colored/spot-color McClaine render must pair the
+   register Element with `McClaine-Color-Master` (e8f2c3e5…) and permit ONLY his
+   canonical profile: tan/mustard suit, cream shirt, gold tie, brown hat,
+   silver-chrome head/hands, CYAN-TEAL eye glow, gold buckle. Orange or any
+   faction-colored accent on McClaine = VIOLATION (this shipped once; never again).
+2c. **STRAY-TEXT RULE** — the prompt must enumerate the exact allowed text and
+   declare all other surfaces blank (zero letters/numbers/symbols) with
+   background-lettering negatives. Missing either half = VIOLATION. Remind the
+   founder checklist to sweep the FULL frame for hallucinated words — prompt-level
+   guards reduce but cannot eliminate them; only composited text is exact.
 3. **Marks (Standard §2)** — hero marks (title logo, readable banners, anything a fan
    would screenshot) must be declared as BLANK PLATES for post-composite, never
    model-generated. Element-embedded logos are acceptable ONLY for ambient use and

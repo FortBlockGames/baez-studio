@@ -38,6 +38,7 @@ composite the source PNG (Standard §2).**
 | **Bots McClaine — realistic PFP** | `bots-mclaine` | `0e3f46dd-1df1-4ff1-83e3-a29fae9fbbdb` | cowboy-hat 3D render register |
 | **Bots McClaine — anime** | `Bots-McClaine-Anime` | `076d353a-eec9-475a-a985-5190e88d2df6` | per Standard registry; *not visible in this workspace's element list — confirm workspace before use* |
 | **Bots McClaine — manga** | `McClaine-Manga` | `e1de9d8d-d52d-4edd-af87-e4140aed7d66` | ✅ CUT (founder-approved anchor, job `647d2808`); use for ALL manga-register McClaine incl. narrator pages |
+| **Bots McClaine — COLOR MASTER** | `McClaine-Color-Master` | `e8f2c3e5-2a7f-4298-ab05-4cffd4367a65` | ✅ OFFICIAL color profile (owner-supplied; repo copy `characters/mcclaine-color-profile.webp`). Pair with the register Element on every colored/spot-color McClaine render |
 | BOT-Captain (generic archetype) | `BOT-Captain` | `998d1657-ce6a-4298-8b09-6a9c50101d79` | use for any Captain-grade unit in panels |
 | BOT-SOLDIER (generic archetype) | `BOT-SOLDIER` | `bfd9815d-109c-486c-b950-f2e30bc88ae7` | use for any Soldier unit in panels; faction = color lock + composited logo |
 | Rae Marlo — manga (original cast) | `Rae-Manga` | `2bd84b66-8305-42dd-bc5f-1aad68b275d7` | ✅ CUT (founder-approved anchor, job `4d19fbe2`); embed `<<<id>>>` — job-ID reference method retired |
@@ -48,7 +49,11 @@ composite the source PNG (Standard §2).**
 - Silhouette: humanoid robot in a **fitted business suit + broad-brim cowboy hat**
 - Signature: cowboy hat, ornate belt buckle, bolo/string tie, boots
 - **HARD FACE RULE: sealed mouthplate — NO mouth, NO teeth, ever; glowing eyes**
-- Color signature: tan/mustard suit, yellow tie (exact values pending)
+- **COLOR LAW (owner-locked, NEVER deviate):** tan/mustard suit · cream shirt · gold
+  tie · brown cowboy hat · silver-chrome head and hands · **CYAN-TEAL eye glow**
+  (never orange, never red) · gold BM belt buckle · TAKEOVER chest badge.
+  NO faction-colored accents, NO invented color highlights, in any register.
+  Master: `McClaine-Color-Master` element + `characters/mcclaine-color-profile.webp`.
 - Emotion goes in body/camera, never the face. Restate the face rule in every prompt.
 - **Narrator role (owner-locked):** all narration/host/recap/title-page appearances are
   McClaine, from the correct per-style Element (manga register once `McClaine-Manga` is cut).
@@ -77,6 +82,11 @@ the manga follows the lore-bible palettes it shipped with.
 3. Hero marks ⇒ blank plate + post composite of the transparent master. Ambient marks
    may use Element embeds. Speech/caption lettering: Nano Banana Pro + anti-garble
    negatives, or composite for guaranteed copy.
+   **STRAY-TEXT LAW (learned 2026-07-22): every prompt must (a) enumerate the ONLY
+   text allowed in-frame and (b) declare every other surface blank (zero letters/
+   numbers/symbols), with background-lettering negatives. Generated text remains
+   draft-grade until a composite lettering pass exists; founder eyeball explicitly
+   sweeps for stray words on every render.**
 4. Fold the Standard's negative blocks (B1 base / B2 lettering / B3 portrait / mark-plate)
    into generations where the API allows; otherwise express as in-prompt prohibitions.
 5. **Founder eyeball gate before anything ships** — the sandbox cannot see the CDN, so

@@ -30,3 +30,14 @@ the blocking registry items clear. The narrator-v2 pattern is the template to co
 - Neutral phrasing for style shorthands (no real-world publication names).
 
 Full agent report retained in session log 2026-07-22.
+
+
+## Gate-4 founder eyeball results (2026-07-22, narrator v3)
+**FAIL — two founder-caught defects, both now codified as guard rules:**
+1. Off-profile color: orange visor glow/accents on McClaine (canonical = cyan-teal
+   glow, tan/gold palette; no faction colors ever). → COLOR LAW added to registry +
+   guard rule 2b; `McClaine-Color-Master` element cut (e8f2c3e5…).
+2. Stray hallucinated words in-frame beyond the scripted captions. → STRAY-TEXT LAW
+   added to registry + guard rule 2c; v4 prompt enumerates allowed text and blanks
+   all other surfaces. Composite lettering pass remains the exact-text end state.
+Narrator v4 regenerated under both laws (job 3f50eba7…).
