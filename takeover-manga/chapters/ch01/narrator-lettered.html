@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>TAKEOVER — Separated Lettering Demo (Narrator)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400&family=Anton&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#080a0f;--muted:#3a4055}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0d1018;color:#cdd0db;font-family:'DM Mono',monospace;padding:24px 12px 60px}
+  h1{font-family:'Bebas Neue',sans-serif;letter-spacing:3px;color:#f0f2f8;font-size:26px;text-align:center;margin-bottom:6px}
+  .sub{text-align:center;font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:22px}
+  /* the page: image + absolutely-positioned text layer, all in % so it scales */
+  .page{position:relative;max-width:680px;margin:0 auto;line-height:0}
+  .page img{width:100%;display:block;border-radius:6px}
+  .layer{position:absolute;inset:0}
+  .cap,.name{position:absolute;background:#fff;color:#111;border:2.5px solid #111;
+    font-family:'Anton',sans-serif;text-transform:uppercase;line-height:1.05;
+    letter-spacing:.5px;box-shadow:3px 3px 0 rgba(0,0,0,.55)}
+  .cap{padding:2.4% 2.6%;font-size:clamp(9px,2.15vw,17px)}
+  .name{padding:1% 1.6%;font-size:clamp(8px,1.7vw,13px);border-radius:3px}
+  .cap b{font-weight:400;color:#111}
+  .note{max-width:680px;margin:22px auto 0;font-size:11px;line-height:1.7;color:#9aa0b4;
+    border-top:1px solid rgba(255,255,255,.08);padding-top:16px}
+  .note b{color:#cdd0db}
+  code{color:#7fb0ff}
+</style>
+</head>
+<body>
+<h1>SEPARATED LETTERING — NARRATOR PAGE</h1>
+<div class="sub">textless art plate + real typeset text overlay · zero generated text</div>
+
+<div class="page" id="page">
+  <img id="art" alt="McClaine narrator — textless art plate">
+  <div class="layer" id="layer"></div>
+</div>
+
+<div class="note">
+  <b>What you're looking at:</b> the art was generated with <b>no text at all</b>
+  (the model can't hallucinate words it isn't drawing). Every caption and the
+  nameplate below are <b>real HTML text</b> I typed — crisp, spell-checked, editable,
+  and impossible to garble. No more <code>RASULSH</code>, no <code>@dh-logo</code>.
+  <br><br>
+  Box positions are % coordinates — tell me "move the top-right caption down" or
+  "make McClaine's nameplate bigger" and it's a one-line change. This same layer
+  system letters every page.
+</div>
+
+<script>
+  const CDN='https://d8j0ntlcm91z4.cloudfront.net/user_367Twnt1CjgstYSJuY3u52mI2QL/';
+  document.getElementById('art').src = CDN+'hf_20260722_202215_3b98fbfc-0ad8-418e-83e1-ab0bc4494d8f.png';
+
+  // The letter layer: {t:text, x,y,w in %, kind}. No em dashes (brand rule).
+  const LETTERS = [
+    {kind:'cap',  t:'YEAR 2577. FIVE CORPOS OWN EVERYTHING.',                          x:3,  y:2,  w:44},
+    {kind:'cap',  t:'EIGHT BANNERS FIGHT OVER EVERY DISTRICT. ALL OF THEM WITH BOTS LIKE ME.', x:55, y:15, w:42},
+    {kind:'name', t:'McCLAINE',                                                        x:3,  y:49, w:0},
+    {kind:'cap',  t:"STICK AROUND, CITIZEN. I'LL WALK YOU THROUGH THE WAR.",            x:55, y:80, w:42},
+  ];
+  const layer=document.getElementById('layer');
+  LETTERS.forEach(L=>{
+    const d=document.createElement('div');
+    d.className=L.kind;
+    d.style.left=L.x+'%'; d.style.top=L.y+'%';
+    if(L.w) d.style.width=L.w+'%';
+    d.textContent=L.t;
+    layer.appendChild(d);
+  });
+</script>
+</body>
+</html>
