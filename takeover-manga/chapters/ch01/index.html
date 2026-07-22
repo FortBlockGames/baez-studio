@@ -42,11 +42,12 @@ footer{text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-sp
 const CDN='https://d8j0ntlcm91z4.cloudfront.net/user_367Twnt1CjgstYSJuY3u52mI2QL/';
 const PAGES = [
   CDN+'hf_20260722_182903_bb4848d3-f3fe-4e76-baf6-fd624eb8a007.png', // cover (spot color, official LoG emblem)
+  CDN+'hf_20260722_184409_03671b8e-1601-4774-b386-400c3e5d600d.png', // narrator: McClaine hosts (official element)
   CDN+'hf_20260722_182912_708b62a0-892c-47f8-8699-aec41feb61b5.png', // p1 cold open (Chickows/DH liveries)
   CDN+'hf_20260722_182920_84ab88ff-8079-425e-8994-6f7e16dca7e0.png', // p2 meet Rae (Vital Vibe ad = only color)
   CDN+'hf_20260722_182926_1c9838d6-f53d-49f0-bf8c-b7faed18cad4.png', // p3 collateral (DH barricade doctrine)
   CDN+'hf_20260722_182941_41807a2a-a074-4c85-9cb2-9e03dcd12742.png', // p4 the broadcast (orange pirate glow)
-  CDN+'hf_20260722_183031_7cb722a0-700b-43ec-8923-d685ac7873de.png', // p5 ritual (8 official banners, LoG assigned)
+  CDN+'hf_20260722_184310_38d0f34e-0ffc-4a13-a94f-7b9c65dc9293.png', // p5 ritual (8 official banners, strict logo fidelity)
   CDN+'hf_20260722_183001_50ba4e5e-16a8-419f-b007-be3f081e81b2.png', // p6 armory (orange paint blooms)
   CDN+'hf_20260722_183009_72605d43-9b21-4c11-9c37-211a6f15bd74.png', // p7 first deployment
   CDN+'hf_20260722_183038_740daef6-fe92-4e7a-ab54-7270e44adbf4.png', // p8 the hook (Skullface hologram)
@@ -54,7 +55,8 @@ const PAGES = [
 const reader=document.getElementById('reader');
 PAGES.forEach((u,i)=>{
   const d=document.createElement('div');d.className='page';
-  d.innerHTML=`<div class="pnum">${i===0?'COVER':'PAGE '+i+' / '+(PAGES.length-1)}</div><img loading="lazy" src="${u}" alt="${i===0?'Chapter cover':'Page '+i}">`;
+  const lbl=i===0?'COVER':i===1?'McCLAINE · NARRATOR':'PAGE '+(i-1)+' / '+(PAGES.length-2);
+  d.innerHTML=`<div class="pnum">${lbl}</div><img loading="lazy" src="${u}" alt="${lbl}">`;
   reader.appendChild(d);
 });
 const end=document.createElement('div');end.className='endcard';

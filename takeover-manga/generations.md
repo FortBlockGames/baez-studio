@@ -52,3 +52,11 @@ Chapter 1 fully regenerated in the locked treatment with official logo elements 
 - **McClaine MegaMart last-stand splash** (official bots-mclaine design + DH signage,
   canon-true Takeover zone, turkey-day nod): `76135f54-ea85-4214-aaa1-b04078cfe281`
 - Pure-B&W v1 pages retained above as the archive edition.
+
+## Narrator lock + logo-fidelity fix
+- **Page 5 v4** (strict "reproduce logos exactly, invent nothing" rule — fixes the
+  hallucinated "Dynamic Hardware" banner): job `38d0f34e-0ffc-4a13-a94f-7b9c65dc9293` — IN READER
+- **McClaine narrator/host page** (official bots-mclaine element, fourth-wall chapter
+  opener template): job `03671b8e-1601-4774-b386-400c3e5d600d` — IN READER after cover
+- PENDING ASSET: official **TAKEOVER title logo** — not yet in the Elements library;
+  cover still uses hand-lettered title until the logo is provided/saved as `takeover-logo`.
