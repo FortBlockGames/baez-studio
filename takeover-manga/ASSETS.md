@@ -52,3 +52,8 @@ Seedream, Kling, Cinema Studio).
 4. New recurring characters: generate a model sheet once, save it as a reference
    element in Higgsfield, add it to this table, then reference it everywhere.
 5. When both an element and a text description conflict, the element (official art) wins.
+
+## Treatment lock (owner-approved)
+B&W manga + faction **spot color on uniforms/gear/bot paint/emblems/glows ONLY**.
+Faces, skin, and hair are always pure monochrome. Every generation prompt must
+state this treatment explicitly.

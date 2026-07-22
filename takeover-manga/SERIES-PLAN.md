@@ -25,14 +25,19 @@ bot sorties, the exact thing players do in-game.
 | Chapter 1 | **55 pages**, self-contained mini-movie | One Piece 54 / Demon Slayer ~55 / CSM ~54 / JJK 47 |
 | Ongoing chapters | **18–22 pages, weekly** | WSJ standard; weekly feeds platform algorithms |
 | Panels per page | 5–6 avg; 2–4 action; 6–8 dialogue; never 9+ | Jump page grammar |
-| Master format | **B&W paged**, then vertical-scroll re-cut (~60 panels/ep) | Dark Horse × WEBTOON model; Solo Leveling proved grayscale converts |
+| Master format | **B&W + faction spot color** (see treatment lock), paged, then vertical-scroll re-cut (~60 panels/ep) | Dark Horse × WEBTOON model + the lore's paint-scheme warfare |
 | Splash pages | **One per chapter**, rationed | Jump rhythm: small setups → huge payoff |
 | Buffer | Bank 6–8 chapters before public launch | cadence misses killed Halo: Uprising |
 | Price | **Free, everywhere, always** | every paywalled web3 comic died |
 
 ## Art style bible (condensed — full prompt strings in `research/playbook.md` §1)
+- **TREATMENT LOCK (owner-approved): B&W manga + faction SPOT COLOR — color appears
+  ONLY on uniforms, gear, bot paint, faction emblems/banners/logos, and holographic
+  glows. Faces, skin, and hair are ALWAYS pure monochrome ink + screentone.
+  Backgrounds monochrome. Rationale: the Combat Standardization Mandate makes paint
+  the only battlefield identity — spot color makes the war legible.**
 - One line register forever: clean modern-Jump inking; rough line only inside impact panels; Berserk-density hatching reserved for megacorp dread moments.
-- All gray is **screentone** (3 fixed tiers + solid spot blacks); standing negative prompt bans color/gradients/3D/painterly on every generation.
+- All gray is **screentone** (3 fixed tiers + solid spot blacks); standing negative prompt bans full-color/gradients/3D/painterly on every generation (spot color is whitelisted per the treatment lock).
 - **Silhouette test is law**: every recurring pilot and faction bot reads as a filled black shape at 1cm — one value assignment + one signature prop each.
 - Faction coding without color: corps = hard geometric silhouettes + heavy blacks; resistance = rounder improvised shapes + white space. One 1cm-survivable emblem per faction — reused as the game's faction icons.
 - SFX hand-drawn, katakana-stroke styled; dialogue lettered in a separate pass (never trust generation for balloon text at scale).
