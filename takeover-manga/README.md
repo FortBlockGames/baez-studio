@@ -75,5 +75,7 @@ takeover-manga/
 ```
 
 ## Status
-- **Ch01 "Collateral"** — script drafted; protagonist design sheet generated
-  (Rae Marlo, 19, citizen bot-pilot). Panels pending art-direction sign-off.
+- **Series plan** — `SERIES-PLAN.md`: 3 seasons / ~150 chapters, arc-per-faction,
+  research-backed format + acquisition loop (research: `research/playbook.md`).
+- **Ch01 "Collateral" v1** — SHIPPED: cover + 8 pages generated, reader at
+  `chapters/ch01/`. v2 milestone: expand to the 55-page hook formula.
