@@ -65,26 +65,28 @@ composite the source PNG (Standard §2).**
 | Mall-EXT | `a2b82b82-9749-4cbb-a326-2c19b5534883` |
 | plaza-01 | `7fecb8ac-fe7c-4c14-b8ee-817a18f64f94` |
 
-## Faction color locks (OWNER-LOCKED 2026-07-22 — exact hex, never a "vibe")
-The single source of truth for every banner, bot paint scheme, emblem, and glow.
-Pass the exact hex into the prompt/SETTING slot; consistency-guard FAILs any color
-word or drift. These supersede the earlier zones.js-vs-lore-bible open question.
+## Faction color locks (OWNER-LOCKED, two-tone — updated 2026-07-23)
+Single source of truth for every banner, bot paint scheme, emblem, and glow. Each
+faction is **two-tone: BASE (main body/fill) + SHADOW/ACCENT (trim, shading, accent)**.
+Pass BOTH exact hexes into the prompt; consistency-guard FAILs any color word or drift.
+Supersedes the earlier single-hex lock.
 
-| Faction | Hex | Bot paint / banner |
+| Faction | Base | Shadow / accent |
 | --- | --- | --- |
-| Digi-U | `#16A34A` | green |
-| Dollar Holler | `#EAB308` | gold/yellow |
-| Chickows | `#DC2626` | red |
-| Vital Vibe | `#2DD4BF` | teal |
-| Aquafeelya | `#2563EB` | blue |
-| PUF | `#7C3AED` | purple |
-| Legion of Ghosts | `#F97316` | orange |
-| Sentioids | `#E5E7EB` | near-white / light grey |
+| Digi-U | `#27C24C` | `#0D5E22` |
+| Dollar Holler | `#FFD534` | `#6E5A08` |
+| Chickows | `#E02418` | `#7A0E08` |
+| Vital Vibe | `#17C3B2` | `#FF7849` |
+| Aquafeelya | `#2E86FF` | `#0A2C5E` |
+| PUF | `#8A3FFC` | `#37156E` |
+| Legion of Ghosts | `#23232B` | `#FF7A1A` |
+| Sentioids | `#EEF1F6` | `#8A94A4` |
 
-Notes for the manga (spot-color treatment): a bot/banner reads in its faction hex;
-faces/skin/hair stay monochrome. **Rae's LoG bot = `#F97316` orange** (not a warmer
-"orange-and-black" guess). Dollar Holler is `#EAB308` **gold**, not red/yellow — the
-page-3 red/yellow bot was wrong on this lock.
+Manga spot-color notes: a bot/banner reads in its faction base+accent; faces/skin/hair
+stay monochrome. **Rae's LoG bot = black `#23232B` body + orange `#FF7A1A` trim** (true
+"orange-and-black"). **Dollar Holler = yellow-gold `#FFD534`** (the page-3 red/yellow
+bot was wrong). **Vital Vibe is two-tone teal `#17C3B2` + orange `#FF7849`** — the
+orange is Vital Vibe's accent, NOT a Legion of Ghosts marker; don't confuse them.
 
 ## Treatment lock (owner-approved)
 B&W manga + faction **spot color on uniforms/gear/bot paint/emblems/glows ONLY**,

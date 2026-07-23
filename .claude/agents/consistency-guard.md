@@ -38,11 +38,13 @@ For EVERY generation prompt, verify:
    "colors only, no logo/text") or a locked hex — never from a mark token. The
    earlier "ambient element embed is OK" allowance is REVOKED for anything with a
    name that could render as text.
-4. **Faction colors are locked HEX values** (ASSETS.md, owner-locked 2026-07-22):
-   Digi-U #16A34A · Dollar Holler #EAB308 · Chickows #DC2626 · Vital Vibe #2DD4BF ·
-   Aquafeelya #2563EB · PUF #7C3AED · Legion of Ghosts #F97316 · Sentioids #E5E7EB.
-   Every banner/bot/emblem must pass the faction's EXACT hex; a color word or wrong
-   hue = VIOLATION. Rae's LoG bot = #F97316 orange. The open canon question is CLOSED.
+4. **Faction colors are locked TWO-TONE HEX** — base + shadow/accent (ASSETS.md,
+   updated 2026-07-23): Digi-U #27C24C/#0D5E22 · Dollar Holler #FFD534/#6E5A08 ·
+   Chickows #E02418/#7A0E08 · Vital Vibe #17C3B2/#FF7849 · Aquafeelya #2E86FF/#0A2C5E ·
+   PUF #8A3FFC/#37156E · Legion of Ghosts #23232B/#FF7A1A · Sentioids #EEF1F6/#8A94A4.
+   Every banner/bot/emblem must pass BOTH exact hexes; a color word or wrong hue =
+   VIOLATION. Rae's LoG bot = black #23232B body + orange #FF7A1A trim. Watch the
+   Vital-Vibe-orange vs LoG-orange confusion (VV #FF7849 accent is NOT a LoG marker).
 5. **Treatment lock** — B&W manga + spot color ONLY on uniforms/gear/bot paint/
    emblems/glows; faces, skin, hair always pure monochrome. The treatment must be
    stated in the prompt. Missing or contradicted = VIOLATION.
