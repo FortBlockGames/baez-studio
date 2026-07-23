@@ -6,62 +6,140 @@
 <meta name="robots" content="noindex,nofollow">
 <title>TAKEOVER — Ch. 1 "Collateral"</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#080a0f;--paper:#0d1018;--blue:#2B7FFF;--dim:#1c2030;--muted:#3a4055;--text:#cdd0db;--white:#f0f2f8;--border:rgba(255,255,255,0.06)}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--ink);color:var(--text);font-family:'DM Sans',sans-serif}
-header{position:sticky;top:0;z-index:10;background:rgba(8,10,15,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);
+header{position:static;background:rgba(8,10,15,.92);border-bottom:1px solid var(--border);
   display:flex;align-items:center;justify-content:space-between;padding:14px 22px}
 .logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:4px;color:var(--white)}
 .logo small{color:var(--blue);font-size:12px;letter-spacing:3px;margin-left:10px}
 .meta{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
 .reader{max-width:820px;margin:0 auto;padding:26px 12px 90px}
-.page{margin:0 0 26px;position:relative}
+.page{margin:0 0 26px;position:relative;line-height:0}
 .page img{width:100%;display:block;border-radius:6px;border:1px solid var(--border);background:#05060a;min-height:200px}
-.pnum{position:absolute;top:10px;left:10px;background:rgba(8,10,15,.8);border:1px solid var(--border);color:var(--muted);
+.layer{position:absolute;inset:0;line-height:1}
+.pnum{position:absolute;top:10px;left:10px;z-index:5;background:rgba(8,10,15,.8);border:1px solid var(--border);color:var(--muted);
   font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;padding:4px 9px;border-radius:6px}
+/* lettering boxes — all positioned in % over the textless plate */
+.cap,.speech,.name,.sfx{position:absolute;color:#111;text-transform:uppercase}
+.cap{background:#fff;border:2px solid #111;font-family:'Anton',sans-serif;letter-spacing:.4px;line-height:1.06;
+  padding:1.6% 1.9%;font-size:clamp(8px,1.72vw,15px);box-shadow:2px 2px 0 rgba(0,0,0,.5)}
+.speech{background:#fff;border:2px solid #111;border-radius:46% / 42%;font-family:'Anton',sans-serif;letter-spacing:.3px;
+  line-height:1.04;padding:1.7% 2.1%;font-size:clamp(8px,1.72vw,15px);text-align:center}
+.name{background:#111;color:#fff;font-family:'Bebas Neue',sans-serif;letter-spacing:1.5px;padding:.7% 1.4%;
+  font-size:clamp(8px,1.55vw,13px);border-radius:2px}
+.sfx{color:#fff;-webkit-text-stroke:2.5px #111;font-family:'Anton',sans-serif;font-size:clamp(20px,6vw,52px);
+  letter-spacing:1px;text-shadow:3px 3px 0 rgba(0,0,0,.35);transform:rotate(-6deg)}
+.title{position:absolute;left:0;right:0;text-align:center;font-family:'Anton',sans-serif;color:#fff;
+  -webkit-text-stroke:2px #000;letter-spacing:4px;line-height:.9}
 .endcard{text-align:center;padding:60px 20px;border:1px dashed var(--dim);border-radius:12px}
 .endcard h2{font-family:'Bebas Neue',sans-serif;font-size:44px;letter-spacing:3px;color:var(--white)}
-.endcard p{font-weight:300;font-size:14px;color:var(--muted);margin:12px auto 26px;max-width:420px;line-height:1.6}
+.endcard p{font-weight:300;font-size:14px;color:var(--muted);margin:12px auto 26px;max-width:440px;line-height:1.6}
 .cta{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-family:'DM Mono',monospace;
   font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:15px 30px;border-radius:9px}
 .cta:hover{background:#1f6ef0}
 footer{text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);padding:30px}
+.note{max-width:820px;margin:0 auto 20px;font-family:'DM Mono',monospace;font-size:10px;line-height:1.7;color:var(--muted);
+  border:1px solid var(--border);border-radius:8px;padding:12px 16px}
+.note b{color:var(--text)}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">TAKEOVER<small>CH. 1 — COLLATERAL</small></div>
+  <div class="logo">TAKEOVER<small>CH. 1 · COLLATERAL</small></div>
   <div class="meta">FBG Universe · 2577 PE</div>
 </header>
 <div class="reader" id="reader"></div>
-<footer>A FORT BLOCK GAMES MANGA · MADE WITH TAKEOVER STUDIO</footer>
+<footer>A FORT BLOCK GAMES MANGA · TEXTLESS ART PLATES + TYPESET LETTERING · MADE WITH TAKEOVER STUDIO</footer>
 <script>
-// PAGES is populated at build time with the generated art URLs (cover first).
 const CDN='https://d8j0ntlcm91z4.cloudfront.net/user_367Twnt1CjgstYSJuY3u52mI2QL/';
+// Each page: {label, url (textless art plate), letters:[...]}.
+// letter kinds: cap (caption box), speech (rounded bubble), name (nameplate), sfx (onomatopoeia), title (cover wordmark)
+// x,y,w are % of the page. No em dashes anywhere (brand rule).
 const PAGES = [
-  CDN+'hf_20260722_184920_62161a87-e841-4e95-9516-67faaa511b01.png', // cover (OFFICIAL TAKEOVER logo + LoG emblem)
-  CDN+'hf_20260722_194412_3f50eba7-97da-415e-97a8-342fb03e3e60.png', // narrator v4: Color Law (canonical profile, cyan glow) + Stray-Text Law
-  CDN+'hf_20260722_182912_708b62a0-892c-47f8-8699-aec41feb61b5.png', // p1 cold open (Chickows/DH liveries)
-  CDN+'hf_20260722_182920_84ab88ff-8079-425e-8994-6f7e16dca7e0.png', // p2 meet Rae (Vital Vibe ad = only color)
-  CDN+'hf_20260722_182926_1c9838d6-f53d-49f0-bf8c-b7faed18cad4.png', // p3 collateral (DH barricade doctrine)
-  CDN+'hf_20260722_182941_41807a2a-a074-4c85-9cb2-9e03dcd12742.png', // p4 the broadcast (orange pirate glow)
-  CDN+'hf_20260722_184310_38d0f34e-0ffc-4a13-a94f-7b9c65dc9293.png', // p5 ritual (8 official banners, strict logo fidelity)
-  CDN+'hf_20260722_183001_50ba4e5e-16a8-419f-b007-be3f081e81b2.png', // p6 armory (orange paint blooms)
-  CDN+'hf_20260722_183009_72605d43-9b21-4c11-9c37-211a6f15bd74.png', // p7 first deployment
-  CDN+'hf_20260722_183038_740daef6-fe92-4e7a-ab54-7270e44adbf4.png', // p8 the hook (Skullface hologram)
+  { label:'COVER', url:CDN+'hf_20260723_170300_5e28db52-0ef2-401a-9d03-c74ab9d98fcf.jpeg', letters:[
+      {k:'title', t:'TAKEOVER', y:2.5, size:7.4},
+      {k:'cap', t:'CHAPTER ONE · COLLATERAL', x:31, y:13, w:38},
+      {k:'cap', t:'AN FBG UNIVERSE MANGA', x:35, y:95, w:30},
+  ]},
+  { label:'McCLAINE · NARRATOR', url:CDN+'hf_20260722_202215_3b98fbfc-0ad8-418e-83e1-ab0bc4494d8f.png', letters:[
+      {k:'cap', t:'YEAR 2577. FIVE CORPOS OWN EVERYTHING.', x:4, y:3, w:38},
+      {k:'cap', t:'EIGHT BANNERS FIGHT OVER EVERY DISTRICT. ALL OF THEM WITH BOTS LIKE ME.', x:62, y:5, w:32},
+      {k:'name', t:'McCLAINE', x:5, y:84},
+      {k:'cap', t:"STICK AROUND, CITIZEN. I'LL WALK YOU THROUGH THE WAR.", x:47, y:90.5, w:49},
+  ]},
+  { label:'PAGE 1', url:CDN+'hf_20260723_172509_32c2530e-6786-49a3-a767-09f9da3e304a.jpeg', letters:[
+      {k:'cap', t:'MERICA CITY. YEAR 2577 PE. DISTRICT 12. THE CORPOS HAVE BEEN AT WAR NEARLY FIVE HUNDRED YEARS.', x:4, y:3.5, w:28},
+      {k:'cap', t:"WE'RE NOT SOLDIERS. WE'RE THE SCENERY THEY FIGHT IN FRONT OF.", x:4, y:57, w:27},
+      {k:'speech', t:'...MOVE LEFT, YOU IDIOT. LEFT.', x:72, y:82, w:24},
+  ]},
+  { label:'PAGE 2', url:CDN+'hf_20260723_170320_3fc5a7ad-a976-48ea-9e57-77ce0ac94a76.jpeg', letters:[
+      {k:'speech', t:"RAE DOESN'T LOSE. BEST HANDS IN DISTRICT 12.", x:65, y:8, w:26},
+      {k:'speech', t:'BEST HANDS IN A DEAD-END ARCADE. GREAT.', x:44, y:50, w:27},
+      {k:'speech', t:'FIGHT FOR A CORPO? NO THANKS.', x:64, y:86, w:24},
+  ]},
+  { label:'PAGE 3', url:CDN+'hf_20260723_172233_9fdc6fad-5691-4bad-9d6a-0ff41318ce1f.jpeg', letters:[
+      {k:'sfx', t:'GDOOOM', x:26, y:26},
+      {k:'speech', t:"STACK 'EM DEEP, BOYS!", x:33, y:44, w:20},
+      {k:'speech', t:"COLLATERAL'S JUST INVENTORY.", x:44, y:52, w:22},
+      {k:'speech', t:'...NO.', x:8, y:80, w:14},
+      {k:'cap', t:'ACCEPTABLE LOSSES, THE CORPOS CALL IT.', x:74, y:90, w:24},
+  ]},
+  { label:'PAGE 4', url:CDN+'hf_20260723_170420_e5e6e1fc-182b-4f3d-a06e-584d6f7a9a91.jpeg', letters:[
+      {k:'cap', t:"FOUR HUNDRED YEARS UNDER THEIR HEEL. 2577 IS THE YEAR THAT CHANGES.", x:4, y:4, w:30},
+      {k:'cap', t:'YOU DON’T NEED THEIR PERMISSION TO FIGHT BACK. YOU NEED A BOT AND A REASON.', x:64, y:70, w:30},
+      {k:'speech', t:'A BOT AND A REASON.', x:72, y:12, w:22},
+      {k:'cap', t:'THEY CALL IT CITIZEN COMBAT. I CALLED IT MY WAY IN.', x:6, y:60, w:26},
+  ]},
+  { label:'PAGE 5', url:CDN+'hf_20260723_170426_7d9bd776-18ca-4077-8863-637e4121da10.jpeg', letters:[
+      {k:'speech', t:'WELCOME, CITIZEN. THE RITUAL WILL NOW ASSIGN YOUR BANNER.', x:38, y:4, w:26},
+      {k:'cap', t:'FIVE CORPOS WHO OWN EVERYTHING. THREE FACTIONS TRYING TO TAKE IT BACK.', x:6, y:60, w:26},
+      {k:'speech', t:"...THE ONE THEY'RE AFRAID OF. FIGURES.", x:10, y:84, w:24},
+      {k:'cap', t:'YOU CAN SWITCH BANNERS BETWEEN EVENTS. NOBODY IN DISTRICT 12 EVER BOTHERS.', x:74, y:84, w:23},
+  ]},
+  { label:'PAGE 6', url:CDN+'hf_20260723_170441_4fb59ba9-a0b9-4a35-a766-53fea8a6e5bb.png', letters:[
+      {k:'cap', t:'THE ARMORY. ONE MAGLEV RIDE, ONE HOLO-REQUISITION, AND YOUR UNIT SHIPS HOME.', x:4, y:4, w:30},
+      {k:'speech', t:"EVERY CITIZEN GETS ONE. FREE, SOULBOUND, YOURS TILL IT'S SCRAP.", x:74, y:12, w:23},
+      {k:'speech', t:"BASIC SOLDIER. LINE UNIT. DON'T GET ATTACHED.", x:56, y:44, w:26},
+      {k:'speech', t:"WE'LL SEE ABOUT THAT.", x:10, y:80, w:22},
+  ]},
+  { label:'PAGE 7', url:CDN+'hf_20260723_172243_c4f8f4ee-2bfd-4a20-9b8a-edb97991521e.jpeg', letters:[
+      {k:'cap', t:'YOU PILOT FROM OUTSIDE THE ZONE. IF THE BOT DIES, YOU DON’T. YOU LOSE THE BOT AND THE PAYOUT.', x:4, y:4, w:26},
+      {k:'speech', t:"THEN I DON'T LOSE IT.", x:38, y:6, w:22},
+      {k:'cap', t:'LOG HAD A CLAIM OPEN ON DISTRICT 12. TONIGHT IT GOT ITS FIRST PAIR OF HANDS.', x:8, y:30, w:24},
+      {k:'speech', t:'WHERE’D THIS ROOKIE LEARN TO...', x:10, y:52, w:22},
+      {k:'sfx', t:'KRAK', x:39, y:80},
+      {k:'cap', t:'LEFT. ALWAYS THE LEFT.', x:74, y:88, w:22},
+  ]},
+  { label:'PAGE 8', url:CDN+'hf_20260723_170502_860b3ce6-7cd3-4147-812e-890bea019b99.jpeg', letters:[
+      {k:'speech', t:'...BEST HANDS IN THE DISTRICT, HUH.', x:8, y:44, w:26},
+      {k:'speech', t:'THE WAR’S BEEN WAITING FOR SOMEONE LIKE YOU, CITIZEN.', x:66, y:44, w:28},
+      {k:'speech', t:"THEN IT CAN KEEP WAITING. I'M NOT FIGHTING FOR THEM. I'M FIGHTING FOR US.", x:6, y:80, w:30},
+      {k:'cap', t:'TAKEOVER CH.1 // END.  NEXT: THE ARMORY’S PRICE.', x:52, y:92, w:44},
+  ]},
 ];
 const reader=document.getElementById('reader');
-PAGES.forEach((u,i)=>{
+PAGES.forEach((p,i)=>{
   const d=document.createElement('div');d.className='page';
-  const lbl=i===0?'COVER':i===1?'McCLAINE · NARRATOR':'PAGE '+(i-1)+' / '+(PAGES.length-2);
-  d.innerHTML=`<div class="pnum">${lbl}</div><img loading="lazy" src="${u}" alt="${lbl}">`;
+  let html=`<div class="pnum">${p.label}</div><img loading="lazy" src="${p.url}" alt="${p.label}"><div class="layer">`;
+  (p.letters||[]).forEach(L=>{
+    if(L.k==='title'){
+      html+=`<div class="title" style="top:${L.y}%;font-size:clamp(28px,${L.size||12}vw,120px)">${L.t}</div>`;
+    } else {
+      const w=L.w?`width:${L.w}%;`:'';
+      html+=`<div class="${L.k==='cap'?'cap':L.k==='speech'?'speech':L.k==='name'?'name':'sfx'}" style="left:${L.x}%;top:${L.y}%;${w}">${L.t}</div>`;
+    }
+  });
+  html+=`</div>`;
+  d.innerHTML=html;
   reader.appendChild(d);
 });
 const end=document.createElement('div');end.className='endcard';
 end.innerHTML=`<h2>THE WAR NEEDS HANDS.</h2>
-<p>Rae got a banner. Every citizen gets one free, soulbound bot — and the Ritual is waiting to assign yours. Which banner will it give you? The Takeover is live.</p>
+<p>Rae got a banner. Every citizen gets one free, soulbound bot, and the Ritual is waiting to assign yours. Which banner will it give you? The Takeover is live.</p>
 <a class="cta" href="https://www.fortblockgames.com/" target="_blank" rel="noopener">ENLIST YOUR BOT →</a>`;
 reader.appendChild(end);
 </script>
