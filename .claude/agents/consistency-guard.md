@@ -38,10 +38,11 @@ For EVERY generation prompt, verify:
    "colors only, no logo/text") or a locked hex — never from a mark token. The
    earlier "ambient element embed is OK" allowance is REVOKED for anything with a
    name that could render as text.
-4. **Faction colors are locked values** — banners, bot paint, emblems must name the
-   faction AND its exact locked color; "corporate blue-ish" vibes = VIOLATION.
-   Note the open canon question (zones.js vs lore-bible palettes) — until resolved,
-   the manga uses lore-bible palettes; flag any drift between pages.
+4. **Faction colors are locked HEX values** (ASSETS.md, owner-locked 2026-07-22):
+   Digi-U #16A34A · Dollar Holler #EAB308 · Chickows #DC2626 · Vital Vibe #2DD4BF ·
+   Aquafeelya #2563EB · PUF #7C3AED · Legion of Ghosts #F97316 · Sentioids #E5E7EB.
+   Every banner/bot/emblem must pass the faction's EXACT hex; a color word or wrong
+   hue = VIOLATION. Rae's LoG bot = #F97316 orange. The open canon question is CLOSED.
 5. **Treatment lock** — B&W manga + spot color ONLY on uniforms/gear/bot paint/
    emblems/glows; faces, skin, hair always pure monochrome. The treatment must be
    stated in the prompt. Missing or contradicted = VIOLATION.

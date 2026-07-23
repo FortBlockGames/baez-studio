@@ -65,13 +65,31 @@ composite the source PNG (Standard §2).**
 | Mall-EXT | `a2b82b82-9749-4cbb-a326-2c19b5534883` |
 | plaza-01 | `7fecb8ac-fe7c-4c14-b8ee-817a18f64f94` |
 
+## Faction color locks (OWNER-LOCKED 2026-07-22 — exact hex, never a "vibe")
+The single source of truth for every banner, bot paint scheme, emblem, and glow.
+Pass the exact hex into the prompt/SETTING slot; consistency-guard FAILs any color
+word or drift. These supersede the earlier zones.js-vs-lore-bible open question.
+
+| Faction | Hex | Bot paint / banner |
+| --- | --- | --- |
+| Digi-U | `#16A34A` | green |
+| Dollar Holler | `#EAB308` | gold/yellow |
+| Chickows | `#DC2626` | red |
+| Vital Vibe | `#2DD4BF` | teal |
+| Aquafeelya | `#2563EB` | blue |
+| PUF | `#7C3AED` | purple |
+| Legion of Ghosts | `#F97316` | orange |
+| Sentioids | `#E5E7EB` | near-white / light grey |
+
+Notes for the manga (spot-color treatment): a bot/banner reads in its faction hex;
+faces/skin/hair stay monochrome. **Rae's LoG bot = `#F97316` orange** (not a warmer
+"orange-and-black" guess). Dollar Holler is `#EAB308` **gold**, not red/yellow — the
+page-3 red/yellow bot was wrong on this lock.
+
 ## Treatment lock (owner-approved)
-B&W manga + faction **spot color on uniforms/gear/bot paint/emblems/glows ONLY**.
-Faces, skin, and hair are always pure monochrome. State the treatment in every prompt.
-Faction colors are **locked exact values** (Standard: pull from `atlas/zones.js`) —
-⚠ open canon question: zones.js values (e.g. Digi-U green `#16A34A`) differ from the
-lore-bible brand palettes (Digi-U blue/chrome). Needs a founder canon pass; until then
-the manga follows the lore-bible palettes it shipped with.
+B&W manga + faction **spot color on uniforms/gear/bot paint/emblems/glows ONLY**,
+using the exact hex locks above. Faces, skin, and hair are always pure monochrome.
+State the treatment + the specific faction hex in every prompt.
 
 ## Pipeline rules (Standard-conformant)
 1. Recurring character ⇒ its per-style Element token in every prompt; describe only
