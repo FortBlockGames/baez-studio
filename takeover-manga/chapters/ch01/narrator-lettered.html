@@ -54,11 +54,12 @@
   document.getElementById('art').src = CDN+'hf_20260722_202215_3b98fbfc-0ad8-418e-83e1-ab0bc4494d8f.png';
 
   // The letter layer: {t:text, x,y,w in %, kind}. No em dashes (brand rule).
+  // Positions aligned to the actual reserved boxes in the art plate (verified via relay).
   const LETTERS = [
-    {kind:'cap',  t:'YEAR 2577. FIVE CORPOS OWN EVERYTHING.',                          x:3,  y:2,  w:44},
-    {kind:'cap',  t:'EIGHT BANNERS FIGHT OVER EVERY DISTRICT. ALL OF THEM WITH BOTS LIKE ME.', x:55, y:15, w:42},
-    {kind:'name', t:'McCLAINE',                                                        x:3,  y:49, w:0},
-    {kind:'cap',  t:"STICK AROUND, CITIZEN. I'LL WALK YOU THROUGH THE WAR.",            x:55, y:80, w:42},
+    {kind:'cap',  t:'YEAR 2577. FIVE CORPOS OWN EVERYTHING.',                          x:4,  y:3,  w:38},
+    {kind:'cap',  t:'EIGHT BANNERS FIGHT OVER EVERY DISTRICT. ALL OF THEM WITH BOTS LIKE ME.', x:62.5, y:5, w:31},
+    {kind:'name', t:'McCLAINE',                                                        x:5,  y:84, w:0},
+    {kind:'cap',  t:"STICK AROUND, CITIZEN. I'LL WALK YOU THROUGH THE WAR.",            x:47, y:90.5, w:49},
   ];
   const layer=document.getElementById('layer');
   LETTERS.forEach(L=>{
