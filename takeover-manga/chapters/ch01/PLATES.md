@@ -40,6 +40,22 @@ Fixes applied (guard-audited before each reroll):
 - P2 arcade screen shows tiny diegetic game-HUD icons (not words) — accepted as first-batch.
 - P7 HUD carries small wordless targeting icons — accepted (no letters/numbers).
 
+## Lettering + logo compositing (reader)
+Two overlay layers sit on top of every textless plate in `index.html`, so the art
+files stay pristine and every mark is pixel-exact:
+1. **Dialogue** — typeset HTML text placed *inside the art's own drawn bubbles*
+   (transparent, no added balloons), per the founder note. Story pages letter into the
+   generated bubbles; the cover + narrator (open-space plates) use styled caption boxes.
+2. **Official logos** — the real transparent PNG masters, composited (never generated):
+   - `assets/logos/takeover-white.png` on the cover (Drive master, 2048×512).
+   - all eight `assets/logos/<faction>.png` crests on the Page-5 banner ring.
+   - `log.png` on Rae's gauntlet at the Legion-of-Ghosts assignment (Page 5), replacing
+     the hallucinated sigil (founder note #3).
+   - `vital-vibe.png` on the Page-2 recruitment hologram, replacing the invented drone
+     glyph (founder note #4).
+   Logo masters pulled from the owner's Drive faction-logo set + title-logo folder and
+   committed to `takeover-manga/assets/logos/` for stable, version-controlled hosting.
+
 ## Durable follow-up (logged, not blocking)
 Per consistency-guard §4A, cut a founder-approved `BOT-SOLDIER-Manga` style Element so the
 manga register never has to fight the generic archetype. The BOT-SOLDIER token is the
