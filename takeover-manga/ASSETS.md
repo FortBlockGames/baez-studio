@@ -40,7 +40,8 @@ composite the source PNG (Standard §2).**
 | **Bots McClaine — manga** | `McClaine-Manga` | `e1de9d8d-d52d-4edd-af87-e4140aed7d66` | ✅ CUT (founder-approved anchor, job `647d2808`); use for ALL manga-register McClaine incl. narrator pages |
 | **Bots McClaine — COLOR MASTER** | `McClaine-Color-Master` | `e8f2c3e5-2a7f-4298-ab05-4cffd4367a65` | ✅ OFFICIAL color profile (owner-supplied; repo copy `characters/mcclaine-color-profile.webp`). Pair with the register Element on every colored/spot-color McClaine render |
 | BOT-Captain (generic archetype) | `BOT-Captain` | `998d1657-ce6a-4298-8b09-6a9c50101d79` | use for any Captain-grade unit in panels |
-| BOT-SOLDIER (generic archetype) | `BOT-SOLDIER` | `bfd9815d-109c-486c-b950-f2e30bc88ae7` | use for any Soldier unit in panels; faction = color lock + composited logo |
+| BOT-SOLDIER (generic archetype, pre-core) | `BOT-SOLDIER` | `bfd9815d-109c-486c-b950-f2e30bc88ae7` | LEGACY — superseded by BOT-SOLDIER-Core below for all new soldier work |
+| **BOT-SOLDIER-Core (CANONICAL soldier)** | `BOT-SOLDIER-Core` | `a865b998-4edd-43fc-b060-dea78c97b9f4` | ✅ OWNER-APPROVED master (from job `4553bda0`). Every line-soldier bot is built from this. Lean wiry frame, exposed cabling, twin round green goggle-optics, worn metal; the glowing ORANGE crosshair reactor **power core** is recessed into the oval chest cavity like a diamond set into a ring. Faction = color lock + composited logo over this base. Power-core master job `81becee3`. |
 | Rae Marlo — manga (original cast) | `Rae-Manga` | `2bd84b66-8305-42dd-bc5f-1aad68b275d7` | ✅ CUT (founder-approved anchor, job `4d19fbe2`); embed `<<<id>>>` — job-ID reference method retired |
 | Rose / Patch / ELI / Papa / ma | per Standard registry | `698bdfa5…` / `58594ee9…` / `db34eda0…` / `389ed70f…` / `f9fd9298…` | team cast |
 | red-soldier-01 / red-1 / big-boi / soldier2100PE | legacy | see Standard registry | reconcile vs Armory roster or retire |
