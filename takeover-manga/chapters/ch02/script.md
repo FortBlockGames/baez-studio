@@ -933,10 +933,12 @@ a product-build change.
    Chickows credit line. Chosen specifically so the loan lives **inside** the canon CP
    economy rather than inventing a parallel currency: the bank lends the thing the war pays
    you in, so future victories are pre-owned. Consistent with §5 (200-year bank) + §16 (CP).
-   **Needs sign-off — this is the chapter's biggest new mechanic.**
+   **✅ FOUNDER-APPROVED 2026-07-27 — canon. Recorded in `CANON-ADDITIONS.md`.**
 3. **A forfeited bot does not clear the credit line.** §3 says the citizen forfeits the bot
    and that operation's payout; it is silent on financing. This reads the silence in the
    harshest plausible direction. Logged as an extension, not a contradiction.
+   **✅ Approved by implication of item 2 and shipped in P14 ("THE BOT'S GONE. THE PAYMENTS
+   AREN'T.") — the CP advance has no teeth without it. Flag if you want it softened.**
 4. **The Armory proving bay** — try-before-you-field lanes with live target armatures.
    Connective tissue; the Armory is canonically the outfitter.
 5. **The Chickows financing kiosk on the Armory floor** — a retail branch of the canon bank,
