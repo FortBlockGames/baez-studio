@@ -48,10 +48,14 @@ anger than when she started, because everyone around her just got fed.
   from the Incident, still paying an Armory credit line taken years ago. Carries the
   witness beat, the price made flesh, and a face for the Mutations population
   (canon **open hook**).
-  **Name — founder pick:** ① **Gus Fenner** *(recommended — weathered, working-class,
-  fits the Americana-satire register)* · ② Delroy "Del" Ashe · ③ Ines Carrow.
-  Gender/design open until you call it; no collision with existing cast
-  (Rose/Patch/ELI/Papa/ma/Marlo/Hollis/Paradise/Thorne/Banks/Shen/PAT/Dodge/W).
+  **Name: GUS FENNER — LOCKED 2026-07-24.** Gender/design still open.
+  **Verified manga-original:** the bible has no street-level civilian character to adapt —
+  its entire named cast is faction-command tier (General Chickow, Dodge, Dollar Bot 9000,
+  Joe Paradise, Morrow, Shen, Goodman, Vanya, Banks, PAT, Hollis/Skullface, The Wraith,
+  Thorne). Dana Banks was considered and rejected: she is a notable ex-LoG defector to PUF
+  with Contested-Archive "alien abilities," so casting her as an indebted street veteran
+  would miscast her and drag unresolvable canon into a mentor slot. No name collision with
+  existing cast or with the ASSETS.md art elements (Rose/Patch/ELI/Papa/ma).
 - **BOOT** *(NEW — minor)* — the arcade kid from ch.1 P2 who said "Rae doesn't lose."
   Gives the block a face and a voice. *Name is a placeholder; easily swapped.*
 - **CHICKOWS** — brand presence, then physical arrival. Red/yellow, wholesome cheer,
