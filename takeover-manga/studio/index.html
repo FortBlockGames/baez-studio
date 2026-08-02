@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Takeover Studio — Manga Engine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#080a0f; --paper:#0d1018; --panel:#11141d; --blue:#2B7FFF;
+  --dim:#1c2030; --muted:#3a4055; --text:#cdd0db; --white:#f0f2f8;
+  --border:rgba(255,255,255,0.06); --border2:rgba(255,255,255,0.12);
+  --good:#39d98a; --warn:#f7b955; --bad:#ff5c72;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--ink);color:var(--text);font-family:'DM Sans',sans-serif;overflow:hidden}
+h1,h2,h3{font-family:'Bebas Neue',sans-serif;letter-spacing:2px;color:var(--white);font-weight:400}
+.mono{font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:2px;font-size:10px;color:var(--muted)}
+button{font-family:'DM Mono',monospace;cursor:pointer}
+input,textarea,select{font-family:'DM Sans',sans-serif}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-thumb{background:var(--dim);border-radius:6px}
+::-webkit-scrollbar-track{background:transparent}
+
+/* ---- shell ---- */
+.app{display:grid;grid-template-columns:230px 1fr;height:100vh}
+.sidebar{background:var(--paper);border-right:1px solid var(--border);display:flex;flex-direction:column;padding:22px 16px}
+.brand{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:5px;color:var(--white);line-height:1}
+.brand small{display:block;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:3px;color:var(--blue);margin-top:6px}
+.nav{margin-top:34px;display:flex;flex-direction:column;gap:4px;flex:1}
+.nav button{display:flex;align-items:center;gap:11px;width:100%;text-align:left;background:none;border:none;color:var(--muted);
+  padding:11px 12px;border-radius:9px;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:.15s}
+.nav button .ic{width:16px;text-align:center;font-size:13px}
+.nav button:hover{color:var(--text);background:rgba(255,255,255,0.03)}
+.nav button.active{color:var(--white);background:rgba(43,127,255,0.12);box-shadow:inset 2px 0 0 var(--blue)}
+.side-foot{border-top:1px solid var(--border);padding-top:14px;margin-top:14px}
+.side-foot .row{display:flex;justify-content:space-between;align-items:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--muted);margin-bottom:6px}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:6px}
+.dot.on{background:var(--good)}.dot.off{background:var(--warn)}
+
+.main{overflow-y:auto;position:relative}
+.view{display:none;padding:34px 40px 80px;max-width:1180px;margin:0 auto}
+.view.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.view-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:26px;gap:20px;flex-wrap:wrap}
+.view-head h1{font-size:46px;letter-spacing:3px}
+.view-head p{max-width:520px;font-weight:300;font-size:13.5px;color:var(--text);line-height:1.6;margin-top:4px}
+
+/* ---- buttons ---- */
+.btn{background:var(--dim);color:var(--white);border:1px solid var(--border2);padding:11px 18px;border-radius:8px;
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:.15s;white-space:nowrap}
+.btn:hover{border-color:var(--blue);color:#fff}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.primary:hover{background:#1f6ef0;box-shadow:0 6px 22px rgba(43,127,255,.35)}
+.btn.ghost{background:none}
+.btn.sm{padding:7px 12px;font-size:9px;border-radius:6px}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.danger:hover{border-color:var(--bad);color:var(--bad)}
+
+/* ---- cards / forms ---- */
+.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px}
+.grid{display:grid;gap:18px}
+label.fld{display:block;margin-bottom:15px}
+label.fld > span{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+input[type=text],textarea,select{width:100%;background:var(--ink);border:1px solid var(--border2);border-radius:8px;color:var(--white);
+  padding:11px 13px;font-size:13.5px;transition:.15s}
+input[type=text]:focus,textarea:focus,select:focus{outline:none;border-color:var(--blue)}
+textarea{resize:vertical;min-height:70px;line-height:1.55}
+select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path d='M0 2l5 5 5-5' fill='none' stroke='%233a4055' stroke-width='1.5'/></svg>");
+  background-repeat:no-repeat;background-position:right 14px center}
+
+/* ---- characters ---- */
+.char-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:18px}
+.char-card{background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:.15s;display:flex;flex-direction:column}
+.char-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.char-thumb{aspect-ratio:1;background:#05060a;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.char-thumb img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.char-thumb .ph{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--dim)}
+.char-thumb .refbadge{position:absolute;top:8px;right:8px;background:rgba(8,10,15,.8);border:1px solid var(--border2);border-radius:20px;
+  font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1px;color:var(--blue);padding:3px 8px}
+.char-body{padding:13px 14px;flex:1;display:flex;flex-direction:column}
+.char-body h3{font-size:21px;letter-spacing:1px;line-height:1}
+.char-body .role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--blue);text-transform:uppercase;margin:5px 0 8px}
+.char-body .desc{font-size:11.5px;font-weight:300;color:var(--muted);line-height:1.5;flex:1;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.char-body .acts{display:flex;gap:6px;margin-top:11px}
+.add-card{border:1.5px dashed var(--border2);background:none;border-radius:14px;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:10px;color:var(--muted);min-height:150px;transition:.15s;text-transform:uppercase;letter-spacing:2px;font-size:10px}
+.add-card:hover{border-color:var(--blue);color:var(--blue)}
+.add-card .plus{font-size:34px;font-family:'Bebas Neue',sans-serif;line-height:.7}
+
+/* ---- dropzone ---- */
+.dz{border:1.5px dashed var(--border2);border-radius:10px;padding:18px;text-align:center;color:var(--muted);
+  font-size:11px;transition:.15s;cursor:pointer}
+.dz.drag{border-color:var(--blue);background:rgba(43,127,255,.06);color:var(--blue)}
+.ref-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.ref-thumb{width:62px;height:62px;border-radius:8px;overflow:hidden;position:relative;border:1px solid var(--border2);background:#05060a}
+.ref-thumb img{width:100%;height:100%;object-fit:cover}
+.ref-thumb button{position:absolute;top:2px;right:2px;background:rgba(8,10,15,.85);border:none;color:var(--bad);border-radius:5px;
+  width:17px;height:17px;font-size:11px;line-height:1;display:flex;align-items:center;justify-content:center}
+
+/* ---- compose ---- */
+.compose{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:start}
+.slider-wrap{margin:6px 0 2px}
+.slider-lbls{display:flex;justify-content:space-between;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--muted);margin-bottom:6px}
+input[type=range]{width:100%;-webkit-appearance:none;height:5px;border-radius:5px;
+  background:linear-gradient(90deg,var(--blue) var(--pct,50%),var(--dim) var(--pct,50%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:#fff;border:3px solid var(--blue);cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--ink);border:1px solid var(--border2);border-radius:20px;padding:7px 13px;font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:1px;color:var(--muted);cursor:pointer;transition:.15s;display:flex;align-items:center;gap:7px}
+.chip:hover{border-color:var(--border2);color:var(--text)}
+.chip.on{background:rgba(43,127,255,.14);border-color:var(--blue);color:#fff}
+.chip .av{width:18px;height:18px;border-radius:50%;object-fit:cover;filter:grayscale(1)}
+.toggles{display:flex;flex-wrap:wrap;gap:8px}
+.tg{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:7px 11px;border-radius:6px;
+  border:1px solid var(--border2);background:var(--ink);color:var(--muted);cursor:pointer;transition:.15s}
+.tg.on{background:rgba(43,127,255,.14);border-color:var(--blue);color:#fff}
+
+.preview-col{position:sticky;top:0}
+.canvas-frame{aspect-ratio:3/4;background:#05060a;border:1px solid var(--border2);border-radius:12px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;position:relative}
+.canvas-frame img{width:100%;height:100%;object-fit:contain}
+.canvas-frame .empty{text-align:center;color:var(--dim);padding:30px}
+.canvas-frame .empty .big{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--dim);letter-spacing:3px}
+.spinner{position:absolute;inset:0;background:rgba(8,10,15,.72);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;z-index:3}
+.spin{width:34px;height:34px;border:3px solid var(--dim);border-top-color:var(--blue);border-radius:50%;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.prompt-box{margin-top:14px;background:var(--ink);border:1px solid var(--border);border-radius:10px;padding:13px;
+  font-family:'DM Mono',monospace;font-size:10.5px;line-height:1.6;color:var(--muted);white-space:pre-wrap;max-height:190px;overflow-y:auto}
+.prompt-box b{color:var(--blue);font-weight:400}
+
+/* ---- storyboard ---- */
+.sb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.sb-panel{background:var(--panel);border:1px solid var(--border);border-radius:10px;overflow:hidden;position:relative}
+.sb-panel img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.sb-panel .meta{padding:8px 10px;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:1px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+.sb-panel .x{position:absolute;top:6px;right:6px;background:rgba(8,10,15,.85);border:1px solid var(--border2);color:var(--bad);border-radius:6px;width:22px;height:22px;font-size:12px}
+.sb-panel .num{position:absolute;top:6px;left:6px;background:var(--blue);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:14px;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center}
+
+.empty-state{text-align:center;padding:70px 20px;color:var(--muted)}
+.empty-state .big{font-family:'Bebas Neue',sans-serif;font-size:54px;color:var(--dim);letter-spacing:3px}
+.empty-state p{font-weight:300;font-size:13px;margin-top:8px}
+
+/* ---- modal ---- */
+.overlay{position:fixed;inset:0;background:rgba(3,4,7,.72);backdrop-filter:blur(4px);z-index:50;display:none;align-items:center;justify-content:center;padding:24px}
+.overlay.open{display:flex}
+.modal{background:var(--paper);border:1px solid var(--border2);border-radius:16px;width:min(600px,100%);max-height:90vh;overflow-y:auto;padding:28px}
+.modal h2{font-size:30px;letter-spacing:2px;margin-bottom:4px}
+.modal .sub{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--blue);text-transform:uppercase;margin-bottom:22px}
+.modal-acts{display:flex;gap:10px;justify-content:flex-end;margin-top:22px}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--white);color:var(--ink);
+  padding:13px 22px;border-radius:10px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;z-index:99;transition:.3s;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast.err{background:var(--bad);color:#fff}
+
+.hint{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:1px;color:var(--muted);line-height:1.6;margin-top:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pill{display:inline-block;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:1px;padding:3px 9px;border-radius:20px;border:1px solid var(--border2);color:var(--muted)}
+@media(max-width:900px){.app{grid-template-columns:1fr}.sidebar{display:none}.compose{grid-template-columns:1fr}.view{padding:24px 18px 80px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">TAKEOVER<small>STUDIO · MANGA ENGINE</small></div>
+    <nav class="nav" id="nav">
+      <button data-view="characters" class="active"><span class="ic">◈</span> Characters</button>
+      <button data-view="compose"><span class="ic">▦</span> Compose</button>
+      <button data-view="storyboard"><span class="ic">▤</span> Storyboard</button>
+      <button data-view="settings"><span class="ic">⚙</span> Settings</button>
+    </nav>
+    <div class="side-foot">
+      <div class="row"><span>Backend</span><span id="statBackend"><span class="dot off"></span>Demo</span></div>
+      <div class="row"><span>Characters</span><span id="statChars">0</span></div>
+      <div class="row"><span>Panels</span><span id="statPanels">0</span></div>
+      <div style="display:flex;gap:6px;margin-top:10px">
+        <button class="btn ghost sm" id="btnExport">Export</button>
+        <button class="btn ghost sm" id="btnImport">Import</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <!-- CHARACTERS -->
+    <section class="view active" id="view-characters">
+      <div class="view-head">
+        <div>
+          <h1>Character Roster</h1>
+          <p>Lock each Takeover character from reference art. Everything you generate stays keyed to these refs so the cast is identical panel‑to‑panel — that's the whole point.</p>
+        </div>
+        <div style="display:flex;gap:9px">
+          <button class="btn ghost" id="btnSeed" title="Load the canonical Takeover roster">Load Takeover cast</button>
+          <button class="btn primary" id="btnNewChar">+ New Character</button>
+        </div>
+      </div>
+      <div class="char-grid" id="charGrid"></div>
+    </section>
+
+    <!-- COMPOSE -->
+    <section class="view" id="view-compose">
+      <div class="view-head">
+        <div><h1>Compose Panel</h1>
+        <p>Cast the panel, set the shot, dial resemblance vs. adaptation, and generate a black‑and‑white manga panel that holds your characters.</p></div>
+      </div>
+      <div class="compose">
+        <div>
+          <div class="card" style="margin-bottom:18px">
+            <label class="fld"><span>Cast — click to assign characters</span></label>
+            <div class="chips" id="castChips"></div>
+            <p class="hint" id="castHint">No characters yet — add some in the Characters tab first.</p>
+          </div>
+
+          <div class="card" style="margin-bottom:18px">
+            <div class="two">
+              <label class="fld"><span>Composition</span>
+                <select id="fComposition">
+                  <option value="single close-up portrait, face fills frame">Close‑up portrait</option>
+                  <option value="medium shot, waist up">Medium shot</option>
+                  <option value="full-body wide shot">Full‑body wide</option>
+                  <option value="two-shot, two characters facing off" selected>Two‑shot / face‑off</option>
+                  <option value="over-the-shoulder shot">Over‑the‑shoulder</option>
+                  <option value="low-angle hero shot looking up">Low‑angle hero</option>
+                  <option value="high-angle establishing shot of the environment">Wide establishing</option>
+                  <option value="dynamic action shot, motion blur, extreme foreshortening">Action / impact</option>
+                  <option value="full-page dramatic splash composition">Splash page</option>
+                </select>
+              </label>
+              <label class="fld"><span>Mood</span>
+                <select id="fMood">
+                  <option>tense</option><option>explosive</option><option>ominous</option>
+                  <option>melancholy</option><option>triumphant</option><option>eerie calm</option>
+                  <option>chaotic</option><option>heroic</option>
+                </select>
+              </label>
+            </div>
+            <label class="fld"><span>Scene / action</span>
+              <textarea id="fAction" placeholder="e.g. Rae's Soldier bot slips two enemy units in a rubble-strewn boulevard as neon billboards flicker overhead."></textarea>
+            </label>
+            <label class="fld"><span>Dialogue / caption <span style="color:var(--dim)">(optional — rendered in a bubble)</span></span>
+              <input type="text" id="fDialogue" placeholder="Left. Always the left.">
+            </label>
+          </div>
+
+          <div class="card" style="margin-bottom:18px">
+            <label class="fld" style="margin-bottom:9px"><span>Style</span></label>
+            <div class="toggles" id="styleToggles">
+              <button class="tg on" data-s="screentone">Screentone</button>
+              <button class="tg on" data-s="ink">Bold ink</button>
+              <button class="tg" data-s="speedlines">Speed lines</button>
+              <button class="tg on" data-s="highcontrast">High contrast</button>
+              <button class="tg" data-s="color">Color override</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <label class="fld" style="margin-bottom:4px"><span>Resemblance ↔ Adaptation</span></label>
+            <div class="slider-wrap">
+              <div class="slider-lbls"><span>Hold reference</span><span id="resVal">70% faithful</span><span>Reinterpret</span></div>
+              <input type="range" id="fRes" min="0" max="100" value="30">
+            </div>
+            <p class="hint">Low = stay locked to the reference sheet (best for recurring cast). High = let the model restyle for dramatic panels.</p>
+          </div>
+        </div>
+
+        <!-- preview -->
+        <div class="preview-col">
+          <div class="card">
+            <div class="canvas-frame" id="canvasFrame">
+              <div class="empty"><div class="big">3 : 4</div><div class="mono" style="margin-top:8px">panel preview</div></div>
+            </div>
+            <div style="display:flex;gap:9px;margin-top:14px">
+              <button class="btn primary" id="btnGen" style="flex:1">⚡ Generate Panel</button>
+              <button class="btn ghost" id="btnAddSb" disabled title="Add to storyboard">＋SB</button>
+            </div>
+            <div class="prompt-box" id="promptBox"><b>ASSEMBLED PROMPT →</b> configure the panel to preview the prompt.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORYBOARD -->
+    <section class="view" id="view-storyboard">
+      <div class="view-head">
+        <div><h1>Storyboard</h1><p>Every panel you keep lands here. Reorder, export a project file, or download the panels to assemble a page.</p></div>
+        <div style="display:flex;gap:9px">
+          <button class="btn ghost" id="btnClearSb">Clear</button>
+          <button class="btn primary" id="btnDownloadAll">Download all</button>
+        </div>
+      </div>
+      <div id="sbWrap"></div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="view" id="view-settings">
+      <div class="view-head"><div><h1>Settings</h1><p>Choose the generation backend. <b style="color:var(--text)">Higgsfield</b> runs through BAEZ's own serverless proxy (<code>/api/generate</code>) so the API key stays server-side and never touches the browser.</p></div></div>
+      <div class="card grid" style="max-width:620px">
+        <label class="fld"><span>Backend</span>
+          <select id="sProvider">
+            <option value="higgsfield">Higgsfield (BAEZ) — our generation engine</option>
+            <option value="demo">Demo — offline placeholder (always works)</option>
+            <option value="custom">Custom endpoint — your own proxy / worker</option>
+          </select>
+        </label>
+        <label class="fld" id="wrapHf" style="display:none"><span>Access code <span style="color:var(--dim)">(only if the server requires one)</span></span>
+          <input type="text" id="sAccessCode" placeholder="leave blank unless given a code" autocomplete="off">
+          <p class="hint">Generates via Higgsfield using BAEZ's account through <code>/api/generate</code> (key lives server-side in Vercel env <code>HIGGSFIELD_API_KEY</code>). Strict rate limits apply per user. Only works on the deployed site; the local file falls back to Demo.</p>
+        </label>
+        <label class="fld" id="wrapKey" style="display:none"><span>API key</span>
+          <input type="text" id="sKey" placeholder="paste key — stored locally only" autocomplete="off">
+          <p class="hint" id="keyHint"></p>
+        </label>
+        <label class="fld" id="wrapModel" style="display:none"><span>Model</span>
+          <input type="text" id="sModel" placeholder="model id">
+        </label>
+        <label class="fld" id="wrapEndpoint" style="display:none"><span>Endpoint URL</span>
+          <input type="text" id="sEndpoint" placeholder="https://your-worker.dev/generate">
+          <p class="hint">POST { prompt, images:[dataURL], resemblance, style } → expects { image: dataURL|url }.</p>
+        </label>
+        <div style="display:flex;gap:10px"><button class="btn primary" id="sSave">Save</button>
+          <span class="pill" id="saveState">unsaved</span></div>
+      </div>
+      <div class="card" style="max-width:620px;margin-top:18px">
+        <label class="fld" style="margin:0"><span>Danger zone</span></label>
+        <button class="btn danger ghost sm" id="btnWipe">Wipe all local data</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- CHARACTER MODAL -->
+<div class="overlay" id="charModal">
+  <div class="modal">
+    <h2 id="cmTitle">New Character</h2>
+    <div class="sub">Identity from references</div>
+    <div class="two">
+      <label class="fld"><span>Name</span><input type="text" id="cmName" placeholder="Rae Marlo"></label>
+      <label class="fld"><span>Role / title</span><input type="text" id="cmRole" placeholder="Citizen bot-pilot"></label>
+    </div>
+    <label class="fld"><span>Faction</span>
+      <select id="cmFaction">
+        <option value="">— unaffiliated / civilian —</option>
+        <optgroup label="Resistance">
+          <option>Peoples United Front (PUF)</option><option>Legion of Ghosts (LoG)</option><option>Sentioids</option>
+        </optgroup>
+        <optgroup label="Penteval">
+          <option>Chickows</option><option>Aquafeelya</option><option>Vital Vibe</option><option>Digi-U</option><option>Dollar Holler</option>
+        </optgroup>
+      </select>
+    </label>
+    <label class="fld"><span>Design description</span>
+      <textarea id="cmDesc" placeholder="Lean athletic 19-year-old, short choppy undercut, worn pilot's bomber jacket, holo-visor pushed up, scarred data gauntlet."></textarea>
+    </label>
+    <label class="fld"><span>Reference art — the locked identity</span></label>
+    <div class="dz" id="cmDz">Drop images here, or click to browse<br><span style="font-size:9px">multiple angles = stronger consistency</span></div>
+    <input type="file" id="cmFile" accept="image/*" multiple hidden>
+    <div class="ref-strip" id="cmRefs"></div>
+    <div class="modal-acts">
+      <button class="btn ghost" id="cmCancel">Cancel</button>
+      <button class="btn primary" id="cmSave">Save Character</button>
+    </div>
+  </div>
+</div>
+
+<input type="file" id="importFile" accept="application/json" hidden>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============ STATE ============ */
+const LS='takeover.studio.v1';
+const uid=()=>Math.random().toString(36).slice(2,10);
+let S=load();
+function load(){try{return JSON.parse(localStorage.getItem(LS))||seed()}catch(e){return seed()}}
+function seed(){return{characters:[],panels:[],settings:{provider:'higgsfield',key:'',model:'',endpoint:'',accessCode:''}}}
+function save(){try{localStorage.setItem(LS,JSON.stringify(S))}catch(e){toast('Storage full — export & trim panels',true)}refreshStats()}
+function toast(m,err){const t=document.getElementById('toast');t.textContent=m;t.className='toast show'+(err?' err':'');setTimeout(()=>t.className='toast',2600)}
+
+/* ============ NAV ============ */
+document.getElementById('nav').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  document.querySelectorAll('#nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-'+b.dataset.view).classList.add('active');
+  if(b.dataset.view==='compose')renderCast();if(b.dataset.view==='storyboard')renderSb();});
+
+function refreshStats(){document.getElementById('statChars').textContent=S.characters.length;
+  document.getElementById('statPanels').textContent=S.panels.length;
+  const p=S.settings.provider;const live=p==='higgsfield'||(p==='custom'&&S.settings.endpoint);
+  document.getElementById('statBackend').innerHTML='<span class="dot '+(live?'on':'off')+'"></span>'+(p==='higgsfield'?'Higgsfield':p==='custom'?'Custom':'Demo');}
+
+/* ============ CHARACTERS ============ */
+const charGrid=document.getElementById('charGrid');
+function renderChars(){
+  charGrid.innerHTML='';
+  S.characters.forEach(c=>{
+    const el=document.createElement('div');el.className='char-card';
+    el.innerHTML=`<div class="char-thumb">${c.refs[0]?`<img src="${c.refs[0]}">`:`<div class="ph">${(c.name[0]||'?').toUpperCase()}</div>`}
+      ${c.refs.length?`<div class="refbadge">${c.refs.length} REF</div>`:''}</div>
+      <div class="char-body"><h3>${esc(c.name)}</h3><div class="role">${esc(c.role||'—')}${c.faction?' · '+esc(shortFac(c.faction)):''}</div>
+      <div class="desc">${esc(c.desc||'No description.')}</div>
+      <div class="acts"><button class="btn ghost sm" data-edit="${c.id}">Edit</button>
+      <button class="btn ghost sm danger" data-del="${c.id}">Del</button></div></div>`;
+    charGrid.appendChild(el);
+  });
+  const add=document.createElement('button');add.className='add-card';add.id='btnNewChar2';
+  add.innerHTML='<span class="plus">+</span>New Character';charGrid.appendChild(add);
+}
+function shortFac(f){return f.replace(/\s*\(.*\)/,'').split(' ')[0]}
+function esc(s){return(s||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+
+charGrid.addEventListener('click',e=>{const ed=e.target.dataset.edit,dl=e.target.dataset.del;
+  if(e.target.id==='btnNewChar2')openChar();
+  if(ed)openChar(ed);
+  if(dl){if(confirm('Delete this character?')){S.characters=S.characters.filter(c=>c.id!==dl);save();renderChars()}}});
+document.getElementById('btnNewChar').onclick=()=>openChar();
+
+/* Takeover hero roster (from the FBG lore bible) + original manga cast (Rae) */
+const SEED_CAST=[
+ {name:'Rae Marlo',role:'Citizen bot-pilot',faction:'',desc:"Lean athletic 19-year-old Merica City arcade ace. Short choppy undercut, worn asymmetric pilot's bomber jacket over a hoodie, holographic control-visor pushed up on the forehead, scarred data gauntlet. The everyman who enlists."},
+ {name:'General Chickow',role:'CEO / Commander',faction:'Chickows',desc:"Hyper-polished humanoid robot sculpted as an idealized CEO/General hybrid. Red-and-yellow fast-food war paint. Wholesome family-restaurant cheer over cold economic menace."},
+ {name:'Captain "W" — Chad Waters',role:'Commander',faction:'Aquafeelya',desc:"Sleek, cunning bot in stealth grey and crystalline blue-white. Serene aquatic surface hiding the threat beneath. Soft-voiced, quietly menacing."},
+ {name:'Captain Dodge',role:'Commander',faction:'Vital Vibe',desc:"Female athlete, early 30s, athletic pro-wear in neon Vibe palette; speed-built bot form. Hype energy-drink influencer with an erratic, chemically-fueled edge."},
+ {name:'Cyborgia the CEO',role:'CEO',faction:'Digi-U',desc:"~100-year-old post-human — the highest-ranking, most powerful post-human in the Penteval. Digi-U brand identity: blue/chrome geometric, screen-glow lighting, body-modification iconography. Bot form design TBD (lore episode 2)."},
+ {name:'Captain Dollar Bot 9000',role:'Field Commander',faction:'Dollar Holler',desc:"Approachable-yet-intimidating chrome bot in yellow/red signage paint. Brash, trash-talking, low-effort grammar over open comms."},
+ {name:'Captain Joe Paradise',role:'Colonel (honorary)',faction:'Peoples United Front (PUF)',desc:"Retired Federal-Agency-Detective look, earth tones, traditional military bearing. The Civilized Rebel; doctrine of minimum collateral damage."},
+ {name:'Skullface — Capt. Redd Hollis',role:'Captain',faction:'Legion of Ghosts (LoG)',desc:"Bot form is a hologram overlay of Redd Hollis himself projected over any bot he controls, mostly orange with black-trim camo. Ruins, masks, hard-edged graffiti."},
+ {name:'Captain PAT',role:'Hero / Captain',faction:'Sentioids',desc:"Non-intimidating, sturdily built workforce-bot, soft white with black trim, faint code patterns. Calculated, trustworthy, rejects violence as a first tool. (Faction leader is Compiler-7.)"},
+];
+document.getElementById('btnSeed').onclick=()=>{
+  const existing=new Set(S.characters.map(c=>c.name));
+  const add=SEED_CAST.filter(c=>!existing.has(c.name));
+  if(!add.length)return toast('Takeover cast already loaded');
+  add.forEach(c=>S.characters.push({id:uid(),...c,refs:[],createdAt:Date.now()}));
+  save();renderChars();toast('Loaded '+add.length+' Takeover characters');
+};
+
+/* char modal */
+let editId=null,tmpRefs=[];
+const cm={modal:document.getElementById('charModal'),name:document.getElementById('cmName'),role:document.getElementById('cmRole'),
+  fac:document.getElementById('cmFaction'),desc:document.getElementById('cmDesc'),refs:document.getElementById('cmRefs')};
+function openChar(id){editId=id||null;const c=id?S.characters.find(x=>x.id===id):null;
+  document.getElementById('cmTitle').textContent=c?'Edit Character':'New Character';
+  cm.name.value=c?.name||'';cm.role.value=c?.role||'';cm.fac.value=c?.faction||'';cm.desc.value=c?.desc||'';
+  tmpRefs=c?[...c.refs]:[];renderTmpRefs();cm.modal.classList.add('open')}
+function closeChar(){cm.modal.classList.remove('open')}
+document.getElementById('cmCancel').onclick=closeChar;
+cm.modal.addEventListener('click',e=>{if(e.target===cm.modal)closeChar()});
+function renderTmpRefs(){cm.refs.innerHTML='';tmpRefs.forEach((r,i)=>{const d=document.createElement('div');d.className='ref-thumb';
+  d.innerHTML=`<img src="${r}"><button data-i="${i}">×</button>`;cm.refs.appendChild(d)})}
+cm.refs.addEventListener('click',e=>{if(e.target.dataset.i!=null){tmpRefs.splice(+e.target.dataset.i,1);renderTmpRefs()}});
+const dz=document.getElementById('cmDz'),fileInput=document.getElementById('cmFile');
+dz.onclick=()=>fileInput.click();
+fileInput.onchange=e=>addFiles(e.target.files);
+;['dragover','dragenter'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.add('drag')}));
+;['dragleave','drop'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.remove('drag')}));
+dz.addEventListener('drop',e=>addFiles(e.dataTransfer.files));
+function addFiles(files){[...files].forEach(f=>{if(!f.type.startsWith('image/'))return;const r=new FileReader();
+  r.onload=()=>{tmpRefs.push(r.result);renderTmpRefs()};r.readAsDataURL(f)})}
+document.getElementById('cmSave').onclick=()=>{const name=cm.name.value.trim();if(!name)return toast('Name required',true);
+  const data={name,role:cm.role.value.trim(),faction:cm.fac.value,desc:cm.desc.value.trim(),refs:tmpRefs};
+  if(editId){Object.assign(S.characters.find(c=>c.id===editId),data)}else{S.characters.push({id:uid(),...data,createdAt:Date.now()})}
+  save();renderChars();closeChar();toast(editId?'Character updated':'Character added')};
+
+/* ============ COMPOSE ============ */
+let selCast=[],style={screentone:1,ink:1,speedlines:0,highcontrast:1,color:0},lastImg=null;
+const castChips=document.getElementById('castChips');
+function renderCast(){castChips.innerHTML='';
+  document.getElementById('castHint').style.display=S.characters.length?'none':'block';
+  S.characters.forEach(c=>{const b=document.createElement('button');b.className='chip'+(selCast.includes(c.id)?' on':'');
+    b.dataset.id=c.id;b.innerHTML=(c.refs[0]?`<img class="av" src="${c.refs[0]}">`:'')+esc(c.name);castChips.appendChild(b)});
+  buildPrompt()}
+castChips.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;const id=b.dataset.id;
+  selCast.includes(id)?selCast=selCast.filter(x=>x!==id):selCast.push(id);renderCast()});
+document.getElementById('styleToggles').addEventListener('click',e=>{const b=e.target.closest('.tg');if(!b)return;
+  style[b.dataset.s]=style[b.dataset.s]?0:1;b.classList.toggle('on');buildPrompt()});
+const fRes=document.getElementById('fRes');
+fRes.addEventListener('input',()=>{const v=+fRes.value;fRes.style.setProperty('--pct',v+'%');
+  document.getElementById('resVal').textContent=(100-v)+'% faithful';buildPrompt()});
+fRes.style.setProperty('--pct','30%');
+['fComposition','fMood','fAction','fDialogue'].forEach(id=>document.getElementById(id).addEventListener('input',buildPrompt));
+
+function buildPrompt(){
+  const cast=selCast.map(id=>S.characters.find(c=>c.id===id)).filter(Boolean);
+  const comp=document.getElementById('fComposition').value, mood=document.getElementById('fMood').value;
+  const action=document.getElementById('fAction').value.trim(), dlg=document.getElementById('fDialogue').value.trim();
+  const res=100-(+fRes.value);
+  const styleBits=[];
+  if(!style.color)styleBits.push('black and white');
+  styleBits.push('Japanese manga panel');
+  if(style.ink)styleBits.push('clean confident ink linework');
+  if(style.screentone)styleBits.push('screentone greyscale shading');
+  if(style.speedlines)styleBits.push('dynamic speed lines');
+  if(style.highcontrast)styleBits.push('high contrast dramatic lighting');
+  const facing=res>66?'stay strictly faithful to each reference sheet — identical face, hair, and outfit'
+    :res>33?'keep each character clearly recognizable from their reference'
+    :'you may restyle dramatically while keeping a hint of each character';
+  let p=`${cap(styleBits.join(', '))}. Shot: ${comp}. Mood: ${mood}.\n`;
+  if(cast.length){p+=`CHARACTERS:\n`+cast.map(c=>`  • ${c.name}${c.role?' ('+c.role+')':''}${c.faction?' — '+shortFac(c.faction):''}: ${c.desc||'see reference'}`).join('\n')+`\n${cap(facing)}.\n`}
+  p+=`SCENE: ${action||'(describe the action above)'}`;
+  if(dlg)p+=`\nSpeech bubble text: "${dlg}"`;
+  p+=`\n${style.color?'':'Monochrome ink and greytone only. '}Single manga panel, clean gutter border, professional shonen style.`;
+  document.getElementById('promptBox').innerHTML='<b>ASSEMBLED PROMPT →</b>\n'+esc(p);
+  return {prompt:p,cast,res,comp,mood,action,dlg};
+}
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+
+/* generate */
+document.getElementById('btnGen').onclick=async()=>{
+  const spec=buildPrompt();
+  if(!spec.action)return toast('Add a scene / action first',true);
+  const frame=document.getElementById('canvasFrame');
+  const sp=document.createElement('div');sp.className='spinner';sp.innerHTML='<div class="spin"></div><div class="mono">generating…</div>';
+  frame.appendChild(sp);document.getElementById('btnGen').disabled=true;
+  try{
+    const img=await generate(spec);
+    lastImg=img;
+    frame.innerHTML=`<img src="${img}">`;
+    document.getElementById('btnAddSb').disabled=false;
+    toast(S.settings.provider==='demo'?'Demo panel rendered':'Panel generated');
+  }catch(err){frame.querySelector('.spinner')?.remove();toast('Generation failed: '+err.message,true);console.error(err)}
+  document.getElementById('btnGen').disabled=false;
+};
+document.getElementById('btnAddSb').onclick=()=>{if(!lastImg)return;const spec=buildPrompt();
+  S.panels.push({id:uid(),img:lastImg,label:spec.cast.map(c=>c.name).join(', ')||'Panel',comp:spec.comp,createdAt:Date.now()});
+  save();toast('Added to storyboard')};
+
+/* ============ BACKENDS ============ */
+async function generate(spec){
+  const p=S.settings.provider;
+  const refs=spec.cast.flatMap(c=>c.refs).slice(0,6);
+  if(p==='higgsfield')return genHiggsfield(spec,refs);
+  if(p==='custom')return genCustom(spec,refs);
+  return genDemo(spec);
+}
+/* demo: render a stylized B&W placeholder panel on canvas */
+function genDemo(spec){
+  return new Promise(res=>{
+    const W=768,H=1024,cv=document.createElement('canvas');cv.width=W;cv.height=H;const x=cv.getContext('2d');
+    x.fillStyle='#0b0d13';x.fillRect(0,0,W,H);
+    // halftone dots
+    x.fillStyle='rgba(255,255,255,0.05)';for(let a=0;a<W;a+=14)for(let b=0;b<H;b+=14){x.beginPath();x.arc(a,b,1.4,0,7);x.fill()}
+    // diagonal speed lines if on
+    if(style.speedlines){x.strokeStyle='rgba(255,255,255,0.10)';x.lineWidth=2;for(let i=-H;i<W;i+=26){x.beginPath();x.moveTo(i,0);x.lineTo(i+H,H);x.stroke()}}
+    // frame
+    x.strokeStyle='rgba(240,242,248,0.85)';x.lineWidth=6;x.strokeRect(20,20,W-40,H-40);
+    // header band
+    x.fillStyle='#2B7FFF';x.fillRect(20,20,W-40,66);
+    x.fillStyle='#fff';x.font='42px "Bebas Neue",sans-serif';x.textBaseline='middle';
+    x.fillText('DEMO PANEL · '+spec.comp.split(',')[0].toUpperCase(),40,55);
+    // cast names big
+    x.fillStyle='#f0f2f8';x.font='72px "Bebas Neue",sans-serif';
+    const names=spec.cast.map(c=>c.name.toUpperCase())||['UNCAST'];
+    let yy=200;(names.length?names:['UNCAST']).forEach(n=>{x.fillText(n,48,yy);yy+=78});
+    // if a ref exists, ghost it in
+    if(spec.cast[0]&&spec.cast[0].refs[0]){const im=new Image();im.onload=()=>{x.globalAlpha=.28;
+      const s=Math.min((W-96)/im.width,(H-460)/im.height);x.drawImage(im,48,yy,im.width*s,im.height*s);x.globalAlpha=1;paintText()};im.src=spec.cast[0].refs[0]}
+    else paintText();
+    function paintText(){
+      x.fillStyle='rgba(205,208,219,0.9)';x.font='300 26px "DM Sans",sans-serif';
+      wrap(x,spec.action||'(no action)',48,H-260,W-96,34);
+      if(spec.dlg){x.fillStyle='#fff';x.strokeStyle='#000';x.lineWidth=2;
+        x.font='500 30px "DM Sans",sans-serif';roundRect(x,48,H-150,W-96,84,16);
+        x.fillStyle='#0b0d13';x.fill();x.strokeStyle='#f0f2f8';x.lineWidth=3;x.stroke();
+        x.fillStyle='#fff';x.fillText('“'+spec.dlg+'”',72,H-108)}
+      x.fillStyle='rgba(58,64,85,0.9)';x.font='300 16px "DM Mono",monospace';
+      x.fillText('TAKEOVER STUDIO · '+(100-(+fRes.value))+'% FAITHFUL · '+(style.color?'COLOR':'B&W MANGA'),48,H-38);
+      res(cv.toDataURL('image/png'));
+    }
+  });
+}
+function wrap(x,t,X,Y,max,lh){const w=t.split(' ');let line='',yy=Y;w.forEach(word=>{const test=line+word+' ';
+  if(x.measureText(test).width>max&&line){x.fillText(line,X,yy);line=word+' ';yy+=lh}else line=test});x.fillText(line,X,yy)}
+function roundRect(x,X,Y,w,h,r){x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+w,Y,X+w,Y+h,r);x.arcTo(X+w,Y+h,X,Y+h,r);
+  x.arcTo(X,Y+h,X,Y,r);x.arcTo(X,Y,X+w,Y,r);x.closePath()}
+
+/* Higgsfield via BAEZ serverless proxy (/api/generate) — key stays server-side */
+async function genHiggsfield(spec,refs){
+  let r;
+  const hdrs={'Content-Type':'application/json'};
+  if(S.settings.accessCode)hdrs['x-access-code']=S.settings.accessCode;
+  try{
+    r=await fetch('/api/generate',{method:'POST',headers:hdrs,
+      body:JSON.stringify({prompt:spec.prompt,aspect_ratio:'3:4'})});
+  }catch(e){toast('Higgsfield endpoint unreachable — using Demo',true);return genDemo(spec);}
+  if(r.status===404){toast('No /api/generate here (local file?) — using Demo',true);return genDemo(spec);}
+  const j=await r.json().catch(()=>({}));
+  if(r.status===429){const w=j.retry_after?Math.ceil(j.retry_after/60)+' min':'a bit';throw new Error('Rate limit reached — try again in '+w)}
+  if(r.status===401)throw new Error('Access code required — add it in Settings');
+  if(!r.ok||!j.image)throw new Error(j.error||('Higgsfield '+r.status));
+  return j.image;
+}
+/* custom proxy */
+async function genCustom(spec,refs){
+  const ep=S.settings.endpoint;if(!ep)throw new Error('set an endpoint URL in Settings');
+  const r=await fetch(ep,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({prompt:spec.prompt,images:refs,resemblance:spec.res,style})});
+  if(!r.ok)throw new Error('endpoint '+r.status);
+  const j=await r.json();if(!j.image)throw new Error('endpoint returned no image');return j.image;
+}
+
+/* ============ STORYBOARD ============ */
+function renderSb(){const wrap=document.getElementById('sbWrap');
+  if(!S.panels.length){wrap.innerHTML='<div class="empty-state"><div class="big">NO PANELS YET</div><p>Generate a panel in Compose and hit ＋SB to collect it here.</p></div>';return}
+  const g=document.createElement('div');g.className='sb-grid';
+  S.panels.forEach((p,i)=>{const el=document.createElement('div');el.className='sb-panel';
+    el.innerHTML=`<div class="num">${i+1}</div><button class="x" data-del="${p.id}">×</button>
+      <img src="${p.img}"><div class="meta"><span>${esc(p.label)}</span><span>${esc((p.comp||'').split(',')[0])}</span></div>`;
+    g.appendChild(el)});
+  wrap.innerHTML='';wrap.appendChild(g);}
+document.getElementById('sbWrap').addEventListener('click',e=>{const d=e.target.dataset.del;
+  if(d){S.panels=S.panels.filter(p=>p.id!==d);save();renderSb()}});
+document.getElementById('btnClearSb').onclick=()=>{if(confirm('Clear the whole storyboard?')){S.panels=[];save();renderSb()}};
+document.getElementById('btnDownloadAll').onclick=()=>{if(!S.panels.length)return toast('Nothing to download',true);
+  S.panels.forEach((p,i)=>{const a=document.createElement('a');a.href=p.img;a.download=`panel-${String(i+1).padStart(2,'0')}.png`;a.click()});
+  toast('Downloading '+S.panels.length+' panels')};
+
+/* ============ SETTINGS ============ */
+const sProv=document.getElementById('sProvider'),sKey=document.getElementById('sKey'),
+  sModel=document.getElementById('sModel'),sEnd=document.getElementById('sEndpoint');
+function loadSettings(){sProv.value=S.settings.provider;sKey.value=S.settings.key;sModel.value=S.settings.model;sEnd.value=S.settings.endpoint||'';
+  document.getElementById('sAccessCode').value=S.settings.accessCode||'';provUI()}
+function provUI(){const p=sProv.value;
+  document.getElementById('wrapHf').style.display=p==='higgsfield'?'block':'none';
+  document.getElementById('wrapKey').style.display='none';
+  document.getElementById('wrapModel').style.display='none';
+  document.getElementById('wrapEndpoint').style.display=p==='custom'?'block':'none';
+}
+sProv.onchange=provUI;
+document.getElementById('sSave').onclick=()=>{S.settings={provider:sProv.value,key:sKey.value.trim(),model:sModel.value.trim(),endpoint:sEnd.value.trim(),
+  accessCode:document.getElementById('sAccessCode').value.trim()};
+  save();document.getElementById('saveState').textContent='saved';toast('Settings saved')};
+document.getElementById('btnWipe').onclick=()=>{if(confirm('Wipe ALL local characters, panels and settings? This cannot be undone.')){localStorage.removeItem(LS);S=seed();renderChars();renderSb();loadSettings();refreshStats();toast('Local data wiped')}};
+
+/* ============ IMPORT / EXPORT ============ */
+document.getElementById('btnExport').onclick=()=>{const blob=new Blob([JSON.stringify(S,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='takeover-project.json';a.click();toast('Project exported')};
+document.getElementById('btnImport').onclick=()=>document.getElementById('importFile').click();
+document.getElementById('importFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{try{const j=JSON.parse(r.result);if(!j.characters)throw 0;S=Object.assign(seed(),j);save();renderChars();renderSb();loadSettings();toast('Project imported')}catch(err){toast('Invalid project file',true)}};r.readAsText(f)};
+
+/* ============ INIT ============ */
+renderChars();loadSettings();refreshStats();
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TAKEOVER — Ch.2: The Armory's Price</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DM+Mono&family=DM+Sans&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#080a0f}*{box-sizing:border-box;margin:0;padding:0}
+body{background:#080a0f;color:#cdd0db;font-family:'DM Sans',sans-serif}
+header{background:rgba(8,10,15,.92);border-bottom:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;padding:13px 20px}
+.lg{font-family:'Bebas Neue';font-size:21px;letter-spacing:4px;color:#f0f2f8}.lg small{color:#2B7FFF;font-size:11px;letter-spacing:3px;margin-left:9px}
+.meta{font-family:'DM Mono';font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#3a4055}
+.reader{max-width:780px;margin:0 auto;padding:24px 10px 80px}
+.stage{position:relative;margin:0 0 22px;line-height:0}
+.stage img{width:100%;display:block;border-radius:5px;border:1px solid rgba(255,255,255,.06)}
+.layer{position:absolute;inset:0;line-height:1}
+.bub,.cap{position:absolute;transform:translate(-50%,-50%);background:#fff;border:2.6px solid #0a0a0a;color:#0a0a0a;
+ font-family:'Anton';text-transform:uppercase;text-align:center;line-height:1.03;letter-spacing:.3px;
+ font-size:clamp(8px,1.5vw,15px);box-shadow:2px 3px 0 rgba(0,0,0,.24)}
+.bub{border-radius:50%/44%;padding:.75em .95em}.cap{padding:.5em .7em}
+.name{position:absolute;transform:translate(-50%,-50%);background:#111;color:#fff;font-family:'Bebas Neue';letter-spacing:1.5px;padding:.35em .7em;font-size:clamp(8px,1.5vw,13px);border-radius:2px}
+.sfx{position:absolute;transform:translate(-50%,-50%) rotate(-8deg);color:#fff;-webkit-text-stroke:2.6px #111;font-family:'Anton';font-size:clamp(18px,4.4vw,40px);letter-spacing:1px}
+/* SYSTEM voice — machine/institutional. Hairline box, no tail, never prints a number. */
+.cap.sys{background:#0e1116;color:#b9c6d6;border:1.6px solid #7c8ea3;box-shadow:none;letter-spacing:1px}
+/* BRAND VOICE — corporate/advertising. Scalloped, tailless, brand-tinted, slightly larger. */
+.bub.brand{background:#fff6f4;color:#7A0E08;border:2.6px solid #E02418;border-radius:14px;
+ font-size:clamp(9px,1.62vw,16px);box-shadow:2px 3px 0 rgba(224,36,24,.32)}
+.bub.brand::before,.bub.brand::after{display:none}
+.bub.teal{background:#f2fdfc;color:#0b5f58;border-color:#17C3B2;box-shadow:2px 3px 0 rgba(23,195,178,.3)}
+.cap.log{background:#15100c;color:#FFB37A;border:2.2px dashed #FF7A1A;box-shadow:2px 3px 0 rgba(0,0,0,.45)}
+.bub::before,.bub::after{content:"";position:absolute;width:0;height:0;border-style:solid}
+.bub.dl::before{left:16%;bottom:-15px;border-width:15px 12px 0 0;border-color:#0a0a0a transparent transparent transparent}
+.bub.dl::after{left:calc(16% + 3px);bottom:-10px;border-width:11px 8px 0 0;border-color:#fff transparent transparent transparent}
+.bub.dr::before{right:16%;bottom:-15px;border-width:15px 0 0 12px;border-color:#0a0a0a transparent transparent transparent}
+.bub.dr::after{right:calc(16% + 3px);bottom:-10px;border-width:11px 0 0 8px;border-color:#fff transparent transparent transparent}
+.bub.ul::before{left:16%;top:-15px;border-width:0 12px 15px 0;border-color:transparent transparent #0a0a0a transparent}
+.bub.ul::after{left:calc(16% + 3px);top:-10px;border-width:0 8px 11px 0;border-color:transparent transparent #fff transparent}
+.bub.ur::before{right:16%;top:-15px;border-width:0 0 15px 12px;border-color:transparent transparent #0a0a0a transparent}
+.bub.ur::after{right:calc(16% + 3px);top:-10px;border-width:0 0 11px 8px;border-color:transparent transparent #fff transparent}
+.pnum{position:absolute;top:9px;left:9px;z-index:5;background:rgba(8,10,15,.8);border:1px solid rgba(255,255,255,.06);color:#3a4055;font-family:'DM Mono';font-size:9px;letter-spacing:2px;padding:3px 8px;border-radius:5px}
+.end{text-align:center;padding:50px 20px;border:1px dashed #1c2030;border-radius:12px}
+.end h2{font-family:'Bebas Neue';font-size:40px;letter-spacing:3px;color:#f0f2f8}.end p{font-weight:300;color:#3a4055;max-width:430px;margin:12px auto 22px;line-height:1.6}
+.cta{display:inline-block;background:#2B7FFF;color:#fff;text-decoration:none;font-family:'DM Mono';font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:14px 28px;border-radius:9px}
+footer{text-align:center;font-family:'DM Mono';font-size:9px;letter-spacing:2px;color:#3a4055;padding:26px}
+</style></head><body>
+<header><div class="lg">TAKEOVER<small>CH.2 · THE ARMORY'S PRICE</small></div><div class="meta">FBG Universe · 2577 PE</div></header>
+<div class="reader" id="R"></div>
+<footer>A FORT BLOCK GAMES MANGA · TAKEOVER STUDIO</footer>
+<script>
+const P=[
+ {lbl:'COVER',img:'pages/cover.png',items:[
+   {k:'cap',t:'THE GUN IS FREE. EVERYTHING ELSE COSTS.',cx:50,cy:96,mw:56}]},
+ {lbl:'McCLAINE · NARRATOR',img:'pages/narrator.png',items:[
+   {k:'cap',t:'STEP RIGHT BACK UP, CITIZEN. THE WAR HANDED YOU A GUN.',cx:23,cy:14,mw:34},
+   {k:'cap',t:"ONE FREE BOT PER CITIZEN. SOULBOUND. YOURS TILL IT'S SCRAP.",cx:22,cy:40,mw:32},
+   {k:'name',t:'McCLAINE',cx:50,cy:63},
+   {k:'cap',t:"NOW LET'S TALK ABOUT THE EDITIONS THEY DON'T GIVE AWAY.",cx:76,cy:88,mw:34}]},
+ {lbl:'PAGE 1 · THE MORNING AFTER',img:'pages/p1.png',items:[
+   {k:'cap',t:'MERICA CITY. DISTRICT 12. THE MORNING AFTER.',cx:26,cy:5,mw:36},
+   {k:'cap',t:'I WON. I KEEP WAITING TO FEEL LIKE IT.',cx:74,cy:31,mw:32},
+   {k:'sfx',t:'VRR—KLK',cx:30,cy:73},
+   {k:'bub',t:"OKAY. LET'S SEE WHAT LAST NIGHT COST.",cx:74,cy:60,mw:26,tail:'dl'}]},
+ {lbl:'PAGE 2 · THE BILL',img:'pages/p2.png',items:[
+   {k:'cap',t:'THE WAR PAYS. NOBODY MENTIONS WHAT IT CHARGES.',cx:24,cy:5,mw:34},
+   {k:'cap',cls:'sys',t:'SHOULDER ACTUATOR: NON-FIELDABLE. REPAIR ESTIMATE ATTACHED. THANK YOU, PILOT!',cx:72,cy:20,mw:34},
+   {k:'bub',t:'"NON-FIELDABLE."',cx:24,cy:36,mw:20,tail:'dr'},
+   {k:'bub',t:"PAYOUT'S THIS. ESTIMATE'S THAT. IT DOESN'T EVEN COVER THE HAND.",cx:30,cy:56,mw:28,tail:'dl'},
+   {k:'cap',t:"I WON LAST NIGHT. I'M FURTHER BEHIND THIS MORNING.",cx:70,cy:94,mw:32}]},
+ {lbl:'PAGE 3 · WHAT "US" MEANS',img:'pages/p3.png',items:[
+   {k:'cap',t:'I TOLD A CAPTAIN I WAS FIGHTING FOR US.',cx:74,cy:6,mw:32},
+   {k:'bub',t:'MY MOM SAYS THE WATER TIER DROPPED AGAIN.',cx:74,cy:31,mw:26,tail:'dl'},
+   {k:'bub',t:"YOU'RE GOING OUT AGAIN TONIGHT, RIGHT? YOU DON'T LOSE.",cx:22,cy:52,mw:26,tail:'dl'},
+   {k:'bub',t:"MY BOT CAN'T LIFT ITS ARM, BOOT.",cx:24,cy:73,mw:24,tail:'dr'},
+   {k:'cap',t:'THIS IS WHAT "US" LOOKS LIKE. COLD. WAITING ON ME.',cx:72,cy:94,mw:32}]},
+ {lbl:'PAGE 4 · THE PUSH',img:'pages/p4.png',items:[
+   {k:'cap',cls:'log',t:'LEGION OPERATION OPEN. DISTRICT 12 PERIMETER. WINDOW: DUSK.',cx:72,cy:6,mw:34},
+   {k:'bub',t:"ENOUGH CP TO MATTER. AND I CAN'T FIELD A BROKEN UNIT.",cx:70,cy:26,mw:28,tail:'dl'},
+   {k:'bub',t:'SO GET IT FIXED.',cx:22,cy:60,mw:20,tail:'dr'},
+   {k:'bub',t:'REPAIRS DON’T SHIP, BOOT. THE BOT HAS TO GO TO THEM.',cx:70,cy:62,mw:28,tail:'dl'},
+   {k:'cap',t:'THE HAZY BARRENS. HALF A CONTINENT. ONE MAGLEV.',cx:26,cy:92,mw:32}]},
+ {lbl:'PAGE 5 · THE MAGLEV OUT',img:'pages/p5.png',items:[
+   {k:'cap',t:'NINETEEN YEARS AND I NEVER LEFT THE DISTRICT.',cx:26,cy:5,mw:34},
+   {k:'cap',t:'FREIGHT. TROOP RACKS. ADS. NOTHING OUT HERE IS BROKEN.',cx:26,cy:31,mw:32},
+   {k:'cap',t:'ALL OF IT MOVING. NONE OF IT COMING TO US.',cx:74,cy:57,mw:30},
+   {k:'cap',cls:'sys',t:'ARRIVING: THE HAZY BARRENS. THANK YOU FOR RIDING, CITIZEN.',cx:50,cy:95,mw:44}]},
+ {lbl:'PAGE 6 · THE HAZY BARRENS',img:'pages/p6.png',items:[
+   {k:'cap',t:"VITAL VIBE'S CITY. THEIR TOWER. THEIR AIR.",cx:24,cy:6,mw:32},
+   {k:'bub',cls:'teal',t:"YOU'VE GOT THIS, CITIZEN. WE'VE GOT EDGE.",cx:72,cy:38,mw:28},
+   {k:'cap',t:'LAST YEAR I TOLD ONE OF THESE TO GET LOST.',cx:22,cy:66,mw:26},
+   {k:'cap',t:"TODAY I'M SHOPPING IN THEIR HOUSE. I SAY NOTHING.",cx:74,cy:92,mw:30}]},
+ {lbl:'PAGE 7 · THE ARMORY',img:'pages/p7.png',items:[
+   {k:'cap',t:'THE ARMORY. THE OUTFITTER TO THE ENTIRE WAR.',cx:24,cy:6,mw:34},
+   {k:'cap',t:'EVERY GUN ON URTHORA STARTS ON A RACK IN HERE.',cx:76,cy:13,mw:34},
+   {k:'bub',t:'OH.',cx:37,cy:88,mw:12,tail:'dr'}]},
+ {lbl:'PAGE 8 · THE FLOOR',img:'pages/p8.png',items:[
+   {k:'cap',cls:'sys',t:'BASIC INTAKE: QUEUE LEFT. PRIME GALLERY: ESCORTED ACCESS ONLY.',cx:50,cy:5,mw:46},
+   {k:'cap',t:'THE LINE FOR FREE IS LONG. THE ROOM FOR PAID IS EMPTY.',cx:26,cy:23,mw:32},
+   {k:'bub',t:'SIX HOURS. THEY ONLY RUN TWO INTAKE WINDOWS.',cx:74,cy:38,mw:26,tail:'dl'},
+   {k:'bub',t:"EIGHT BANNERS IN ONE LINE. NOBODY'S FIGHTING IN HERE.",cx:26,cy:52,mw:28,tail:'dr'},
+   {k:'cap',t:'SAME QUEUE. SAME BOT. DIFFERENT PAINT.',cx:74,cy:94,mw:30}]},
+ {lbl:'PAGE 9 · BASIC vs PRIME',img:'pages/p9.png',items:[
+   {k:'bub',t:"BASIC IS FREE. ONE PER CITIZEN. SOULBOUND TILL IT'S SCRAP.",cx:26,cy:6,mw:30,tail:'dl'},
+   {k:'bub',t:'REPAIRS AREN’T FREE. NOTHING AFTER THE FIRST ONE IS.',cx:28,cy:30,mw:28,tail:'dl'},
+   {k:'bub',t:'AND THOSE?',cx:24,cy:47,mw:16,tail:'dr'},
+   {k:'bub',t:'PRIME EDITION. PRINT-CAPPED. IT LEVELS, AND IT EVOLVES.',cx:74,cy:47,mw:28,tail:'dl'},
+   {k:'bub',t:"PRICED IN CONQUEST POINTS. YOUR BALANCE WON'T REACH IT, PILOT.",cx:30,cy:76,mw:30,tail:'dl'},
+   {k:'bub',t:'"WON’T REACH IT."',cx:76,cy:92,mw:22,tail:'dr'}]},
+ {lbl:'PAGE 10 · THE ONE SHE WANTS',img:'pages/p10.png',items:[
+   {k:'cap',t:"I'M NOT LOOKING AT IT LIKE A PRICE TAG.",cx:26,cy:6,mw:32},
+   {k:'cap',t:'I’M LOOKING AT WHAT IT COULD HOLD. MY WHOLE BLOCK.',cx:74,cy:40,mw:30},
+   {k:'bub',t:"YOU'D HAVE HELD THAT STREET.",cx:74,cy:70,mw:24,tail:'dl'}]},
+ {lbl:'PAGE 11 · THE PROVING BAY',img:'pages/p11.png',items:[
+   {k:'cap',cls:'sys',t:"PROVING BAY. LIVE TARGETS. UNITS RUN AT PILOT'S OWN RISK.",cx:50,cy:5,mw:46},
+   {k:'bub',t:'THAT ARM’S DEAD. WHY WOULD YOU EVEN RACK IT?',cx:72,cy:31,mw:26,tail:'dl'},
+   {k:'bub',t:"TO SEE WHAT'S LEFT.",cx:24,cy:57,mw:22,tail:'dr'},
+   {k:'bub',t:'OKAY. ONE GOOD ARM.',cx:76,cy:78,mw:22,tail:'dl'}]},
+ {lbl:'PAGE 12 · THE RUN',img:'pages/p12.png',items:[
+   {k:'cap',t:'EVERY RIG HAS A TELL. THIS ONE LOADS RIGHT.',cx:26,cy:6,mw:32},
+   {k:'sfx',t:'SHK—SHK',cx:76,cy:40},
+   {k:'sfx',t:'KRAAK',cx:64,cy:63},
+   {k:'bub',t:'LEFT. ALWAYS THE LEFT.',cx:24,cy:88,mw:24,tail:'dr'}]},
+ {lbl:'PAGE 13 · THE WITNESS BEAT',img:'pages/p13.png',items:[
+   {k:'bub',t:'...THAT WAS A DEAD ARM.',cx:24,cy:9,mw:22,tail:'dr'},
+   {k:'bub',t:'WHERE DOES A D12 KID LEARN HANDS LIKE THAT?',cx:70,cy:40,mw:28,tail:'dl'},
+   {k:'bub',t:"HOW DO YOU KNOW I'M D12?",cx:26,cy:62,mw:24,tail:'dr'},
+   {k:'bub',t:'SAME PLACE I LEARNED MINE.',cx:70,cy:88,mw:26,tail:'dl'}]},
+ {lbl:'PAGE 14 · THE VETERAN’S PRICE',img:'pages/p14.png',items:[
+   {k:'bub',t:'GUS FENNER. I PILOTED OFF THIS FLOOR ELEVEN YEARS.',cx:26,cy:7,mw:28,tail:'dl'},
+   {k:'bub',t:"SO WHY AREN'T YOU RACKED UP?",cx:74,cy:9,mw:24,tail:'dr'},
+   {k:'bub',t:'HANDS.',cx:76,cy:31,mw:14,tail:'dl'},
+   {k:'bub',t:'MERICA CITY. THE BURGERS. THEY CALLED IT "SLIGHT MUTATIONS."',cx:26,cy:53,mw:28,tail:'dl'},
+   {k:'bub',t:'THEY FRONTED ME THE POINTS FOR A PRIME. I SIGNED.',cx:74,cy:70,mw:28,tail:'dl'},
+   {k:'bub',t:"LOST IT IN ONE OPERATION. THE BOT'S GONE. THE PAYMENTS AREN'T.",cx:34,cy:92,mw:32,tail:'dl'}]},
+ {lbl:'PAGE 15 · WHO HOLDS THE PAPER',img:'pages/p15.png',items:[
+   {k:'bub',t:'SO THE ARMORY OWNS YOU.',cx:24,cy:8,mw:24,tail:'dr'},
+   {k:'bub',t:"THE ARMORY JUST SELLS, KID. IT DOESN'T LEND.",cx:74,cy:26,mw:26,tail:'dl'},
+   {k:'bub',t:"THAT'S A BURGER COMPANY.",cx:76,cy:52,mw:24,tail:'dl'},
+   {k:'bub',t:'IT’S A BANK. TWO HUNDRED YEARS. NOBODY PRINTS IT ON THE CUP.',cx:30,cy:74,mw:32,tail:'dl'},
+   {k:'cap',t:'THEY POISONED HIS CITY. THEN THEY LOANED HIM THE POINTS.',cx:72,cy:94,mw:32}]},
+ {lbl:'PAGE 16 · THE OFFER',img:'pages/p16.png',items:[
+   {k:'bub',cls:'brand',t:'HI THERE, PILOT! ROUGH DAY OUT ON THE RACKS?',cx:72,cy:9,mw:28},
+   {k:'bub',cls:'brand',t:"POINTS TODAY. PAY US BACK IN VICTORIES. IT'S THAT EASY!",cx:26,cy:36,mw:28},
+   {k:'bub',cls:'brand',t:'APPROVED INSTANTLY! THE FAMILY TAKES CARE OF FAMILY.',cx:74,cy:55,mw:28},
+   {k:'bub',t:'WHAT HAPPENS IF I LOSE?',cx:26,cy:72,mw:24,tail:'dr'},
+   {k:'bub',cls:'brand',t:"THEN WE'LL STILL BE HERE FOR YOU. ALWAYS!",cx:70,cy:90,mw:28}]},
+ {lbl:'PAGE 17 · THE HARD WAY',img:'pages/p17.png',items:[
+   {k:'bub',t:'NO.',cx:26,cy:8,mw:12,tail:'dr'},
+   {k:'bub',cls:'brand',t:"NO PRESSURE! WE'LL KEEP YOUR FILE WARM, PILOT!",cx:70,cy:11,mw:28},
+   {k:'bub',t:'THE HARD ROAD TAKES YEARS, KID.',cx:26,cy:70,mw:26,tail:'dl'},
+   {k:'bub',t:"YEARS I KEEP. THEIRS I DON'T.",cx:72,cy:74,mw:26,tail:'dr'},
+   {k:'cap',t:'I’LL FIELD IT ANYWAY. AND TAKE THE POINTS OFF THE BOARD.',cx:50,cy:94,mw:40}]},
+ {lbl:'PAGE 18 · THE BOOT IN A SMILE',img:'pages/p18.png',items:[
+   {k:'bub',cls:'brand',t:"DISTRICT 12! WHO'S HUNGRY? THE FAMILY BROUGHT DINNER!",cx:50,cy:29,mw:34},
+   {k:'bub',t:"RAE! RAE! THEY'RE FIXING THE WATER LINE!",cx:24,cy:52,mw:24,tail:'dl'},
+   {k:'bub',t:"THEY DIDN'T HAVE TO DO THIS.",cx:74,cy:52,mw:24,tail:'dl'},
+   {k:'cap',t:'NOBODY HERE KNOWS WHAT I LEARNED TODAY.',cx:24,cy:80,mw:30},
+   {k:'cap',t:"I DON'T SAY ANYTHING. I JUST DON'T SMILE.",cx:74,cy:88,mw:30},
+   {k:'cap',t:'THE BILL COMES FOR EVERYBODY, CITIZEN. EVEN YOU.',cx:50,cy:96,mw:44}]},
+];
+const R=document.getElementById('R');
+P.forEach((p)=>{
+ const s=document.createElement('div');s.className='stage';
+ let h=`<div class="pnum">${p.lbl}</div><img loading="lazy" src="${p.img}" alt="${p.lbl}"><div class="layer">`;
+ (p.items||[]).forEach(o=>{
+   if(o.k==='sfx')h+=`<div class="sfx" style="left:${o.cx}%;top:${o.cy}%">${o.t}</div>`;
+   else if(o.k==='name')h+=`<div class="name" style="left:${o.cx}%;top:${o.cy}%">${o.t}</div>`;
+   else h+=`<div class="${o.k}${o.tail?(' '+o.tail):''}${o.cls?(' '+o.cls):''}" style="left:${o.cx}%;top:${o.cy}%;max-width:${o.mw}%">${o.t}</div>`;
+ });
+ h+=`</div>`;s.innerHTML=h;R.appendChild(s);
+});
+const e=document.createElement('div');e.className='end';
+e.innerHTML=`<h2>THE GUN IS FREE.</h2><p>Every citizen gets one free, soulbound bot. Everything that keeps it alive costs — and somebody already owns the credit. Chapter 3: <strong>COMPANY TOWN</strong>.</p><a class="cta" href="https://www.fortblockgames.com/" target="_blank" rel="noopener">ENLIST YOUR BOT →</a>`;
+R.appendChild(e);
+</script></body></html>

@@ -1,0 +1,107 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DM+Mono&family=DM+Sans&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#080a0f}*{box-sizing:border-box;margin:0;padding:0}
+body{background:#080a0f;color:#cdd0db;font-family:'DM Sans',sans-serif}
+header{background:rgba(8,10,15,.92);border-bottom:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;padding:13px 20px}
+.lg{font-family:'Bebas Neue';font-size:21px;letter-spacing:4px;color:#f0f2f8}.lg small{color:#2B7FFF;font-size:11px;letter-spacing:3px;margin-left:9px}
+.meta{font-family:'DM Mono';font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#3a4055}
+.reader{max-width:780px;margin:0 auto;padding:24px 10px 80px}
+.stage{position:relative;margin:0 0 22px;line-height:0}
+.stage img{width:100%;display:block;border-radius:5px;border:1px solid rgba(255,255,255,.06)}
+.layer{position:absolute;inset:0;line-height:1}
+.bub,.cap{position:absolute;transform:translate(-50%,-50%);background:#fff;border:2.6px solid #0a0a0a;color:#0a0a0a;
+ font-family:'Anton';text-transform:uppercase;text-align:center;line-height:1.03;letter-spacing:.3px;
+ font-size:clamp(8px,1.5vw,15px);box-shadow:2px 3px 0 rgba(0,0,0,.24)}
+.bub{border-radius:50%/44%;padding:.75em .95em}.cap{padding:.5em .7em}
+.name{position:absolute;transform:translate(-50%,-50%);background:#111;color:#fff;font-family:'Bebas Neue';letter-spacing:1.5px;padding:.35em .7em;font-size:clamp(8px,1.5vw,13px);border-radius:2px}
+.sfx{position:absolute;transform:translate(-50%,-50%) rotate(-8deg);color:#fff;-webkit-text-stroke:2.6px #111;font-family:'Anton';font-size:clamp(20px,5vw,44px);letter-spacing:1px}
+.bub::before,.bub::after{content:"";position:absolute;width:0;height:0;border-style:solid}
+.bub.dl::before{left:16%;bottom:-15px;border-width:15px 12px 0 0;border-color:#0a0a0a transparent transparent transparent}
+.bub.dl::after{left:calc(16% + 3px);bottom:-10px;border-width:11px 8px 0 0;border-color:#fff transparent transparent transparent}
+.bub.dr::before{right:16%;bottom:-15px;border-width:15px 0 0 12px;border-color:#0a0a0a transparent transparent transparent}
+.bub.dr::after{right:calc(16% + 3px);bottom:-10px;border-width:11px 0 0 8px;border-color:#fff transparent transparent transparent}
+.bub.ul::before{left:16%;top:-15px;border-width:0 12px 15px 0;border-color:transparent transparent #0a0a0a transparent}
+.bub.ul::after{left:calc(16% + 3px);top:-10px;border-width:0 8px 11px 0;border-color:transparent transparent #fff transparent}
+.bub.ur::before{right:16%;top:-15px;border-width:0 0 15px 12px;border-color:transparent transparent #0a0a0a transparent}
+.bub.ur::after{right:calc(16% + 3px);top:-10px;border-width:0 0 11px 8px;border-color:transparent transparent #fff transparent}
+.cap.bc{background:#15100c;color:#FFB37A;border:2.4px dashed #FF7A1A;box-shadow:2px 3px 0 rgba(0,0,0,.45)}
+.pnum{position:absolute;top:9px;left:9px;z-index:5;background:rgba(8,10,15,.8);border:1px solid rgba(255,255,255,.06);color:#3a4055;font-family:'DM Mono';font-size:9px;letter-spacing:2px;padding:3px 8px;border-radius:5px}
+.end{text-align:center;padding:50px 20px;border:1px dashed #1c2030;border-radius:12px}
+.end h2{font-family:'Bebas Neue';font-size:40px;letter-spacing:3px;color:#f0f2f8}.end p{font-weight:300;color:#3a4055;max-width:430px;margin:12px auto 22px;line-height:1.6}
+.cta{display:inline-block;background:#2B7FFF;color:#fff;text-decoration:none;font-family:'DM Mono';font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:14px 28px;border-radius:9px}
+footer{text-align:center;font-family:'DM Mono';font-size:9px;letter-spacing:2px;color:#3a4055;padding:26px}
+</style></head><body>
+<header><div class="lg">TAKEOVER<small>CH.1 · COLLATERAL</small></div><div class="meta">FBG Universe · 2577 PE</div></header>
+<div class="reader" id="R"></div>
+<footer>A FORT BLOCK GAMES MANGA · TAKEOVER STUDIO</footer>
+<script>
+const P=[
+ {lbl:'COVER',img:'pages/cover.png',items:[
+   {k:'cap',t:'THEY CALL IT COLLATERAL. SHE CALLS IT HOME.',cx:50,cy:96,mw:52}]},
+ {lbl:'McCLAINE · NARRATOR',img:'pages/narrator.png',items:[
+   {k:'cap',t:'STEP RIGHT UP, CITIZEN. YEAR 2577. FIVE CORPOS OWN EVERYTHING.',cx:20,cy:50,mw:30},
+   {k:'cap',t:'EIGHT BANNERS BRAWL FOR EVERY DISTRICT, WITH BOTS LIKE YOURS TRULY.',cx:80,cy:63,mw:30},
+   {k:'name',t:'McCLAINE',cx:13,cy:80},
+   {k:'cap',t:"STICK AROUND. I'LL TALK YOU THROUGH THE WHOLE BEAUTIFUL MESS.",cx:74,cy:90,mw:32}]},
+ {lbl:'PAGE 1',img:'pages/p1.png',items:[
+   {k:'cap',t:'MERICA CITY. DISTRICT 12. YEAR 2577 PE.',cx:26,cy:9,mw:34},
+   {k:'cap',t:"NEARLY FIVE HUNDRED YEARS THEY'VE BEEN AT THIS.",cx:26,cy:28,mw:32},
+   {k:'cap',t:"WE'RE NOT SOLDIERS. WE'RE THE SCENERY THEY FIGHT IN FRONT OF.",cx:26,cy:64,mw:32},
+   {k:'bub',t:'...MOVE LEFT. FLANK LEFT.',cx:78,cy:80,mw:22,tail:'dr'}]},
+ {lbl:'PAGE 2',img:'pages/p2.png',items:[
+   {k:'bub',t:"RAE DOESN'T LOSE. BEST HANDS IN DISTRICT 12.",cx:19,cy:44,mw:22,tail:'dr'},
+   {k:'bub',t:'BEST HANDS IN A DEAD-END ARCADE. PUT IT ON MY TOMBSTONE.',cx:30,cy:70,mw:26,tail:'dl'},
+   {k:'bub',t:'"DEFEND DISTRICT 12"? YOU CORPOS ARE THE ONES SHOOTING AT IT.',cx:40,cy:90,mw:30,tail:'dl'}]},
+ {lbl:'PAGE 3',img:'pages/p3.png',items:[
+   {k:'sfx',t:'GDOOOM',cx:20,cy:31},
+   {k:'bub',t:'...NO.',cx:57,cy:15,mw:13,tail:'ur'},
+   {k:'bub',t:"STACK 'EM DEEP, BOYS!",cx:82,cy:43,mw:17,tail:'dr'},
+   {k:'bub',t:"CIVVIES IN THE STACK? COUNT 'EM AS INVENTORY.",cx:57,cy:48,mw:22,tail:'dl'},
+   {k:'cap',t:"ACCEPTABLE LOSSES. THAT'S WHAT THE CORPOS CALL MY BLOCK.",cx:68,cy:92,mw:28},
+   {k:'bub',t:'ACCEPTABLE.',cx:86,cy:95,mw:14}]},
+ {lbl:'PAGE 4',img:'pages/p4.png',items:[
+   {k:'cap',cls:'bc',t:'400 YEARS UNDER THEIR HEEL. 2577 IS THE YEAR THAT CHANGES.',cx:27,cy:9,mw:32},
+   {k:'cap',cls:'bc',t:"YOU DON'T NEED THEIR PERMISSION. JUST A BOT AND A REASON.",cx:75,cy:14,mw:30},
+   {k:'bub',t:"A BOT AND A REASON. I'VE ALREADY GOT THE REASON.",cx:30,cy:33,mw:26,tail:'dl'},
+   {k:'cap',t:'THEY CALL IT CITIZEN COMBAT. I CALLED IT MY WAY IN.',cx:72,cy:92,mw:30}]},
+ {lbl:'PAGE 5',img:'pages/p5.png',items:[
+   {k:'bub',t:'WELCOME, CITIZEN! PASSPORT FIRST — THEN THE RITUAL ASSIGNS YOUR BANNER.',cx:34,cy:9,mw:28,tail:'dl'},
+   {k:'cap',t:'FIVE CORPOS OWN EVERYTHING. THREE FACTIONS TRY TO TAKE IT BACK.',cx:20,cy:33,mw:26},
+   {k:'bub',t:"...THE ONE THEY'RE AFRAID OF. FIGURES.",cx:26,cy:62,mw:22,tail:'dr'},
+   {k:'cap',t:'SWITCH BANNERS BETWEEN EVENTS. NOBODY IN DISTRICT 12 BOTHERS.',cx:78,cy:70,mw:24}]},
+ {lbl:'PAGE 6',img:'pages/p6.png',items:[
+   {k:'cap',t:'THE ARMORY, OUT IN THE HAZY BARRENS. UNITS SHIP HOME BY MAGLEV.',cx:22,cy:8,mw:30},
+   {k:'cap',t:"EVERY CITIZEN GETS ONE. FREE, SOULBOUND, YOURS TILL IT'S SCRAP.",cx:24,cy:24,mw:28},
+   {k:'cap',t:"BASIC SOLDIER. LINE UNIT. DON'T GET ATTACHED.",cx:74,cy:42,mw:24},
+   {k:'bub',t:"WE'LL SEE ABOUT THAT.",cx:72,cy:74,mw:20,tail:'dr'}]},
+ {lbl:'PAGE 7',img:'pages/p7.png',items:[
+   {k:'cap',t:'PILOT FROM OUTSIDE THE ZONE. LOSE THE BOT, LOSE THE PAYOUT.',cx:26,cy:7,mw:32},
+   {k:'bub',t:"THEN I DON'T LOSE IT.",cx:24,cy:18,mw:20,tail:'dl'},
+   {k:'sfx',t:'KRAK',cx:60,cy:20},
+   {k:'bub',t:'WHERE’D THIS ROOKIE LEARN TO—',cx:78,cy:30,mw:22,tail:'dr'},
+   {k:'cap',t:'THE LEGION HAD A CLAIM ON DISTRICT 12. NOW IT HAS HANDS.',cx:24,cy:47,mw:26},
+   {k:'cap',t:'LEFT. ALWAYS THE LEFT.',cx:30,cy:90,mw:24}]},
+ {lbl:'PAGE 8',img:'pages/p8.png',items:[
+   {k:'bub',t:'...BEST HANDS IN THE DISTRICT, HUH.',cx:60,cy:20,mw:24,tail:'ur'},
+   {k:'bub',t:"THE WAR'S BEEN WAITING FOR YOU, CITIZEN. SO HAVE I.",cx:57,cy:37,mw:26,tail:'ur'},
+   {k:'bub',t:"THEN IT CAN KEEP WAITING. I'M FIGHTING FOR US, NOT THEM.",cx:27,cy:60,mw:28,tail:'ul'},
+   {k:'cap',t:'HER WAR STARTS NEXT CHAPTER. YOURS STARTS AT THE ARMORY, CITIZEN.',cx:28,cy:92,mw:32},
+   {k:'cap',t:"TAKEOVER CH.1 // END. NEXT: THE ARMORY'S PRICE.",cx:75,cy:96,mw:26}]},
+];
+const R=document.getElementById('R');
+P.forEach((p,i)=>{
+ const s=document.createElement('div');s.className='stage';
+ let h=`<div class="pnum">${p.lbl}</div><img loading="lazy" src="${p.img}" alt="${p.lbl}"><div class="layer">`;
+ (p.items||[]).forEach(o=>{
+   if(o.k==='sfx')h+=`<div class="sfx" style="left:${o.cx}%;top:${o.cy}%">${o.t}</div>`;
+   else if(o.k==='name')h+=`<div class="name" style="left:${o.cx}%;top:${o.cy}%">${o.t}</div>`;
+   else h+=`<div class="${o.k}${o.tail?(' '+o.tail):''}${o.cls?(' '+o.cls):''}" style="left:${o.cx}%;top:${o.cy}%;max-width:${o.mw}%">${o.t}</div>`;
+ });
+ h+=`</div>`;s.innerHTML=h;R.appendChild(s);
+});
+const e=document.createElement('div');e.className='end';
+e.innerHTML=`<h2>THE WAR NEEDS HANDS.</h2><p>Every citizen gets one free, soulbound bot, and the Ritual is waiting to assign yours. Which banner will it give you?</p><a class="cta" href="https://www.fortblockgames.com/" target="_blank" rel="noopener">ENLIST YOUR BOT →</a>`;
+R.appendChild(e);
+</script></body></html>
