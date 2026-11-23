@@ -1,2259 +1,705 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Baez Studio | Cinematic AI Video for Brands & Game Cinematics</title>
-
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPQ3NP81MN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LPQ3NP81MN');
-</script>
-
-<!-- ── SEO / AIEO META ──────────────────────────────────────────────
-     TODO: Replace SITE_URL below (https://baez.studio) with your real
-     canonical domain. Replace the og:image path with a 1200×630
-     hero image once you have one. -->
-<meta name="description" content="Baez Studio is a video production company pairing traditional cinematic direction with the latest AI tools, based in the Midwest (Ann Arbor, MI and Fort Wayne, IN) and working worldwide. Cinematic films for brand launches, revivals, campaigns, and game cinematics. Brief to broadcast in 7-14 days. Book a free consultation.">
-<meta name="keywords" content="cinematic AI video, AI video production studio, AI content creation, brand launch video, brand revival video, game cinematic, lore video, AI brand film, AI motion graphics, AI cinematic studio, campaign video production, product launch video, short form video production, social media video, sticker pack design, content creation studio, AI film studio, affordable AI video">
-<meta name="author" content="BAEZ.AI.STUDIO">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Baez Studio | Cinematic AI Video &amp; Custom AI Business Stacks</title>
+<meta name="description" content="Baez Studio pairs 15+ years of commercial editing with generative AI video and bespoke AI business workflows. Brand films from $1,500, AI stacks from $2,500. Ann Arbor, Fort Wayne, worldwide.">
 <link rel="canonical" href="https://baez.studio/">
-
-<!-- Open Graph -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1">
+<meta name="theme-color" content="#0A0A0C">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="BAEZ.AI.STUDIO">
-<meta property="og:title" content="Baez Studio | Cinematic AI Video for Brands & Game Cinematics">
-<meta property="og:description" content="Cinematic AI films for brand launches, revivals, campaigns, and game cinematics. Brief to broadcast in 7–14 days.">
+<meta property="og:site_name" content="Baez Studio">
+<meta property="og:title" content="Baez Studio | Cinematic AI Video &amp; Custom AI Business Stacks">
+<meta property="og:description" content="Baez Studio pairs 15+ years of commercial editing with generative AI video and bespoke AI business workflows. Brand films from $1,500, AI stacks from $2,500. Ann Arbor, Fort Wayne, worldwide.">
 <meta property="og:url" content="https://baez.studio/">
 <meta property="og:image" content="https://baez.studio/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Baez Studio | Cinematic AI Video for Brands & Game Cinematics">
-<meta name="twitter:description" content="Cinematic AI films for brand launches, revivals, campaigns, and game cinematics. Brief to broadcast in 7–14 days.">
+<meta name="twitter:site" content="@baezaistudio">
 <meta name="twitter:image" content="https://baez.studio/og-card.png">
-
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0C'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' text-anchor='middle' fill='%23F5B841'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="assets/media/hero-poster.avif" type="image/avif" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-
-<!-- ── BOOKING (Cal.com inline embed) ───────────────────────────────────
-     Calendar mounts inline in the Contact section (#book-inline).
-     Every "Book Meeting" / package button calls openBooking(), which
-     smooth-scrolls visitors to the inline calendar.
-     To change the event: update CAL_LINK below. -->
-<script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", "baez", {origin:"https://cal.com"});
-
-  // Single source of truth for the booking link
-  window.CAL_LINK = "baezstudio/15min";
-  window.BOOKING_URL = "https://cal.com/" + window.CAL_LINK;
-
-  // Every CTA on the page calls openBooking() — it scrolls to the
-  // inline calendar in the Contact section, with a popup fallback.
-  window.openBooking = function(){
-    var el = document.getElementById('book-inline');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-      window.open(window.BOOKING_URL, '_blank', 'noopener');
-    }
-    return false;
-  };
-</script>
-
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --ink:#080a0f;
-  --paper:#0d1018;
-  --blue:#2B7FFF;
-  --dim:#1c2030;
-  --muted:#3a4055;
-  --text:#cdd0db;
-  --white:#f0f2f8;
-  --border:rgba(255,255,255,0.05);
-}
-html{background:var(--ink);color:var(--text);scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;overflow-x:hidden;}
-
-/* grain */
-body::before{content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity:.03;mix-blend-mode:overlay;}
-
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 40px;height:56px;
-  border-bottom:1px solid var(--border);
-  background:rgba(8,10,15,0.85);
-  backdrop-filter:blur(16px);
-}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:4px;color:var(--white);}
-.nav-logo span{color:var(--blue);}
-.nav-right{display:flex;align-items:center;gap:24px;}
-.nav-links{display:flex;gap:20px;}
-.nav-link{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
-.nav-link:hover{color:var(--blue);}
-.nav-cta{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;
-  padding:10px 22px;border:none;border-radius:999px;
-  color:#fff;background:var(--blue);
-  cursor:pointer;white-space:nowrap;
-  transition:opacity .2s,box-shadow .2s;
-  box-shadow:0 0 0 0 rgba(43,127,255,0);
-}
-.nav-cta:hover{opacity:.88;box-shadow:0 0 18px rgba(43,127,255,0.45);}
-.nav-cta .icon-track{
-  display:flex;flex-direction:column;
-  height:13px;overflow:hidden;flex-shrink:0;
-  transition:transform .3s cubic-bezier(0.34,1.56,0.64,1);
-}
-.nav-cta:hover .icon-track{transform:translateY(-13px);}
-.nav-cta .icon-track svg{flex-shrink:0;}
-.dot-live{width:5px;height:5px;background:#00e676;border-radius:50%;display:inline-block;margin-right:6px;animation:blink 2s infinite;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
-
-/* hamburger — mobile only */
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
-.nav-hamburger span{display:block;width:22px;height:1px;background:var(--white);transition:transform .3s,opacity .3s;}
-
-/* mobile nav drawer */
-.nav-drawer{
-  display:none;position:fixed;top:56px;left:0;right:0;bottom:0;
-  background:rgba(8,10,15,0.97);z-index:199;
-  flex-direction:column;align-items:center;justify-content:center;gap:40px;
-}
-.nav-drawer.open{display:flex;}
-.drawer-link{
-  font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:4px;
-  color:var(--white);text-decoration:none;transition:color .2s;
-}
-.drawer-link:hover{color:var(--blue);}
-.drawer-cta{
-  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;
-  padding:14px 36px;border:1px solid var(--blue);color:var(--blue);background:transparent;
-  cursor:pointer;margin-top:8px;
-}
-
-/* ── HERO ── */
-#hero{
-  position:relative;height:100svh;min-height:600px;overflow:hidden;
-  display:flex;flex-direction:column;justify-content:flex-end;
-  background:var(--ink);
-}
-#hero-mascot{
-  position:absolute;inset:0;
-  mix-blend-mode:screen;pointer-events:none;
-  opacity:0;transition:opacity 1.4s ease .3s;
-}
-#hero-mascot video{width:100%;height:100%;object-fit:cover;display:block;}
-/* desktop overlay — protect headline (left) and stats (bottom) */
-#hero::after{
-  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:
-    linear-gradient(to right,rgba(8,10,15,0.92) 0%,rgba(8,10,15,0.7) 22%,rgba(8,10,15,0.35) 48%,transparent 80%),
-    linear-gradient(to top,rgba(8,10,15,0.85) 0%,rgba(8,10,15,0.4) 22%,transparent 55%);
-}
-body.loaded #hero-mascot{opacity:1;}
-
-.hero-content{
-  position:relative;z-index:2;
-  padding:0 40px 64px;
-  max-width:640px;
-}
-.hero-eyebrow{
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;
-  color:var(--blue);margin-bottom:20px;display:flex;align-items:center;gap:14px;
-  opacity:0;transform:translateY(10px);transition:opacity .7s ease .2s,transform .7s ease .2s;
-}
-.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--blue);}
-.hero-h1{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:min(15vw,130px);
-  line-height:.92;letter-spacing:2px;color:var(--white);margin-bottom:24px;
-  opacity:0;transform:translateY(18px);transition:opacity .8s ease .35s,transform .8s ease .35s;
-}
-.hero-h1 em{color:var(--blue);font-style:normal;}
-.hero-h1-desc{
-  display:block;
-  font-family:'DM Sans',sans-serif;
-  font-size:clamp(18px,2vw,26px);
-  font-style:italic;font-weight:300;
-  line-height:1.4;letter-spacing:0;
-  text-transform:none;
-  color:var(--text);
-  margin-top:22px;
-  max-width:680px;
-}
-.hero-sub{
-  font-size:15px;line-height:1.7;color:rgba(205,208,219,0.5);
-  max-width:380px;margin-bottom:40px;font-weight:300;
-  opacity:0;transform:translateY(10px);transition:opacity .7s ease .5s,transform .7s ease .5s;
-}
-.hero-actions{
-  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
-  opacity:0;transform:translateY(10px);transition:opacity .7s ease .65s,transform .7s ease .65s;
-}
-.hero-trust{
-  margin-top:26px;
-  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;
-  color:rgba(205,208,219,0.4);
-  display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;
-  opacity:0;transform:translateY(10px);transition:opacity .7s ease .8s,transform .7s ease .8s;
-}
-.btn-primary{
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;
-  padding:13px 28px;background:var(--blue);color:#fff;border:none;cursor:pointer;
-  display:flex;align-items:center;gap:8px;transition:opacity .2s;
-}
-.btn-primary:hover{opacity:.8;}
-/* ── liquid-metal pill: hero reel CTA ── */
-.hero-reel-cta{
-  position:relative;
-  display:inline-flex;align-items:center;gap:16px;
-  padding:17px 34px 17px 18px;
-  font-family:'DM Mono',monospace;font-size:14px;letter-spacing:3px;
-  text-transform:uppercase;color:#e7ebf4;
-  cursor:pointer;border-radius:999px;
-  border:1px solid rgba(255,255,255,0.08);
-  background:linear-gradient(180deg,#2b3045 0%,#13161f 52%,#0a0c12 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.14),
-    inset 0 -1px 1px rgba(0,0,0,0.65),
-    0 14px 28px -10px rgba(0,0,0,0.85),
-    0 0 0 1px rgba(43,127,255,0.16);
-  overflow:hidden;isolation:isolate;
-  opacity:0;
-  transition:transform .25s ease,box-shadow .35s ease,opacity .9s ease 1s;
-}
-body.loaded .hero-reel-cta{opacity:1;}
-
-/* the "liquid" — a diagonal sheen drifting across the surface */
-.hero-reel-cta::before{
-  content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(115deg,
-    transparent 30%,
-    rgba(110,170,255,0.22) 44%,
-    rgba(255,255,255,0.14) 50%,
-    rgba(110,170,255,0.22) 56%,
-    transparent 70%);
-  background-size:280% 100%;
-  animation:liquidSheen 4.8s ease-in-out infinite;
-}
-
-/* chromed inner edge */
-.hero-reel-cta::after{
-  content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-  box-shadow:
-    inset 0 0 0 1px rgba(43,127,255,0.06),
-    inset 0 0 16px rgba(43,127,255,0.06);
-}
-
-.hero-reel-cta:hover{
-  transform:translateY(-2px);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.2),
-    inset 0 -1px 1px rgba(0,0,0,0.65),
-    0 18px 34px -10px rgba(0,0,0,0.95),
-    0 0 0 1px rgba(43,127,255,0.42),
-    0 0 32px rgba(43,127,255,0.28);
-}
-
-/* small glossy play chip on the left */
-.hero-reel-cta .play-chip{
-  position:relative;
-  width:38px;height:38px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;color:#fff;
-  background:radial-gradient(circle at 30% 24%,#7ab0ff 0%,var(--blue) 40%,#1747b8 100%);
-  border:1px solid rgba(255,255,255,0.22);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.45),
-    0 2px 4px rgba(0,0,0,0.55);
-}
-.hero-reel-cta .play-chip::after{
-  content:'';position:absolute;inset:2px;border-radius:50%;pointer-events:none;
-  background:radial-gradient(circle at 30% 18%,rgba(255,255,255,0.45),transparent 55%);
-  opacity:.85;
-}
-.hero-reel-cta .cta-label{position:relative;}
-
-@keyframes liquidSheen{
-  0%,100%{background-position:0% 0;}
-  50%{background-position:100% 0;}
-}
-
-@media(max-width:768px){
-  .hero-reel-cta{
-    padding:9px 22px 9px 10px;
-    font-size:10px;gap:10px;
-  }
-  .hero-reel-cta:hover{transform:translateY(-1px);}
-  .hero-reel-cta .play-chip{width:22px;height:22px;}
-  .hero-reel-cta .play-chip svg{width:9px;height:10px;}
-}
-
-body.loaded .hero-eyebrow,body.loaded .hero-h1,body.loaded .hero-sub,
-body.loaded .hero-actions,body.loaded .hero-trust{opacity:1;transform:translateY(0);}
-
-/* ── MARQUEE ── */
-.marquee-strip{
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:14px 0;overflow:hidden;background:var(--paper);
-}
-.marquee-track{display:flex;white-space:nowrap;animation:marquee 28s linear infinite;}
-.marquee-item{
-  font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:6px;
-  color:var(--muted);text-transform:uppercase;padding:0 36px;
-  display:inline-flex;align-items:center;gap:36px;
-}
-.marquee-item::after{content:'✦';color:var(--blue);font-size:9px;}
-@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-
-/* ── SHARED SECTION ── */
-.section-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--blue);margin-bottom:10px;}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:min(9vw,80px);letter-spacing:2px;color:var(--white);line-height:.95;}
-.section-title em{color:var(--blue);font-style:normal;}
-.pad{padding:100px 40px;}
-
-/* ── SHOWREEL ── */
-#showreel{background:var(--ink);}
-.reel-header{
-  display:flex;align-items:flex-end;justify-content:space-between;
-  padding:100px 40px 48px;gap:32px;flex-wrap:wrap;
-}
-.reel-desc{max-width:300px;font-size:15px;line-height:1.7;color:rgba(205,208,219,0.4);font-weight:300;padding-bottom:4px;}
-.reel-screen{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden;}
-.reel-screen video{width:100%;height:100%;object-fit:cover;display:block;}
-.reel-screen iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;}
-.reel-fade{position:absolute;inset:0;background:linear-gradient(to top,var(--ink) 0%,transparent 28%);pointer-events:none;}
-.reel-frame{
-  position:relative;max-width:880px;margin:24px auto 0;
-  padding:16px;background:var(--paper);border:1px solid var(--border);
-}
-.reel-frame::before{
-  content:'';position:absolute;inset:-60px;z-index:0;pointer-events:none;
-  background:radial-gradient(ellipse at center,rgba(43,127,255,0.28) 0%,transparent 65%);
-  filter:blur(28px);
-  animation:reelPulse 4s ease-in-out infinite;
-}
-@keyframes reelPulse{
-  0%,100%{opacity:0.6;transform:scale(1);}
-  50%{opacity:1;transform:scale(1.06);}
-}
-.reel-frame::after{
-  content:'';position:absolute;inset:16px;z-index:0;pointer-events:none;opacity:.5;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.022) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,0.022) 1px,transparent 1px);
-  background-size:28px 28px;
-}
-.reel-frame > .reel-screen,.reel-frame > .reel-meta{position:relative;z-index:1;}
-.reel-crop{
-  position:absolute;width:18px;height:18px;
-  border:1px solid var(--blue);z-index:2;pointer-events:none;
-}
-.reel-crop.tl{top:-1px;left:-1px;border-right:none;border-bottom:none;}
-.reel-crop.tr{top:-1px;right:-1px;border-left:none;border-bottom:none;}
-.reel-crop.bl{bottom:-1px;left:-1px;border-right:none;border-top:none;}
-.reel-crop.br{bottom:-1px;right:-1px;border-left:none;border-top:none;}
-.reel-meta{
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
-  padding:14px 4px 2px;
-  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);
-}
-.reel-meta-dot{display:inline-flex;align-items:center;gap:8px;}
-.reel-meta-dot::before{content:'';width:5px;height:5px;background:var(--blue);border-radius:50%;animation:blink 2s infinite;}
-@media(max-width:768px){
-  .reel-frame{padding:10px;margin:16px 24px 0;}
-  .reel-meta{font-size:8px;letter-spacing:2px;padding-top:10px;}
-  .reel-crop{width:14px;height:14px;}
-}
-.reel-play{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:72px;height:72px;border:1px solid rgba(255,255,255,0.2);border-radius:50%;
-  background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;
-  cursor:pointer;transition:border-color .2s,background .2s,opacity .3s ease;
-  opacity:0;
-}
-.reel-screen:hover .reel-play{opacity:1;}
-.reel-play.is-paused{opacity:1;}
-.reel-play:hover{border-color:var(--blue);background:rgba(43,127,255,0.15);}
-.reel-play.is-paused{animation:reelPulse 2.4s ease-out infinite;}
-.reel-play.is-paused::before{
-  content:'';position:absolute;inset:-1px;border-radius:50%;
-  border:1px solid var(--blue);opacity:0;
-  animation:reelRing 2.4s ease-out infinite;pointer-events:none;
-}
-@keyframes reelPulse{0%,100%{box-shadow:0 0 0 0 rgba(43,127,255,0);}50%{box-shadow:0 0 0 6px rgba(43,127,255,0.08);}}
-@keyframes reelRing{0%{transform:scale(1);opacity:.6;}100%{transform:scale(1.5);opacity:0;}}
-.reel-play svg{color:#fff;margin-left:3px;}
-
-/* ── PACKAGES ── */
-#packages{background:var(--paper);}
-#packages.pad{padding-top:32px;padding-bottom:48px;}
-@media(max-width:768px){#packages.pad{padding-top:20px;}}
-.pkg-intro{margin-bottom:64px;}
-.pkg-note{font-size:15px;color:rgba(205,208,219,0.35);margin-top:12px;font-style:italic;font-weight:300;}
-.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
-.pkg{
-  background:var(--paper);padding:44px 36px;position:relative;overflow:hidden;
-  transition:background .25s;
-  isolation:isolate;
-}
-.pkg:hover{background:#101420;}
-.pkg.featured{background:var(--dim);}
-/* ── spotlight card effect ── */
-.pkg::before{
-  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:radial-gradient(480px circle at var(--mouse-x,50%) var(--mouse-y,50%),
-    rgba(43,127,255,0.18),transparent 42%);
-  opacity:0;transition:opacity .4s ease;
-}
-.pkg::after{
-  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
-  padding:1px;
-  background:radial-gradient(260px circle at var(--mouse-x,50%) var(--mouse-y,50%),
-    rgba(43,127,255,0.9),transparent 42%);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite:xor;
-          mask-composite:exclude;
-  opacity:0;transition:opacity .4s ease;
-}
-.pkg:hover::before,.pkg:hover::after{opacity:1;}
-.pkg > *{position:relative;z-index:3;}
-.pkg .pkg-watermark{z-index:0;}
-.pkg-badge{
-  position:absolute;top:20px;right:20px;
-  font-family:'DM Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;
-  color:var(--blue);border:1px solid rgba(43,127,255,0.35);padding:4px 10px;
-}
-.pkg-watermark{
-  position:absolute;right:-16px;bottom:-24px;
-  font-family:'Bebas Neue',sans-serif;font-size:120px;line-height:1;
-  color:rgba(255,255,255,0.025);pointer-events:none;user-select:none;letter-spacing:-2px;
-}
-.pkg-name{
-  font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:2px;
-  color:var(--white);line-height:1;margin-bottom:16px;
-}
-.pkg-sub{font-size:15px;color:rgba(205,208,219,0.75);margin-bottom:36px;font-weight:300;line-height:1.55;}
-.pkg-tier-sep{height:1px;background:var(--border);margin:36px -36px 36px;}
-/* ── PACKAGE ACCORDION CARDS ── */
-.pkg-acc-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-  max-width:1240px;margin:0 auto;
-}
-@media(max-width:900px){.pkg-acc-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){.pkg-acc-grid{grid-template-columns:1fr;}}
-.pkg-acc-wrap{
-  position:relative;border-radius:12px;padding:2px;overflow:hidden;
-  background:transparent;
-}
-.pkg-acc-wrap::before{
-  content:'';position:absolute;inset:-60%;
-  background:conic-gradient(from 0deg,#2B7FFF 0%,#00d4ff 25%,#7b2fff 50%,#2B7FFF 75%,#00d4ff 100%);
-  animation:dmSpin 14s linear infinite;
-  border-radius:50%;opacity:0.35;
-  transition:opacity .4s, animation-duration .4s;
-}
-.pkg-acc-wrap:hover::before,.pkg-acc-wrap.is-open::before{opacity:0.75;animation-duration:6s;}
-.pkg-acc-inner{
-  position:relative;background:var(--paper);border-radius:10px;
-  overflow:hidden;
-}
-.pkg-acc-header{
-  width:100%;display:flex;align-items:flex-start;justify-content:space-between;
-  gap:16px;padding:28px 28px 24px;
-  background:none;border:none;cursor:pointer;text-align:left;
-}
-.pkg-acc-header-text{flex:1;}
-.pkg-acc-name{
-  font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:2px;
-  color:var(--white);line-height:1;margin-bottom:10px;display:block;
-}
-.pkg-acc-desc{
-  font-size:15px;color:rgba(205,208,219,0.72);line-height:1.5;font-weight:300;
-}
-.pkg-acc-toggle{
-  flex-shrink:0;width:32px;height:32px;border-radius:50%;
-  border:1px solid var(--border);display:flex;align-items:center;justify-content:center;
-  color:var(--muted);margin-top:8px;
-  transition:transform .35s ease, border-color .25s, color .25s;
-}
-.pkg-acc-wrap.is-open .pkg-acc-toggle{transform:rotate(45deg);border-color:var(--blue);color:var(--blue);}
-.pkg-acc-body{
-  max-height:0;overflow:hidden;
-  transition:max-height .45s cubic-bezier(0.4,0,0.2,1);
-}
-.pkg-acc-wrap.is-open .pkg-acc-body{max-height:600px;}
-.pkg-acc-content{
-  padding:0 28px 28px;border-top:1px solid var(--border);
-}
-.pkg-acc-content .pkg-price-line{
-  font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--blue);
-  line-height:1;margin:20px 0 4px;
-}
-.pkg-acc-content .pkg-price-hint{
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;
-  text-transform:uppercase;color:rgba(205,208,219,0.55);margin-bottom:20px;
-}
-.pkg-acc-content .pkg-list{margin-bottom:24px;}
-.pkg-acc-content .pkg-btn{margin-top:8px;}
-/* ── PACKAGE TABS ── */
-.pkg-tab-wrap{display:flex;justify-content:center;margin-bottom:52px;}
-.pkg-tab-track{
-  position:relative;display:inline-flex;
-  border-radius:999px;padding:5px;
-  border:1px solid rgba(255,255,255,0.08);
-  background:linear-gradient(180deg,#2b3045 0%,#13161f 52%,#0a0c12 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.14),
-    inset 0 -1px 1px rgba(0,0,0,0.65),
-    0 14px 28px -10px rgba(0,0,0,0.85),
-    0 0 0 1px rgba(43,127,255,0.16);
-  overflow:hidden;isolation:isolate;
-  transition:box-shadow .35s ease;
-}
-.pkg-tab-track:hover{
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.2),
-    inset 0 -1px 1px rgba(0,0,0,0.65),
-    0 18px 34px -10px rgba(0,0,0,0.95),
-    0 0 0 1px rgba(43,127,255,0.42),
-    0 0 28px rgba(43,127,255,0.2);
-}
-.pkg-tab-track::before{
-  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:linear-gradient(115deg,
-    transparent 30%,
-    rgba(110,170,255,0.22) 44%,
-    rgba(255,255,255,0.14) 50%,
-    rgba(110,170,255,0.22) 56%,
-    transparent 70%);
-  background-size:280% 100%;
-  animation:liquidSheen 4.8s ease-in-out infinite;
-}
-.pkg-tab-pill{
-  position:absolute;top:5px;bottom:5px;left:5px;
-  background:var(--blue);border-radius:999px;
-  transition:left .35s cubic-bezier(0.4,0,0.2,1),width .35s cubic-bezier(0.4,0,0.2,1);
-  pointer-events:none;z-index:1;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);
-}
-.pkg-tab{
-  position:relative;z-index:2;
-  font-family:'DM Mono',monospace;font-size:14px;letter-spacing:2px;text-transform:uppercase;
-  padding:15px 40px;border:none;background:transparent;cursor:pointer;border-radius:999px;
-  color:rgba(240,242,248,0.88);transition:color .25s;white-space:nowrap;
-}
-.pkg-tab.is-active{color:#fff;}
-.pkg-panel{
-  opacity:1;transition:opacity .3s ease;
-  display:none;
-}
-.pkg-panel.is-active{display:grid;}
-.pkg-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);}
-@media(max-width:768px){.pkg-grid-2{grid-template-columns:1fr;}.pkg-tab{padding:12px 24px;font-size:11px;}}
-.pkg-retainer-price{
-  font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--blue);line-height:1;
-  margin-bottom:4px;
-}
-.pkg-retainer-period{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:rgba(205,208,219,0.65);margin-bottom:36px;}
-.pkg-price-slot{min-height:84px;display:flex;flex-direction:column;justify-content:flex-end;margin-bottom:0;}
-.pkg-price-slot .pkg-price-hint{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:rgba(205,208,219,0.65);text-transform:uppercase;margin-top:4px;}
-.pkg-price-slot .pkg-price-line{font-family:'Bebas Neue',sans-serif;font-size:30px;color:rgba(255,255,255,0.9);line-height:1;letter-spacing:1px;}
-@media(max-width:768px){.pkg-price-slot{min-height:0;margin-bottom:8px;}}
-.pkg-divider{height:1px;background:rgba(255,255,255,0.1);margin-bottom:28px;}
-.pkg-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:40px;}
-.pkg-list li{font-size:15px;color:rgba(205,208,219,0.88);display:flex;align-items:flex-start;gap:10px;line-height:1.5;}
-.pkg-list li::before{content:'—';color:var(--blue);flex-shrink:0;font-family:'DM Mono',monospace;font-size:11px;margin-top:1px;}
-.pkg-btn{
-  width:100%;padding:13px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;
-  text-transform:uppercase;border:1px solid rgba(255,255,255,0.25);background:transparent;
-  color:var(--white);cursor:pointer;transition:border-color .2s,color .2s,background .2s;
-}
-.pkg-btn:hover{border-color:var(--blue);color:var(--blue);}
-.pkg.featured .pkg-btn{border-color:rgba(43,127,255,0.4);color:var(--blue);}
-.pkg.featured .pkg-btn:hover{background:var(--blue);color:#fff;}
-
-/* ── PACKAGE ADD-ON (Subject Lock) ── */
-.pkg-addon{
-  margin-top:48px;
-  background:var(--paper);
-  border:1px solid rgba(43,127,255,0.18);
-  padding:44px 48px;
-  display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center;
-  position:relative;overflow:hidden;
-}
-.pkg-addon::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at top right,rgba(43,127,255,0.12),transparent 60%);
-}
-.pkg-addon-left,.pkg-addon-right{position:relative;z-index:1;}
-.pkg-addon-badge{
-  display:inline-block;
-  font-family:'DM Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;
-  color:var(--blue);border:1px solid rgba(43,127,255,0.35);padding:4px 10px;
-  margin-bottom:22px;
-}
-.pkg-addon-title{
-  font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:1px;color:var(--white);
-  line-height:1;margin-bottom:10px;
-}
-.pkg-addon-tagline{
-  font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:var(--blue);
-  line-height:1.1;margin-bottom:16px;
-}
-.pkg-addon-desc{
-  font-size:15px;color:rgba(205,208,219,0.55);line-height:1.7;font-weight:300;max-width:480px;
-}
-.pkg-addon-list{
-  list-style:none;display:flex;flex-direction:column;gap:12px;margin:0 0 28px 0;padding:0;
-}
-.pkg-addon-list li{
-  font-size:15px;color:rgba(205,208,219,0.75);display:flex;align-items:flex-start;gap:10px;line-height:1.4;
-}
-.pkg-addon-list li::before{
-  content:'+';color:var(--blue);flex-shrink:0;font-family:'DM Mono',monospace;font-size:13px;font-weight:500;line-height:1;margin-top:2px;
-}
-.pkg-addon-price{
-  font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--white);line-height:1;letter-spacing:1px;
-  margin-bottom:6px;
-}
-.pkg-addon-price-hint{
-  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:22px;
-}
-.pkg-addon .pkg-btn{max-width:280px;}
-@media(max-width:768px){
-  .pkg-addon{grid-template-columns:1fr;gap:32px;padding:32px 24px;margin-top:32px;}
-  .pkg-addon-title{font-size:36px;}
-  .pkg-addon-tagline{font-size:18px;}
-  .pkg-addon .pkg-btn{max-width:100%;}
-}
-
-/* ── PROCESS ── */
-#process{background:var(--ink);position:relative;overflow:hidden;}
-.process-watermark{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  font-family:'Bebas Neue',sans-serif;font-size:min(22vw,240px);letter-spacing:16px;
-  color:rgba(255,255,255,0.012);pointer-events:none;user-select:none;white-space:nowrap;
-}
-.process-inner{
-  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
-  position:relative;z-index:1;
-}
-.process-mascot-wrap{position:sticky;top:120px;text-align:center;align-self:start;}
-.process-mascot-wrap img{
-  width:min(100%,400px);mix-blend-mode:screen;
-  filter:drop-shadow(0 0 40px rgba(43,127,255,0.2));
-  animation:float 5s ease-in-out infinite;
-}
-@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
-
-/* ── PROCESS gradient cards ── */
-.process-header{margin-bottom:56px;position:relative;z-index:1;max-width:560px;}
-.feat-carousel{
-  display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;
-  align-items:start;position:relative;z-index:1;
-}
-
-/* ── LEFT column: clickable phase list ── */
-.feat-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
-.feat-item{
-  position:relative;cursor:pointer;
-  padding:20px 22px;
-  border:1px solid var(--border);
-  background:var(--paper);
-  transition:border-color .3s ease,background .25s ease,transform .25s ease;
-  overflow:hidden;
-}
-.feat-item:hover{border-color:rgba(255,255,255,0.12);}
-.feat-item.is-active{
-  border-color:var(--accent-line);
-  background:
-    linear-gradient(135deg,var(--accent) 0%,transparent 60%),
-    var(--paper);
-}
-.feat-row{display:flex;gap:18px;align-items:flex-start;}
-.feat-num{
-  font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;
-  color:rgba(255,255,255,0.16);line-height:1;flex-shrink:0;min-width:40px;
-  transition:color .25s ease;
-}
-.feat-item.is-active .feat-num{color:var(--accent-text);}
-.feat-body{flex:1;}
-.feat-eyebrow{
-  display:inline-block;
-  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;
-  text-transform:uppercase;color:var(--muted);
-  margin-bottom:6px;transition:color .25s ease;
-}
-.feat-item.is-active .feat-eyebrow{color:var(--accent-text);}
-.feat-title{
-  font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;
-  color:var(--white);line-height:1.05;margin:0 0 4px;
-}
-.feat-desc{
-  font-size:15px;color:rgba(205,208,219,0.58);line-height:1.65;font-weight:300;
-  max-height:0;overflow:hidden;opacity:0;margin-top:0;
-  transition:max-height .45s ease,opacity .3s ease .05s,margin-top .3s ease;
-}
-.feat-item.is-active .feat-desc{max-height:220px;opacity:1;margin-top:10px;}
-.feat-progress{
-  position:absolute;bottom:0;left:0;right:0;height:2px;
-  background:rgba(255,255,255,0.04);
-}
-.feat-progress span{
-  display:block;height:100%;width:0;
-  background:var(--accent-text);
-  transition:none;
-}
-
-/* ── RIGHT column: media stage ── */
-.feat-stage{
-  position:relative;
-  aspect-ratio:16/11;
-  background:var(--ink);
-  border:1px solid var(--border);
-  overflow:hidden;
-}
-.feat-slide{
-  position:absolute;inset:0;
-  opacity:0;transition:opacity .55s ease;
-  pointer-events:none;
-}
-.feat-slide.is-active{opacity:1;pointer-events:auto;}
-.feat-slide video,
-.feat-slide img{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  display:block;
-}
-
-/* placeholder vignette — swap for a real <video> or <img> in markup */
-.feat-placeholder{
-  position:absolute;inset:0;display:flex;flex-direction:column;
-  align-items:flex-start;justify-content:flex-end;padding:36px 40px;
-  background:
-    radial-gradient(ellipse at 30% 25%,var(--accent-hot) 0%,transparent 60%),
-    linear-gradient(135deg,var(--accent) 0%,transparent 65%),
-    var(--ink);
-}
-.feat-placeholder::before{
-  content:'';position:absolute;inset:0;pointer-events:none;opacity:.55;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
-  background-size:28px 28px;
-}
-.feat-placeholder::after{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(to top,rgba(8,10,15,0.6) 0%,transparent 50%);
-}
-.feat-ph-num{
-  position:relative;z-index:1;
-  font-family:'Bebas Neue',sans-serif;font-size:min(18vw,220px);
-  letter-spacing:4px;line-height:.85;
-  color:rgba(255,255,255,0.04);
-}
-.feat-ph-label{
-  position:relative;z-index:1;margin-top:14px;
-  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:4px;
-  text-transform:uppercase;color:var(--accent-text);
-}
-
-/* per-phase accents */
-.feat-item[data-accent="blue"], .feat-ph--blue{
-  --accent:rgba(43,127,255,0.18);
-  --accent-hot:rgba(43,127,255,0.32);
-  --accent-line:rgba(43,127,255,0.42);
-  --accent-text:#5b9bff;
-}
-.feat-item[data-accent="cyan"], .feat-ph--cyan{
-  --accent:rgba(34,211,238,0.16);
-  --accent-hot:rgba(34,211,238,0.28);
-  --accent-line:rgba(34,211,238,0.42);
-  --accent-text:#67e8f9;
-}
-.feat-item[data-accent="violet"], .feat-ph--violet{
-  --accent:rgba(167,139,250,0.18);
-  --accent-hot:rgba(167,139,250,0.30);
-  --accent-line:rgba(167,139,250,0.42);
-  --accent-text:#c4b5fd;
-}
-.feat-item[data-accent="amber"], .feat-ph--amber{
-  --accent:rgba(245,158,11,0.16);
-  --accent-hot:rgba(245,158,11,0.28);
-  --accent-line:rgba(245,158,11,0.42);
-  --accent-text:#fbbf24;
-}
-
-@media(max-width:900px){
-  .feat-carousel{grid-template-columns:1fr;gap:28px;}
-  .feat-stage{aspect-ratio:16/9;}
-}
-@media(max-width:768px){
-  .feat-item{padding:16px 18px;}
-  .feat-num{font-size:26px;}
-  .feat-title{font-size:22px;}
-  .feat-desc{font-size:16px;}
-}
-.steps{display:flex;flex-direction:column;}
-.step{
-  display:grid;grid-template-columns:52px 1fr;gap:24px;
-  padding:44px 0;border-bottom:1px solid var(--border);align-items:start;
-}
-.step:first-child{padding-top:0;}
-.step:last-child{border-bottom:none;}
-.step-n{font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(255,255,255,0.07);line-height:1;letter-spacing:2px;}
-.step-phase{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:4px;color:var(--blue);text-transform:uppercase;margin-bottom:6px;}
-.step-name{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--white);letter-spacing:1px;margin-bottom:10px;}
-.step-desc{font-size:15px;color:rgba(205,208,219,0.4);line-height:1.7;font-weight:300;}
-
-/* ── INTERMISSION (pencil mascot) ── */
-#intermission{
-  background:linear-gradient(to bottom,var(--ink) 0%,var(--ink) 55%,var(--paper) 100%);
-  position:relative;overflow:hidden;
-  padding:24px 40px 0;
-}
-#intermission::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;
-  height:160px;z-index:3;pointer-events:none;
-  background:linear-gradient(to bottom,transparent,var(--paper));
-}
-.matrix-bg{
-  position:absolute;inset:0;width:100%;height:100%;
-  z-index:0;pointer-events:none;opacity:0.55;
-  display:block;
-}
-.intermission-inner{
-  max-width:1240px;margin:0 auto;position:relative;z-index:2;
-  display:flex;flex-direction:column;align-items:flex-start;
-  text-align:left;
-}
-.intermission-inner .section-title{margin-bottom:32px;font-size:min(8vw,72px);}
-.pencil-stage{
-  position:relative;
-  width:min(1100px,94vw);aspect-ratio:16/9;
-  display:flex;align-items:center;justify-content:flex-start;
-}
-.pencil-video{
-  width:100%;height:100%;object-fit:contain;
-  mix-blend-mode:screen;pointer-events:none;
-  -webkit-mask-image:
-    linear-gradient(to bottom,transparent 0%,#000 9%,#000 70%,transparent 100%),
-    linear-gradient(to right, transparent 0%,#000 20%,#000 80%,transparent 100%);
-  -webkit-mask-composite:source-in;
-          mask-image:
-    linear-gradient(to bottom,transparent 0%,#000 9%,#000 70%,transparent 100%),
-    linear-gradient(to right, transparent 0%,#000 20%,#000 80%,transparent 100%);
-          mask-composite:intersect;
-}
-@media(max-width:768px){
-  #intermission{padding:16px 24px 0;}
-  .intermission-inner .section-title{font-size:min(11vw,52px);margin-bottom:20px;}
-  .pencil-stage{width:min(560px,95vw);}
-}
-
-/* ── CONTACT ── */
-#contact{background:var(--paper);padding-top:48px;}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.contact-mascot video{
-  width:100%;mix-blend-mode:screen;
-  display:block;
-}
-.form{display:flex;flex-direction:column;margin-top:44px;}
-.field{display:flex;flex-direction:column;gap:6px;border-bottom:1px solid var(--border);padding:18px 0;}
-.field:first-child{border-top:1px solid var(--border);}
-.field label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);}
-.field input,.field textarea,.field select{
-  background:transparent;border:none;outline:none;
-  font-family:'DM Sans',sans-serif;font-size:16px;color:var(--white);
-  padding:6px 0;resize:none;-webkit-appearance:none;
-}
-.field textarea{min-height:72px;}
-.field input::placeholder,.field textarea::placeholder{color:var(--muted);}
-.field select option{background:var(--paper);}
-.form-submit{
-  margin-top:36px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;
-  padding:16px 36px;background:var(--blue);color:#fff;border:none;cursor:pointer;
-  display:inline-flex;align-items:center;gap:10px;transition:opacity .2s;align-self:flex-start;
-}
-.form-submit:hover{opacity:.8;}
-
-/* Side-by-side actions: Send Brief + Book Meeting Now */
-.form-actions{
-  margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;
-}
-.form-actions .form-submit{margin-top:0;align-self:auto;}
-.form-book{
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;
-  padding:16px 36px;background:transparent;color:var(--white);
-  border:1px solid var(--white);cursor:pointer;
-  display:inline-flex;align-items:center;gap:10px;
-  transition:background .2s,color .2s,opacity .2s;
-}
-.form-book:hover{background:var(--white);color:var(--ink);}
-
-/* ── FOOTER ── */
-footer{
-  border-top:1px solid var(--border);padding:36px 40px;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;
-  background:var(--ink);
-}
-.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:4px;color:rgba(255,255,255,0.18);}
-.footer-logo span{color:var(--blue);}
-.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-link{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
-.footer-link:hover{color:var(--blue);}
-.footer-copy{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(58,64,85,0.6);}
-
-/* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease;}
-.reveal.in{opacity:1;transform:none;}
-
-/* ════════════════════════════════════
-   MOBILE RESPONSIVE
-   ════════════════════════════════════ */
-@media(max-width:768px){
-
-  /* nav */
-  nav{padding:0 24px;}
-  .nav-links{display:none;}
-  .nav-cta{display:none;}
-  .nav-hamburger{display:flex;}
-
-  /* hero */
-  #hero{justify-content:flex-end;min-height:100svh;}
-  #hero-mascot{opacity:1 !important;} /* skip load fade on mobile */
-  /* mobile overlay — text sits at the bottom so protect that band strongly */
-  #hero::after{
-    background:linear-gradient(to top,rgba(8,10,15,1) 0%,rgba(8,10,15,0.85) 35%,rgba(8,10,15,0.25) 60%,transparent 100%);
-  }
-  .hero-content{padding:0 24px 40px;max-width:100%;position:relative;z-index:2;}
-  .hero-h1{font-size:min(18vw,72px);}
-  .hero-sub{font-size:14px;max-width:100%;}
-  .hero-actions{flex-direction:column;align-items:stretch;gap:12px;}
-  .hero-actions .hero-reel-cta,.hero-actions .btn-primary{width:100%;justify-content:center;}
-  .hero-trust{font-size:9px;gap:6px 12px;margin-top:20px;}
-
-  /* showreel */
-  .reel-header{padding:72px 24px 36px;flex-direction:column;align-items:flex-start;gap:20px;}
-  .reel-desc{max-width:100%;}
-  .reel-play{width:56px;height:56px;}
-
-  /* packages */
-  .pad{padding:72px 24px;}
-  .pkg-grid{grid-template-columns:1fr;}
-  .pkg{padding:36px 28px;}
-  .pkg.featured{order:-1;}
-
-  /* process */
-  .process-inner{grid-template-columns:1fr;gap:48px;}
-  .process-mascot-wrap{position:relative;top:auto;transform:none;}
-  .process-mascot-wrap img{width:min(70%,280px);margin:0 auto;display:block;}
-  .step{grid-template-columns:40px 1fr;gap:16px;padding:32px 0;}
-  .step-n{font-size:36px;}
-
-  /* contact */
-  .contact-grid{grid-template-columns:1fr;gap:40px;}
-  .contact-mascot{max-width:260px;margin:0 auto;}
-  .form-actions{flex-direction:column;align-items:stretch;}
-  .form-submit,.form-book{width:100%;justify-content:center;}
-
-  /* footer */
-  footer{flex-direction:column;text-align:center;padding:28px 24px;}
-  .footer-links{justify-content:center;}
-}
-
-@media(max-width:480px){
-  .hero-h1{font-size:16vw;}
-  .section-title{font-size:min(13vw,56px);}
-}
-
-/* ══════════════════════════════════════════════════════════════
-   TYPOGRAPHY UPLIFT — readability pass
-   All sizes/contrasts bumped so copy is legible on mid-tier
-   monitors and for readers who don't have 20/20 vision.
-   Remove this whole block to revert to the original sizing.
-   ══════════════════════════════════════════════════════════════ */
-
-body{font-size:16px;line-height:1.6;}
-
-/* Hero */
-.hero-eyebrow{font-size:13px;letter-spacing:3px;color:#3D8FFF;}
-.hero-sub{font-size:18px;line-height:1.65;color:rgba(205,208,219,0.88);max-width:540px;font-weight:400;}
-
-/* Section labels & marquee */
-.section-label{font-size:12px;letter-spacing:3.5px;}
-.marquee-item{font-size:18px;letter-spacing:5px;}
-
-/* Nav */
-.nav-link{font-size:12px;color:#9099B0;letter-spacing:2.5px;}
-.nav-cta{font-size:11px;padding:11px 22px;}
-.drawer-link{font-size:42px;}
-.drawer-cta{font-size:12px;}
-
-/* Showreel + reel meta */
-.reel-desc{font-size:16px;line-height:1.7;color:rgba(205,208,219,0.72);max-width:360px;font-weight:400;}
-.reel-meta{font-size:11px;letter-spacing:3px;}
-.reel-meta-dot{font-size:11px;}
-
-/* Process / feature carousel */
-.feat-desc{font-size:16px;line-height:1.7;color:rgba(205,208,219,0.88);}
-.feat-eyebrow{font-size:11px;letter-spacing:3.5px;}
-.feat-num{font-size:30px;}
-.feat-title{font-size:28px;}
-
-/* Step grid (if used) */
-.step-desc{font-size:16px;line-height:1.7;color:rgba(205,208,219,0.68);font-weight:400;}
-.step-phase{font-size:11px;letter-spacing:3.5px;}
-.step-name{font-size:32px;}
-
-/* Packages */
-.pkg-sub{font-size:16px;line-height:1.6;color:rgba(205,208,219,0.9);}
-.pkg-note{font-size:16px;color:rgba(205,208,219,0.7);}
-.pkg-list li{font-size:16px;line-height:1.6;color:rgba(205,208,219,0.95);}
-.pkg-list li::before{font-size:13px;}
-.pkg-price-slot .pkg-price-line{font-size:34px;}
-.pkg-price-slot .pkg-price-hint{font-size:11px;letter-spacing:3px;}
-.pkg-retainer-period{font-size:11px;letter-spacing:3px;color:rgba(205,208,219,0.78);}
-.pkg-btn{font-size:11px;letter-spacing:3px;padding:15px;}
-
-/* Subject Lock add-on */
-.pkg-addon-badge{font-size:10px;letter-spacing:3px;}
-.pkg-addon-tagline{font-size:24px;}
-.pkg-addon-desc{font-size:16px;line-height:1.7;color:rgba(205,208,219,0.78);}
-.pkg-addon-list li{font-size:16px;line-height:1.5;color:rgba(205,208,219,0.92);}
-.pkg-addon-list li::before{font-size:14px;}
-.pkg-addon-price-hint{font-size:11px;letter-spacing:3px;color:rgba(205,208,219,0.72);}
-
-/* Contact form */
-.field label{font-size:11px;letter-spacing:3.5px;}
-.field input,.field textarea{font-size:17px;}
-.field-submit-btn{font-size:12px;letter-spacing:3.5px;}
-
-/* Footer */
-.footer-logo{font-size:18px;}
-.footer-link{font-size:11px;letter-spacing:2.5px;color:#7A8398;}
-.footer-copy{font-size:10px;letter-spacing:1.5px;color:rgba(122,131,152,0.85);}
-
-/* New "Built For" section */
-#built-for .bf-num{font-size:12px;letter-spacing:2.5px;}
-#built-for .bf-title{font-size:30px;}
-#built-for .bf-desc{font-size:15px;line-height:1.7;color:rgba(205,208,219,0.92);}
-#built-for .bf-tag{font-size:11px;letter-spacing:2px;}
-
-/* New FAQ section */
-#faq summary{font-size:23px;padding:30px 0;}
-#faq .faq-answer{font-size:16px;line-height:1.8;color:rgba(205,208,219,0.95);padding-bottom:32px;}
-
-/* Mobile typography — smaller bumps so things fit phones */
-@media (max-width:640px){
-  body{font-size:16px;}
-  .hero-eyebrow{font-size:12px;letter-spacing:2.5px;}
-  .hero-sub{font-size:16px;line-height:1.6;}
-  .marquee-item{font-size:15px;letter-spacing:3px;}
-  .reel-desc{font-size:15px;}
-  .step-desc{font-size:15px;}
-  .pkg-list li{font-size:16px;}
-  .feat-desc{font-size:16px;}
-  #built-for .bf-title{font-size:26px;}
-  #built-for .bf-desc{font-size:16px;}
-  #faq summary{font-size:18px;padding:22px 0;}
-  #faq .faq-answer{font-size:15px;line-height:1.75;}
-}
-</style>
-
-<!-- ── STRUCTURED DATA (AIEO) ─────────────────────────────────────
-     This is what LLMs like ChatGPT, Perplexity, and Google's AI
-     Overviews read to understand what BAEZ does and quote when a
-     user asks "who makes cinematic AI launch videos for brand launches and campaigns?" -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/site.css?v=20261123">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPQ3NP81MN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-LPQ3NP81MN');</script>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "BAEZ.AI.STUDIO",
-  "alternateName": "BAEZ Studio",
-  "url": "https://baez.studio/",
-  "logo": "https://baez.studio/wine-bottle-images/image-4-2.png",
-  "description": "Video production company pairing traditional human cinematic direction with the latest AI tools, based in the Midwest US, serving Ann Arbor MI, Fort Wayne IN, and clients worldwide. Building short-form content, launch films, brand revivals, campaign videos, and game cinematics for brands, businesses, and studios.",
-  "founder": "BAEZ Studio",
-  "address": {
-    "@type": "PostalAddress",
-    "addressRegion": "MI",
-    "addressCountry": "US"
+ "@context": "https://schema.org",
+ "@type": "ProfessionalService",
+ "@id": "https://baez.studio/#studio",
+ "name": "Baez Studio",
+ "alternateName": "BAEZ.AI.STUDIO",
+ "url": "https://baez.studio/",
+ "email": "josh@baez.studio",
+ "logo": "https://baez.studio/og-card.png",
+ "image": "https://baez.studio/og-card.png",
+ "description": "Boutique studio pairing 15+ years of commercial editing with generative AI compositing, Remotion programmatic video and bespoke AI business workflows.",
+ "founder": {
+  "@type": "Person",
+  "@id": "https://baez.studio/#josh",
+  "name": "Josh Baez",
+  "jobTitle": "Founder & Creative Director",
+  "url": "https://baez.studio/about/",
+  "alumniOf": {
+   "@type": "CollegeOrUniversity",
+   "name": "Point Park University"
   },
-  "areaServed": [
-    { "@type": "City", "name": "Ann Arbor", "containedInPlace": { "@type": "State", "name": "Michigan" } },
-    { "@type": "City", "name": "Fort Wayne", "containedInPlace": { "@type": "State", "name": "Indiana" } },
-    "Worldwide"
-  ],
   "sameAs": [
-    "https://www.instagram.com/baez.ai.studio/",
-    "https://x.com/baezaistudio"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Sales",
-    "url": "https://cal.com/baezstudio/15min"
-  }
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Cinematic AI Video Production",
-  "provider": {
-    "@type": "Organization",
-    "name": "BAEZ.AI.STUDIO",
-    "url": "https://baez.studio/"
-  },
-  "areaServed": "Worldwide",
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "Brands launching or relaunching, indie game studios, founder-led startups, agencies, creative directors, small businesses"
-  },
-  "description": "AI content creation and cinematic video production for brand launches, revivals, campaigns, game cinematics, social content, and product reveals. Brief to broadcast in 7–14 days.",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "BAEZ Production Packages",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "name": "Single Shot",
-        "description": "One polished video up to 30 seconds with original music, sound design, and two revision rounds. Delivered in 5–7 business days.",
-        "price": "1500",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "name": "Hook Pack",
-        "description": "One 30-second hero spot plus two 15-second cutdowns. Optimized for paid social and launch announcements.",
-        "price": "2500",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "name": "Brand Film",
-        "description": "One 60–90 second hero film plus four short-form derivatives. The signature launch piece.",
-        "price": "5000",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "name": "Retainer",
-        "description": "Always-on cinematic production. Up to 8 finished assets per month, ≈4 minutes of runtime.",
-        "price": "7500",
-        "priceCurrency": "USD"
-      }
-    ]
-  }
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What does a cinematic AI launch video cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "BAEZ.AI.STUDIO offers four packages: the Single Shot starts at $1,500 (one polished video up to 30 seconds with music and two revisions), the Hook Pack starts at $2,500 (one 30-second hero spot plus two cutdowns), the Brand Film starts at $5,000 (one 60–90 second hero film plus four derivatives), and the Retainer starts at $7,500/month for always-on production."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does it take to produce a cinematic AI video?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Hook Pack deliveries take 7–10 business days. Brand Film projects take 14–21 business days. Retainer clients receive a first draft within 5 business days of brief lock, with same-week turnaround on urgent cuts."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What's the difference between an AI cinematic and traditional motion graphics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Traditional motion graphics rely on stock footage, vector animation, or 3D rendering with long render times. AI cinematic production lets a human director generate photoreal scenes, characters, and environments from prompts and reference images, then composite them with sound design and live action. The result is closer to a short film than a motion-graphics ad, at a fraction of the time and cost of a traditional cinematic shoot."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What kinds of businesses is BAEZ.AI.STUDIO a good fit for?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Any business with a story worth telling cinematically. BAEZ works best for brands launching something new, reviving an existing identity, kicking off a campaign, or releasing a game or project with rich lore. The studio is equally suited to small businesses, startups, agencies, and established brands. The common thread is wanting visuals that stop the scroll and earn attention. The studio is based in the Midwest and works in person with businesses around Ann Arbor, MI and Fort Wayne, IN."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Who have you worked with?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "BAEZ is a new studio. Founding clients get launch pricing and founder-level direction on every frame, in exchange for a testimonial and case-study rights. The showreel demonstrates the work."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is BAEZ a good fit for web3 launches and NFT drops?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Web3 and crypto projects are a strong fit. BAEZ produces token launch trailers, NFT mint reveals, lore drops, and community announcement films for crypto projects, DAOs, and on-chain studios. The studio understands launch-day timing pressure and ships on tight calendars tied to mint dates and token launch windows."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What makes a strong launch video?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Three things, in under 60 seconds: what this is, why it matters, what the viewer should do next. Cinematic films work because they earn attention through tone and craft instead of asking for it. The best launch films sell the world the brand or project lives in, not the feature set. This is especially true for game and web3 launches. People back things they believe in. The film's job is to make them believe."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How many revisions are included?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Every Hook Pack and Brand Film includes three structured revision rounds: Direction (concept and structure), Refinement (shot-by-shot adjustments), and Polish (color, sound, final pass). Retainer projects include two revision rounds per asset."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What file formats and aspect ratios do you deliver?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Every project ships as a 4K master plus platform-ready exports for Meta, TikTok, YouTube Shorts, X/Twitter, and LinkedIn. Vertical (9:16), square (1:1), and horizontal (16:9) cuts are included. Captioned versions are available on request."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Who owns the rights to the final video?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The client owns full commercial usage rights to the finished deliverables. BAEZ retains the right to feature the work in its showreel and case studies unless a confidentiality arrangement is agreed in advance."
-      }
-    }
+   "https://www.linkedin.com/in/josh-baez-1bab4430a",
+   "https://www.instagram.com/baez.ai.studio/",
+   "https://x.com/baezaistudio"
   ]
+ },
+ "priceRange": "$750 – $18,000",
+ "areaServed": [
+  {
+   "@type": "City",
+   "name": "Ann Arbor",
+   "containedInPlace": {
+    "@type": "State",
+    "name": "Michigan"
+   }
+  },
+  {
+   "@type": "City",
+   "name": "Fort Wayne",
+   "containedInPlace": {
+    "@type": "State",
+    "name": "Indiana"
+   }
+  },
+  {
+   "@type": "Country",
+   "name": "United States"
+  },
+  "Worldwide"
+ ],
+ "knowsAbout": [
+  "AI video production",
+  "Generative AI compositing",
+  "Remotion",
+  "Paid social creative",
+  "AI workflow automation",
+  "n8n",
+  "Make",
+  "Google Workspace automation"
+ ],
+ "sameAs": [
+  "https://www.linkedin.com/in/josh-baez-1bab4430a",
+  "https://www.instagram.com/baez.ai.studio/",
+  "https://x.com/baezaistudio"
+ ],
+ "hasOfferCatalog": {
+  "@type": "OfferCatalog",
+  "name": "Baez Studio services",
+  "itemListElement": [
+   {
+    "@type": "OfferCatalog",
+    "name": "Cinematic AI Video Production",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Single Shot"
+      },
+      "priceSpecification": {
+       "@type": "PriceSpecification",
+       "priceCurrency": "USD",
+       "minPrice": 1500
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Hook Pack"
+      },
+      "priceSpecification": {
+       "@type": "PriceSpecification",
+       "priceCurrency": "USD",
+       "minPrice": 2500
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Signature Brand Film"
+      },
+      "priceSpecification": {
+       "@type": "PriceSpecification",
+       "priceCurrency": "USD",
+       "minPrice": 5000
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Cinematic Video Retainer"
+      },
+      "priceSpecification": {
+       "@type": "UnitPriceSpecification",
+       "priceCurrency": "USD",
+       "minPrice": 7500,
+       "unitCode": "MON"
+      }
+     }
+    ]
+   },
+   {
+    "@type": "OfferCatalog",
+    "name": "Custom AI Business Stacks",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "AI Workflow Audit & Blueprint"
+      },
+      "priceSpecification": {
+       "@type": "PriceSpecification",
+       "priceCurrency": "USD",
+       "minPrice": 750,
+       "maxPrice": 1500
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Starter AI Business Stack"
+      },
+      "priceSpecification": {
+       "@type": "PriceSpecification",
+       "priceCurrency": "USD",
+       "minPrice": 2500,
+       "maxPrice": 6500
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Growth AI Operations Stack"
+      },
+      "priceSpecification": {
+       "@type": "PriceSpecification",
+       "priceCurrency": "USD",
+       "minPrice": 7500,
+       "maxPrice": 18000
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Stack Care & Optimization Plan"
+      },
+      "priceSpecification": {
+       "@type": "UnitPriceSpecification",
+       "priceCurrency": "USD",
+       "minPrice": 500,
+       "maxPrice": 1500,
+       "unitCode": "MON"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Hybrid Growth Retainer"
+      },
+      "priceSpecification": {
+       "@type": "UnitPriceSpecification",
+       "priceCurrency": "USD",
+       "minPrice": 4500,
+       "maxPrice": 9500,
+       "unitCode": "MON"
+      }
+     }
+    ]
+   }
+  ]
+ }
 }
 </script>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "name": "BAEZ.AI.STUDIO — 2026 Showreel",
-  "description": "Cinematic AI video production showreel from BAEZ.AI.STUDIO — brand launches, revivals, game cinematics, and campaign films produced with generative AI and traditional cinematic direction.",
-  "thumbnailUrl": "https://baez.studio/og-card.png",
-  "uploadDate": "2026-01-01",
-  "embedUrl": "https://player.vimeo.com/video/1194564875",
-  "contentUrl": "https://vimeo.com/1194564875",
-  "publisher": {
-    "@type": "Organization",
-    "name": "BAEZ.AI.STUDIO",
-    "url": "https://baez.studio/"
-  },
-  "keywords": "cinematic AI video, AI content creation, brand film, game cinematic, video production"
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "@id": "https://baez.studio/#website",
+ "name": "Baez Studio",
+ "alternateName": "BAEZ.AI.STUDIO",
+ "url": "https://baez.studio/",
+ "publisher": {
+  "@id": "https://baez.studio/#studio"
+ },
+ "inLanguage": "en-US"
 }
 </script>
-
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "VideoObject",
+ "name": "Baez Studio Showreel 2026",
+ "description": "Showreel of cinematic AI video by Baez Studio: brand films, brand revivals, game and lore cinematics and campaign spots, directed and edited by Josh Baez.",
+ "thumbnailUrl": [
+  "https://baez.studio/og-card.png",
+  "https://baez.studio/assets/media/hero-poster.webp"
+ ],
+ "uploadDate": "2026-05-23T09:00:00-04:00",
+ "duration": "PT1M30S",
+ "embedUrl": "https://player.vimeo.com/video/1194564875",
+ "url": "https://baez.studio/work/showreel-2026/",
+ "creator": {
+  "@type": "Person",
+  "name": "Josh Baez",
+  "url": "https://baez.studio/about/"
+ },
+ "publisher": {
+  "@id": "https://baez.studio/#studio"
+ },
+ "potentialAction": {
+  "@type": "SeekToAction",
+  "target": "https://vimeo.com/1194564875#t={seek_to_second_number}s",
+  "startOffset-input": "required name=seek_to_second_number"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What does Baez Studio do?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Baez Studio makes cinematic AI video for brands and builds custom AI business stacks that automate the spreadsheets, emails, newsletters, flyers and social posts behind growth. Both are directed by Josh Baez, a commercial editor with 15+ years of experience."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much does a cinematic AI video cost?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A Single Shot starts at $1,500, a Hook Pack at $2,500, a Signature Brand Film at $5,000 and a Cinematic Video Retainer at $7,500 per month. Each price includes original sound, structured revisions and 4K masters with 9:16, 1:1 and 16:9 exports."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much does a custom AI business stack cost?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Most clients start with a $750–$1,500 Workflow Audit, credited in full toward a build started within 30 days. Starter Stacks run $2,500–$6,500, Growth Operations Stacks $7,500–$18,000, and optional care plans $500–$1,500 per month."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Who owns the videos, prompts and workflows?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "You do. Clients receive full commercial rights to finished video and 100% ownership of custom workflows, prompts, scripts and connected accounts on final payment, with no vendor lock-in."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is Baez Studio a new studio?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The studio brand is recent; the craft is not. Josh Baez has worked in commercial, social and live-event production since 2008, including Beam Suntory and a confidential consumer brand in California, with campaigns that regularly reach six- and seven-figure view counts."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Where is Baez Studio based?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The studio works from two Midwest home bases, Ann Arbor, Michigan and Fort Wayne, Indiana, and delivers remotely to B2B, tech, consumer and gaming brands worldwide. In-person shoots and workshops are available in both regions."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">BAEZ<span>.</span>AI<span>.</span>STUDIO</div>
-  <div class="nav-right">
-    <div class="nav-links">
-      <a href="#showreel" class="nav-link">Showreel</a>
-      <a href="#process" class="nav-link">Process</a>
-      <a href="#packages" class="nav-link">Packages</a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Primary">
+    <a class="wordmark" href="./" aria-label="Baez Studio home">BAEZ<span>.</span>AI<span>.</span>STUDIO</a>
+    <ul class="nav-links" id="nav-links"><li><a href="video-production/">Video Production</a></li><li><a href="ai-business-stacks/">AI Business Stacks</a></li><li><a href="work/">Work</a></li><li><a href="#process">Process</a></li><li><a href="#pricing">Pricing</a></li><li><a href="about/">About</a></li><li class="mobile-only"><a href="mailto:josh@baez.studio">josh@baez.studio</a></li></ul>
+    <div class="nav-cta">
+      <a class="nav-mail" href="mailto:josh@baez.studio">josh@baez.studio</a>
+      <a class="btn btn-primary btn-sm" href="book/">Book a Call</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
     </div>
-    <div class="nav-socials" style="display:flex;align-items:center;gap:14px;margin-right:8px;">
-      <a href="https://www.instagram.com/baez.ai.studio/" target="_blank" rel="noopener" aria-label="Instagram" style="color:var(--muted);transition:color .2s;display:flex;align-items:center;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--muted)'">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      </a>
-      <a href="https://x.com/baezaistudio" target="_blank" rel="noopener" aria-label="X / Twitter" style="color:var(--muted);transition:color .2s;display:flex;align-items:center;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--muted)'">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.737l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-    </div>
-    <button class="nav-cta" onclick="openBooking()">
-      <span class="icon-track">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      </span>
-      Book a Call
-    </button>
-    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-</nav>
-
-<!-- MOBILE DRAWER -->
-<div class="nav-drawer" id="drawer">
-  <a class="drawer-link" href="#showreel" onclick="toggleMenu()">Showreel</a>
-  <a class="drawer-link" href="#process" onclick="toggleMenu()">Process</a>
-  <a class="drawer-link" href="#packages" onclick="toggleMenu()">Packages</a>
-  <a class="drawer-link" href="#contact" onclick="toggleMenu()">Contact</a>
-  <button class="drawer-cta nav-cta" onclick="toggleMenu();openBooking()">
-    <span class="icon-track">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    </span>
-    Book a Call
-  </button>
-</div>
-
-<!-- ══ HERO ══ -->
-<section id="hero">
-  <div id="hero-mascot">
-    <video autoplay loop muted playsinline preload="auto" poster="fly-poster.jpg">
-      <source src="fly-hero.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div class="hero-content">
-    <p class="hero-eyebrow">Human Direction · AI Production · US → Worldwide</p>
-    <h1 class="hero-h1">
-      Your brand,<br>
-      <em>unleashed.</em>
-      <span class="hero-h1-desc">Content creation and cinematic AI films for brand launches, revivals &amp; campaigns.</span>
-    </h1>
-
-    <div class="hero-actions">
-      <button class="hero-reel-cta" onclick="document.getElementById('showreel').scrollIntoView({behavior:'smooth'})">
-        <span class="play-chip">
-          <svg width="11" height="12" viewBox="0 0 9 10" fill="currentColor"><path d="M0 0l9 5-9 5z"/></svg>
-        </span>
-        <span class="cta-label">Watch Demo Reel</span>
-      </button>
-      <button class="btn-primary" onclick="openBooking()">Book a Free Call →</button>
-    </div>
-
-    <p class="hero-trust">7–14 Day Turnaround · US-Based Studio · Clients Worldwide</p>
-  </div>
-
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-strip">
-  <div class="marquee-track">
-    <span class="marquee-item">Brand Launches</span>
-    <span class="marquee-item">Brand Revivals</span>
-    <span class="marquee-item">New Campaigns</span>
-    <span class="marquee-item">Brand Films</span>
-    <span class="marquee-item">Game Cinematics</span>
-    <span class="marquee-item">AI × Hand-Crafted</span>
-    <span class="marquee-item">4K Delivery</span>
-    <span class="marquee-item">Brand Launches</span>
-    <span class="marquee-item">Brand Revivals</span>
-    <span class="marquee-item">New Campaigns</span>
-    <span class="marquee-item">Brand Films</span>
-    <span class="marquee-item">Game Cinematics</span>
-    <span class="marquee-item">AI × Hand-Crafted</span>
-    <span class="marquee-item">4K Delivery</span>
-  </div>
-</div>
-
-<!-- ══ SHOWREEL ══ -->
-<section id="showreel">
-  <div class="reel-header reveal">
+  </nav>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap hero-grid">
     <div>
-      <p class="section-label">Worlds Without Limits</p>
-      <h2 class="section-title">Cinematic AI<br><em>Production.</em></h2>
+      <p class="pill"><span class="dot" aria-hidden="true"></span>15+ Years Commercial Post · Generative Cinema &amp; Custom AI Business Stacks · Ann Arbor · Fort Wayne · Worldwide</p>
+      <h1>Cinematic AI Video &amp; Custom AI Systems — <em>Directed by Craft,</em> Engineered for Speed.</h1>
+      <p class="lede">Baez Studio pairs 15+ years of commercial editing with generative AI compositing, Remotion programmatic video, and bespoke AI business workflows, delivering 4K brand campaigns up to 3x faster and automating the spreadsheets, emails, newsletters, flyers, and social pipelines behind your growth.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="book/">Book a 15-Min Discovery Call →</a>
+        <a class="btn btn-ghost" href="https://vimeo.com/1194564875" data-reel>▶ Watch 90s Showreel</a>
+      </div>
+      <div class="hero-meta"><span>4K masters</span><span>100% client ownership</span><span>Reply in 1 business day</span></div>
     </div>
-    <p class="reel-desc">Traditional cinematic direction, powered by the latest generative AI tools. A filmmaker calls every shot.</p>
-  </div>
-  <div class="reel-frame reveal">
-    <span class="reel-crop tl"></span>
-    <span class="reel-crop tr"></span>
-    <span class="reel-crop bl"></span>
-    <span class="reel-crop br"></span>
-    <div class="reel-screen">
-      <iframe
-        src="https://player.vimeo.com/video/1194564875?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
-        loading="lazy"
-        allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-        allowfullscreen
-        title="BAEZ Studio — 2026 Showreel"></iframe>
-    </div>
-
+    <div class="hero-media">
+  <video data-ambient autoplay muted loop playsinline preload="metadata" width="1280" height="720" poster="assets/media/hero-poster.webp" aria-label="Silent ambient loop of the Baez Studio robot mascot in flight">
+    <source src="assets/media/hero-loop.webm" type="video/webm">
+    <source src="assets/media/hero-loop.mp4" type="video/mp4">
+  </video>
+  
+</div>
   </div>
 </section>
 
-<!-- ══ BUILT FOR (use-case grid) ══ -->
-<section id="built-for" class="pad" style="position:relative;padding-top:88px;padding-bottom:40px;">
-  <style>
-    #built-for .bf-header{max-width:880px;margin:0 0 48px;text-align:left;}
-    #built-for .bf-grid{
-      display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-      background:var(--border);border:1px solid var(--border);
-      max-width:1240px;margin:0 auto;
-    }
-    #built-for .bf-card{
-      background:var(--paper);padding:28px 24px;
-      transition:background .25s;
-      display:flex;flex-direction:column;gap:12px;
-      min-height:200px;
-    }
-    #built-for .bf-card:hover{background:var(--dim);}
-    #built-for .bf-num{
-      font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;
-      color:var(--blue);text-transform:uppercase;
-    }
-    #built-for .bf-title{
-      font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;
-      color:var(--white);line-height:1;
-    }
-    #built-for .bf-desc{
-      font-size:15px;line-height:1.6;color:var(--text);
-    }
-    #built-for .bf-tag{
-      margin-top:auto;font-family:'DM Mono',monospace;font-size:10px;
-      letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;
-    }
-    @media (max-width:1080px){
-      #built-for .bf-grid{grid-template-columns:repeat(2,1fr);}
-    }
-    @media (max-width:560px){
-      #built-for .bf-grid{grid-template-columns:1fr;}
-      #built-for .bf-card{min-height:auto;}
-    }
-  </style>
-  <div class="bf-header reveal">
-    <h2 class="section-title">Stories We<br><em>Tell Best.</em></h2>
-    <style>
-      .about-acc{margin-top:24px;max-width:760px;border-top:1px solid var(--border);}
-      .about-trigger{
-        width:100%;display:flex;align-items:center;gap:12px;
-        padding:14px 0;background:none;border:none;border-bottom:1px solid var(--border);
-        cursor:pointer;text-align:left;
-      }
-      .about-bar{
-        width:3px;height:18px;border-radius:2px;flex-shrink:0;
-        background:var(--muted);transition:background .25s;
-      }
-      .about-trigger[aria-expanded="true"] .about-bar{background:var(--blue);}
-      .about-name{
-        font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;
-        text-transform:uppercase;color:var(--white);font-weight:400;
-      }
-      .about-hint{
-        margin-left:auto;display:flex;align-items:center;gap:8px;
-        font-family:'DM Mono',monospace;font-size:10px;
-        letter-spacing:2px;text-transform:uppercase;color:rgba(240,242,248,0.7);
-        transition:color .25s;
-      }
-      .about-hint svg{transition:transform .35s ease;}
-      .about-trigger[aria-expanded="true"] .about-hint{color:var(--blue);}
-      .about-trigger[aria-expanded="true"] .about-hint svg{transform:rotate(45deg);}
-      .about-body{
-        max-height:0;overflow:hidden;
-        transition:max-height .45s cubic-bezier(0.4,0,0.2,1);
-      }
-      .about-body.open{max-height:420px;}
-      .about-body p{
-        padding:16px 0 20px;font-size:15px;color:var(--text);line-height:1.75;
-      }
-    </style>
-    <div class="about-acc">
-      <button class="about-trigger" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');this.nextElementSibling.classList.toggle('open');">
-        <span class="about-bar"></span>
-        <span class="about-name">BAEZ.AI.STUDIO</span>
-        <span class="about-hint">
-          About
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg>
-        </span>
-      </button>
-      <div class="about-body">
-        <p>A video production company pairing traditional cinematic direction with the latest AI tools. Every frame is directed by a human filmmaker; AI is the camera, lens, and crew. The result is production quality that used to take six-figure budgets and months of lead time, now within reach for your brand. Based in the Midwest (Ann Arbor, MI and Fort Wayne, IN), working worldwide. Limited spots available.</p>
+<section class="section tight" aria-labelledby="pillars-h">
+  <div class="wrap">
+    <h2 id="pillars-h" class="sr-only">Two services</h2>
+    <div class="grid g2">
+  <a class="card pillar" href="video-production/">
+    <span class="eyebrow cinema">Pillar 01 · Cinematic AI Video &amp; Paid Social</span>
+    <h3>Films that stop the scroll, cut by an editor who has done it for 15 years.</h3>
+    <p>Brand films, brand revivals, lore and game cinematics, and performance hook packs for Meta, TikTok and YouTube. Generative compositing directed shot by shot, finished in a real NLE.</p>
+    <div class="tags"><span class="tag cinema">Brand Films</span><span class="tag cinema">Hook Packs</span><span class="tag cinema">Lore &amp; Worlds</span><span class="tag cinema">Remotion Variants</span></div>
+    <span class="link-arrow">Explore Video Packages</span>
+  </a>
+  <a class="card pillar systems" href="ai-business-stacks/">
+    <span class="eyebrow systems">Pillar 02 · Custom AI Business Stacks</span>
+    <h3>One spreadsheet in, a week of emails, flyers and posts out.</h3>
+    <p>Bespoke ChatGPT, Gemini and Claude workflows wired to your Sheets, CRM and inbox. Automated spreadsheets, lifecycle emails, newsletters, branded flyers and social content engines that your team owns outright.</p>
+    <div class="tags"><span class="tag systems">Automated Sheets</span><span class="tag systems">Lifecycle Email</span><span class="tag systems">Newsletters</span><span class="tag systems">Flyer &amp; Social Engines</span></div>
+    <span class="link-arrow">Explore AI Stacks</span>
+  </a>
+</div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="switch-h">
+  <div class="wrap">
+    <span class="eyebrow">Choose your path</span>
+    <h2 id="switch-h">Which service do you need: <em>video</em> or <em>systems?</em></h2>
+    <p class="lede mb3">If the problem is attention, you need the film. If the problem is the hours your team spends producing everything around the film, you need the stack. Many clients need both.</p>
+    <div data-tabs>
+      <div class="tabs" role="tablist" aria-label="Service switcher">
+        <button class="tab" role="tab" id="s-video" aria-controls="sp-video" aria-selected="true" type="button">Cinematic AI Video</button>
+        <button class="tab systems" role="tab" id="s-stack" aria-controls="sp-stack" aria-selected="false" type="button">Custom AI Business Stacks</button>
       </div>
+      <section class="panel" id="sp-video" role="tabpanel" aria-labelledby="s-video">
+        <div class="split">
+          <div>
+            <h3 class="panel-title">Cinematic AI Video &amp; Programmatic Video</h3>
+            <table class="mt2"><caption>What each video format is for</caption>
+              <thead><tr><th scope="col">Format</th><th scope="col">Best for</th></tr></thead>
+              <tbody>
+                <tr><td>Brand Films</td><td>Launches, founder stories, homepage hero films</td></tr>
+                <tr><td>Brand Revivals</td><td>Re-introducing an established brand with cinematic weight</td></tr>
+                <tr><td>Lore &amp; Worlds</td><td>Game trailers, factions, characters, origin stories</td></tr>
+                <tr><td>Hook Packs</td><td>Paid social on Meta, TikTok and YouTube with A/B-ready hooks</td></tr>
+                <tr><td>Remotion Variants</td><td>Dozens of data-driven versions from one approved template</td></tr>
+              </tbody></table>
+            <a class="link-arrow cinema mt2" style="display:inline-block" href="video-production/">See the full video service</a>
+          </div>
+          <figure class="frame mt0" style="margin:0"><img src="assets/media/cellar-4.webp" width="1100" height="614" loading="lazy" decoding="async" alt="Graded final frame of a wine bottle on a stone plinth under cellar light beams, from a Baez Studio spec ad"><span class="spec">Spec Ad Showcase</span></figure>
+        </div>
+      </section>
+      <section class="panel" id="sp-stack" role="tabpanel" aria-labelledby="s-stack">
+        <h3 class="panel-title">Custom AI Business Stacks</h3>
+        <p class="secondary measure">One source of truth feeds every channel. Update a row in the sheet and the workflow drafts the email, the newsletter block, the branded flyer and the social post, then waits for your approval.</p>
+        <div class="mt2"><div class="flow" role="img" aria-label="Diagram: one source of truth, such as a Google Sheet, Airtable base or CRM, feeds an AI workflow layer that produces lifecycle emails, newsletters, branded flyers, social posts and Remotion video variants.">
+  <div class="node source"><span class="mono">Source of truth</span><strong>Google Sheets · Airtable · CRM</strong><small>Products, events, offers, leads, intake forms</small></div>
+  <div class="arrow" aria-hidden="true">→</div>
+  <div>
+    <div class="node mb2"><span class="mono">AI workflow layer</span><strong>Custom GPT / Gemini / Claude + n8n or Make</strong><small>Your brand voice, prompts and templates, with human approval gates</small></div>
+    <div class="outputs">
+      <div class="node"><span class="mono">Out</span><strong>Lifecycle &amp; outbound email</strong></div>
+      <div class="node"><span class="mono">Out</span><strong>Newsletter drafts</strong></div>
+      <div class="node"><span class="mono">Out</span><strong>Branded flyers</strong></div>
+      <div class="node"><span class="mono">Out</span><strong>Social queue</strong></div>
+      <div class="node"><span class="mono">Out</span><strong>Remotion video variants</strong></div>
     </div>
   </div>
-
-  <div class="bf-grid reveal">
-    <div class="bf-card">
-      <h3 class="bf-title">Brand Films</h3>
-      <p class="bf-desc">Product launches, founder narratives, and category-defining campaigns. The hero film that lives on the homepage, the keynote intro, and the pitch deck.</p>
-    </div>
-
-    <div class="bf-card">
-      <h3 class="bf-title">Brand Revivals</h3>
-      <p class="bf-desc">Re-introduce an existing brand with full cinematic weight. A new campaign film that makes your audience feel like they&#8217;re discovering you for the first time.</p>
-    </div>
-
-    <div class="bf-card">
-      <h3 class="bf-title">Lore &amp; Worlds</h3>
-      <p class="bf-desc">World-building films for games, studios, and lore-driven brands: characters, factions, origin stories. The cinematic asset that turns audiences into true believers.</p>
-    </div>
-
-    <div class="bf-card">
-      <h3 class="bf-title">New Campaigns</h3>
-      <p class="bf-desc">The 30-second campaign launch asset. Built for social and built for attention, it drops across Instagram, TikTok, and YouTube the moment your campaign goes live.</p>
+</div></div>
+        <a class="link-arrow mt2" style="display:inline-block" href="ai-business-stacks/">See how a stack is built</a>
+      </section>
     </div>
   </div>
 </section>
 
-<!-- ══ PROCESS ══ -->
-<section id="process" class="pad">
-  <div class="process-watermark">HOW</div>
-  <div class="process-header reveal">
-    <p class="section-label">How It Works</p>
-    <h2 class="section-title">The <em>Process.</em></h2>
-  </div>
-  <div class="feat-carousel reveal">
-
-    <!-- LEFT: clickable phase list -->
-    <ul class="feat-list">
-      <li class="feat-item is-active" data-feat="0" data-accent="blue">
-        <div class="feat-row">
-          <span class="feat-num">01</span>
-          <div class="feat-body">
-            <span class="feat-eyebrow">Intake</span>
-            <h3 class="feat-title">Brief</h3>
-            <p class="feat-desc">A five-minute form, then a one-day answer. No sales call and no commitment. You get a yes, a no, or exactly what we'd need to make it work.</p>
-          </div>
-        </div>
-        <div class="feat-progress"><span></span></div>
-      </li>
-      <li class="feat-item" data-feat="1" data-accent="cyan">
-        <div class="feat-row">
-          <span class="feat-num">02</span>
-          <div class="feat-body">
-            <span class="feat-eyebrow">Creative</span>
-            <h3 class="feat-title">Concept</h3>
-            <p class="feat-desc">We co-author the direction with you (references, mood, deliverables, scope) and lock it in writing before a single frame is rendered.</p>
-          </div>
-        </div>
-        <div class="feat-progress"><span></span></div>
-      </li>
-      <li class="feat-item" data-feat="2" data-accent="violet">
-        <div class="feat-row">
-          <span class="feat-num">03</span>
-          <div class="feat-body">
-            <span class="feat-eyebrow">Execution</span>
-            <h3 class="feat-title">Production</h3>
-            <p class="feat-desc">A human filmmaker directs the AI, frame by frame. You see daily builds as they happen, and revisions are baked into the timeline, never billed as extras.</p>
-          </div>
-        </div>
-        <div class="feat-progress"><span></span></div>
-      </li>
-      <li class="feat-item" data-feat="3" data-accent="amber">
-        <div class="feat-row">
-          <span class="feat-num">04</span>
-          <div class="feat-body">
-            <span class="feat-eyebrow">Output</span>
-            <h3 class="feat-title">Delivery</h3>
-            <p class="feat-desc">4K masters, vertical and square cuts, captioned versions. Every format your team needs, delivered straight to your drive.</p>
-          </div>
-        </div>
-        <div class="feat-progress"><span></span></div>
-      </li>
-    </ul>
-
-    <!-- RIGHT: media stage. Replace each .feat-placeholder with
-         <video autoplay loop muted playsinline><source src="brief.mp4" type="video/mp4"></video>
-         or <img src="brief.jpg" alt=""> -->
-    <div class="feat-stage">
-      <div class="feat-slide is-active" data-feat="0">
-        <img src="wine-bottle-images/image-1.webp" loading="lazy" decoding="async" alt="Brief · Intake — bottle reference and pinned storyboard on a studio desk">
-      </div>
-      <div class="feat-slide" data-feat="1">
-        <img src="wine-bottle-images/image-2.webp" loading="lazy" decoding="async" alt="Concept · Creative — hand-drawn storyboard with shot labels and color palette">
-      </div>
-      <div class="feat-slide" data-feat="2">
-        <img src="wine-bottle-images/image-3.webp" loading="lazy" decoding="async" alt="Production · Execution — artist building the bottle silhouette and palette on screen">
-      </div>
-      <div class="feat-slide" data-feat="3">
-        <img src="wine-bottle-images/image-4-2.webp" loading="lazy" decoding="async" alt="Delivery · Output — finished bottle on a stone plinth, light beams in a cellar">
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══ INTERMISSION (pencil) ══ -->
-<section id="intermission">
-  <canvas class="matrix-bg" id="matrix-canvas"></canvas>
-  <div class="intermission-inner reveal">
-    <h2 class="section-title">Get <em>Started.</em></h2>
-    <div class="pencil-stage">
-      <video class="pencil-video" autoplay loop muted playsinline preload="auto">
-        <source src="pencil-wide.mp4" type="video/mp4">
-      </video>
+<section class="section alt" aria-labelledby="proof-h">
+  <div class="wrap">
+    <div class="kicker"><div><span class="eyebrow">Proof</span><h2 id="proof-h">Recent <em>work.</em></h2></div><a class="btn btn-ghost" href="work/">View all work</a></div>
+    <div class="work-grid">
+      <a class="work-card" href="work/showreel-2026/"><div class="frame"><img src="assets/media/hero-poster.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Still from the Baez Studio 2026 showreel"></div><div class="meta"><span class="tag cinema">Brand Films</span><span class="tag cinema">Lore &amp; Worlds</span></div><h3>Showreel 2026</h3><p>Ninety seconds of brand films, revivals and game cinematics.</p></a>
+      <a class="work-card" href="work/cellar-reserve-spec/"><div class="frame"><img src="assets/media/cellar-1.webp" width="1100" height="614" loading="lazy" decoding="async" alt="Brief board with a wine bottle reference and pinned storyboard"><span class="spec">Spec Ad Showcase</span></div><div class="meta"><span class="tag cinema">Brand Films</span></div><h3>Cellar Reserve: brief to 4K master</h3><p>A premium wine spot, shown stage by stage.</p></a>
+      <a class="work-card" href="work/studio-content-engine/"><div class="frame" style="display:grid;place-items:center;background:var(--bg-elevated)"><span class="mono" style="color:var(--accent-systems);font-size:14px">SHEET → EMAIL · FLYER · SOCIAL</span></div><div class="meta"><span class="tag systems">AI Business Stacks</span></div><h3>Studio Content Engine</h3><p>The in-house stack that runs Baez Studio's own publishing.</p></a>
     </div>
   </div>
 </section>
 
-<!-- ══ PACKAGES ══ -->
-<section id="packages" class="pad">
-  <div class="pkg-intro reveal">
-    <p class="section-label">Investment</p>
-    <h2 class="section-title">Choose Your<br><em>Package.</em></h2>
-    <p class="pkg-note"><strong>Founding client pricing:</strong> we're taking a small number of founding clients at launch rates in exchange for a testimonial and case-study rights. Every project starts with a free discovery call. <strong>Click Content Packs or Launch Films to find your right package.</strong></p>
+<section class="section" id="process" aria-labelledby="process-h">
+  <div class="wrap">
+    <span class="eyebrow">Process</span>
+    <h2 id="process-h">How does a project with Baez Studio work?</h2>
+    <p class="lede mb3">Four steps, the same for film and for systems. Scope is locked in writing before any frame is rendered or any workflow is wired.</p>
+    <ol class="steps">
+      <li><h3>Brief</h3><p>A 15-minute call or a five-minute form. You get a yes, a no, or exactly what it would take, within one business day.</p></li>
+      <li><h3>Concept</h3><p>References, storyboard or workflow blueprint, deliverables and price, agreed in writing.</p></li>
+      <li><h3>Production</h3><p>Josh directs every generation and every automation, with review links as work lands, not at the end.</p></li>
+      <li><h3>Delivery</h3><p>4K masters in every aspect ratio, or a running stack with Loom training and SOPs. All of it yours.</p></li>
+    </ol>
   </div>
-  <!-- PACKAGE ACCORDION CARDS -->
-  <div class="pkg-acc-grid reveal">
+</section>
 
-    <!-- SINGLE SHOT -->
-    <div class="pkg-acc-wrap" id="acc-single">
-      <div class="pkg-acc-inner">
-        <button class="pkg-acc-header" onclick="toggleAcc('acc-single')">
-          <div class="pkg-acc-header-text">
-            <span class="pkg-acc-name">Single Shot</span>
-            <span class="pkg-acc-desc">One polished video up to 30 seconds, built to launch.</span>
-          </div>
-          <span class="pkg-acc-toggle">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg>
-          </span>
-        </button>
-        <div class="pkg-acc-body">
-          <div class="pkg-acc-content">
-            <div class="pkg-price-line">From $1,500</div>
-            <div class="pkg-price-hint">Per project</div>
-            <ul class="pkg-list">
-              <li>1× polished video up to 30 seconds</li>
-              <li>Original music and sound design</li>
-              <li>2 comprehensive revision rounds</li>
-              <li>Delivered in 5–7 business days</li>
-              <li>4K master + platform-ready exports</li>
-            </ul>
-            <button class="pkg-btn" onclick="openBooking()">Start a Single Shot →</button>
-          </div>
-        </div>
+<section class="section alt" id="pricing" aria-labelledby="pricing-h">
+  <div class="wrap">
+    <div class="kicker"><div><span class="eyebrow">Investment</span><h2 id="pricing-h">How much does Baez Studio cost?</h2></div><p class="updated">Last updated: November 2026</p></div>
+    <p class="lede mb3">Video projects start at $1,500, and custom AI business stacks start with a $750 audit. Every figure below is a published starting point or typical range, scoped exactly on a free 15-minute call.</p>
+    <div data-tabs>
+      <div class="tabs" role="tablist" aria-label="Pricing categories">
+        <button class="tab" role="tab" id="t-video" aria-controls="p-video" aria-selected="true" type="button">AI Video</button>
+        <button class="tab systems" role="tab" id="t-stack" aria-controls="p-stack" aria-selected="false" type="button">AI Business Stacks</button>
+        <button class="tab hybrid" role="tab" id="t-hybrid" aria-controls="p-hybrid" aria-selected="false" type="button">Hybrid Studio Retainer</button>
       </div>
-    </div>
-
-    <!-- HOOK PACK -->
-    <div class="pkg-acc-wrap" id="acc-hook">
-      <div class="pkg-acc-inner">
-        <button class="pkg-acc-header" onclick="toggleAcc('acc-hook')">
-          <div class="pkg-acc-header-text">
-            <span class="pkg-acc-name">Hook Pack</span>
-            <span class="pkg-acc-desc">3 videos: One hero &amp; two cutdowns, built for the feed.</span>
-          </div>
-          <span class="pkg-acc-toggle">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg>
-          </span>
-        </button>
-        <div class="pkg-acc-body">
-          <div class="pkg-acc-content">
-            <div class="pkg-price-line">From $2,500</div>
-            <div class="pkg-price-hint">Per project</div>
-            <ul class="pkg-list">
-              <li>1× 30-second hero spot (vertical or horizontal)</li>
-              <li>2× 15-second cutdowns optimized for paid social</li>
-              <li>Original voiceover, music, and sound design</li>
-              <li>3 comprehensive revision rounds — Direction · Refinement · Polish</li>
-              <li>Delivered in 7–10 business days</li>
-              <li>4K masters · Meta, TikTok, YouTube Shorts ready</li>
-            </ul>
-            <button class="pkg-btn" onclick="openBooking()">Start a Hook Pack →</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BRAND FILM -->
-    <div class="pkg-acc-wrap" id="acc-brand">
-      <div class="pkg-acc-inner">
-        <button class="pkg-acc-header" onclick="toggleAcc('acc-brand')">
-          <div class="pkg-acc-header-text">
-            <span class="pkg-acc-name">Brand Film</span>
-            <span class="pkg-acc-desc">One signature film, four derivatives built around it. For the ultimate experience.</span>
-          </div>
-          <span class="pkg-acc-toggle">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg>
-          </span>
-        </button>
-        <div class="pkg-acc-body">
-          <div class="pkg-acc-content">
-            <div class="pkg-price-line">From $5,000</div>
-            <div class="pkg-price-hint">Per project</div>
-            <ul class="pkg-list">
-              <li>1× 60–90 second hero brand film</li>
-              <li>4× short-form derivatives (15–30 sec) cut from the hero</li>
-              <li>Consistent visual continuity across every frame</li>
-              <li>Original score, voiceover, and full sound design</li>
-              <li>3 comprehensive revision rounds — Direction · Refinement · Polish</li>
-              <li>Delivered in 14–21 business days</li>
-              <li>Full 4K masters + platform-ready exports</li>
-            </ul>
-            <button class="pkg-btn" onclick="openBooking()">Start a Brand Film →</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
+      <section class="panel" id="p-video" role="tabpanel" aria-labelledby="t-video">
+        <h3 class="panel-title tabbed mb2">Cinematic AI Video Packages</h3>
+        <div class="price-grid">
+  <article class="card price">
+    <h3>Single Shot</h3>
+    <p class="amt">From $1,500<small>per project</small></p>
+    <p class="time">5–7 business days</p>
+    <ul><li>1× polished video up to 30s</li><li>Original music &amp; sound design</li><li>2 revision rounds</li><li>4K master + 9:16 / 1:1 / 16:9 exports</li></ul>
+    <a class="btn btn-ghost" href="book/?service=video">Start a Single Shot</a>
+  </article>
+  <article class="card price featured">
+    <span class="badge">Built for paid social</span>
+    <h3>Hook Pack</h3>
+    <p class="amt">From $2,500<small>per project · paid social &amp; A/B testing</small></p>
+    <p class="time">7–10 business days</p>
+    <ul><li>1× 30s hero spot + 2× 15s modular hook / body / CTA cutdowns (or Remotion automated variants)</li><li>AI voiceover (ElevenLabs) + custom sound design</li><li>3 structured rounds: Direction, Refinement, Polish</li><li>Meta, TikTok &amp; Shorts ready</li></ul>
+    <a class="btn btn-primary" href="book/?service=video">Start a Hook Pack</a>
+  </article>
+  <article class="card price">
+    <h3>Signature Brand Film</h3>
+    <p class="amt">From $5,000<small>per project</small></p>
+    <p class="time">14–21 business days</p>
+    <ul><li>1× 60–90s hero film + 4× 15–30s short-form derivatives</li><li>Frame-consistent character &amp; product locking</li><li>Original score + full sound design</li><li>3 structured revision rounds · full 4K masters</li></ul>
+    <a class="btn btn-ghost" href="book/?service=video">Start a Brand Film</a>
+  </article>
+  <article class="card price">
+    <h3>Cinematic Video Retainer</h3>
+    <p class="amt">From $7,500<small>per month · weekly delivery</small></p>
+    <p class="time">Ongoing</p>
+    <ul><li>Up to 8 assets / month (~4 min total runtime)</li><li>5-day first drafts</li><li>Same-week urgent cuts</li><li>Direct Creative Director access</li></ul>
+    <a class="btn btn-ghost" href="book/?service=video">Enquire about retainer</a>
+  </article>
+</div>
+      </section>
+      <section class="panel" id="p-stack" role="tabpanel" aria-labelledby="t-stack">
+        <h3 class="panel-title tabbed mb2">Custom AI Business Stack Packages</h3>
+        <div class="price-grid">
+  <article class="card price systems">
+    <h3>AI Workflow Audit &amp; Blueprint</h3>
+    <p class="amt">$750 – $1,500<small>one-time · 100% credited to a build started within 30 days</small></p>
+    <p class="time">5 business days</p>
+    <ul><li>Deep audit of spreadsheets, email sequences, newsletter cadence, flyer design and social publishing</li><li>ROI time-savings model</li><li>Full architecture roadmap</li></ul>
+    <a class="btn btn-ghost" href="book/?service=stack">Audit my workflow</a>
+  </article>
+  <article class="card price systems featured">
+    <span class="badge systems">Best start</span>
+    <h3>Starter AI Business Stack</h3>
+    <p class="amt">$2,500 – $6,500<small>one-time build</small></p>
+    <p class="time">2–3 weeks</p>
+    <ul><li>1–2 core custom workflows (e.g. Sheets / CRM → branded flyers + lifecycle email &amp; newsletter drafts + social queue)</li><li>Custom ChatGPT / Gemini skills &amp; prompt library</li><li>Zero-training API setup</li><li>Loom handoff training · 100% client ownership</li></ul>
+    <a class="btn btn-systems" href="book/?service=stack">Scope a Starter Stack</a>
+  </article>
+  <article class="card price systems">
+    <h3>Growth AI Operations Stack</h3>
+    <p class="amt">$7,500 – $18,000<small>one-time build</small></p>
+    <p class="time">3–5 weeks</p>
+    <ul><li>End-to-end stack linking Sheets / Airtable / CRM</li><li>Automated email &amp; newsletter engine</li><li>Programmatic flyer &amp; Remotion social video templates</li><li>Webhooks, n8n / Make orchestration, error monitoring, team SOPs</li></ul>
+    <a class="btn btn-ghost" href="book/?service=stack">Scope a Growth Stack</a>
+  </article>
+  <article class="card price systems">
+    <h3>Stack Care &amp; Optimization</h3>
+    <p class="amt">$500 – $1,500<small>per month · optional · cancel anytime</small></p>
+    <p class="time">Month-to-month</p>
+    <ul><li>Proactive API &amp; webhook monitoring</li><li>Prompt and model upgrades as models evolve</li><li>Monthly workflow refinements</li></ul>
+    <a class="btn btn-ghost" href="book/?service=stack">Ask about care plans</a>
+  </article>
+</div>
+      </section>
+      <section class="panel" id="p-hybrid" role="tabpanel" aria-labelledby="t-hybrid">
+        <h3 class="panel-title tabbed mb2">Hybrid Growth Retainer</h3>
+        <div class="grid g2">
+  <article class="card price featured" style="border-color:var(--text-primary)">
+    <h3>Creative + AI Systems Partner</h3>
+    <p class="amt">Custom from $4,500 – $9,500<small>per month</small></p>
+    <p class="time">Monthly partnership</p>
+    <ul><li>Monthly cinematic and performance AI video production</li><li>Continuous custom AI business stack automation</li><li>Every hero campaign becomes automated email sequences, newsletters, flyers and Remotion social cutdowns from one sheet</li><li>One Creative Director across film and systems</li></ul>
+    <a class="btn btn-primary" href="book/?service=hybrid">Talk about a Hybrid Retainer</a>
+  </article>
+  <div class="card elevated">
+    <span class="eyebrow">Why hybrid</span>
+    <h3>Most studios make the film. Most automation shops wire the tools. Almost nobody does both.</h3>
+    <p>A hybrid retainer means the campaign film and the system that distributes it are designed together. The hero cut, the 9:16 hooks, the launch email, the newsletter feature and the flyer all come from the same brief and the same source sheet, so nothing gets lost between the creative team and the ops team.</p>
   </div>
-
-  <!-- RETAINER SPOTLIGHT -->
-  <div class="pkg-addon reveal">
-    <div class="pkg-addon-left">
-      <h3 class="pkg-addon-title">Go Retainer.</h3>
-      <p class="pkg-addon-tagline">Your brand, in constant cinematic motion.</p>
-      <p class="pkg-addon-desc">A dedicated "always-on" creative engine. Great for impromptu content, to keep up with trends. Up to 8 finished assets per month (social cuts, campaign films, product reveals) delivered weekly by a Creative Director who knows your world. Spots are limited.</p>
+</div>
+      </section>
     </div>
-    <div class="pkg-addon-right">
-      <ul class="pkg-addon-list">
-        <li>Up to 8 assets/month (≈4 min total runtime)</li>
-        <li>First draft within 5 business days of brief lock</li>
-        <li>Same-week turnaround on urgent cuts</li>
-        <li>Direct access to your Creative Director</li>
-        <li>Priority queue — your work never waits in line</li>
-      </ul>
-      <div class="pkg-addon-price">From $7,500<span style="font-size:18px;color:rgba(205,208,219,0.6);font-family:'DM Sans',sans-serif;font-weight:300;">/mo</span></div>
-      <div class="pkg-addon-price-hint">Monthly partnership</div>
-      <button class="pkg-btn" onclick="openBooking()">Enquire About Retainer →</button>
+    <p class="note mt3"><strong>Founding AI-Stack Partner slots:</strong> a limited number of stack builds are taken each quarter so every system gets senior, hands-on architecture. Backed by Josh Baez's 15+ years of commercial production since 2008.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="founder-h">
+  <div class="wrap">
+    <div class="founder">
+      <div class="mascot"><video data-lazy data-autoplay muted loop playsinline preload="none" width="720" height="720" aria-label="Baez Studio mascot waving"><source data-src="contact-mascot.mp4" type="video/mp4"></video></div>
+      <div>
+        <span class="eyebrow cinema">Founder</span>
+        <h2 id="founder-h">Directed by Josh Baez, <em>since 2008.</em></h2>
+        <p class="lede">Creative producer, performance video editor and AI production systems architect. B.A. in Digital Arts, Point Park University. Past production roles include Beam Suntory and a confidential consumer brand in California.</p>
+        <a class="link-arrow cinema" href="about/">Read Josh's story</a>
+      </div>
+    </div>
+    <div class="stats mt3">
+      <div class="stat"><b>15+</b><span>years in commercial, social and live-event production</span></div>
+      <div class="stat"><b>6–7</b><span>figure organic and paid view counts on multi-platform campaigns</span></div>
+      <div class="stat"><b>~60%</b><span>faster VFX and post turnaround with AI-assisted workflows</span></div>
+      <div class="stat"><b>3x</b><span>production speed on campaign deliverables</span></div>
     </div>
   </div>
 </section>
 
-<!-- ══ CONTACT ══ -->
-<section id="contact" class="pad">
-
-  <!-- ── INLINE BOOKING (Cal.com) ─────────────────────────────── -->
-  <style>
-    .book-wrap{max-width:1080px;margin:0 auto 80px;text-align:center;}
-    .book-intro{
-      font-size:17px;line-height:1.7;color:rgba(205,208,219,0.78);
-      max-width:560px;margin:18px auto 36px;font-weight:400;
-    }
-    .book-frame{
-      background:var(--paper);
-      border:1px solid var(--border);
-      border-radius:6px;
-      padding:8px;
-      min-height:680px;
-      overflow:hidden;
-      position:relative;
-    }
-    #book-inline{width:100%;min-height:660px;}
-    .book-divider{
-      display:flex;align-items:center;gap:20px;
-      max-width:520px;margin:80px auto 60px;
-      color:var(--muted);
-      font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;
-    }
-    .book-divider::before,.book-divider::after{
-      content:'';flex:1;height:1px;background:var(--border);
-    }
-    @media (max-width:640px){
-      .book-frame{min-height:620px;padding:4px;}
-      #book-inline{min-height:600px;}
-      .book-wrap{margin-bottom:56px;}
-    }
-  </style>
-
-  <div class="book-wrap reveal">
-    <h2 class="section-title">Book Your<br><em>Discovery Call.</em></h2>
-    <p class="book-intro">Use the calendar below to book a 15-minute intro call / free consultation. We'll figure out the right package on the spot.</p>
-    <style>
-      .dm-card-wrap{position:relative;border-radius:12px;padding:2px;margin-top:32px;overflow:hidden;}
-      .dm-card-wrap::before{
-        content:'';position:absolute;inset:-60%;
-        background:conic-gradient(from 0deg,#2B7FFF 0%,#00d4ff 25%,#7b2fff 50%,#2B7FFF 75%,#00d4ff 100%);
-        animation:dmSpin 5s linear infinite;
-        border-radius:50%;
-      }
-      @keyframes dmSpin{to{transform:rotate(360deg);}}
-      .dm-card-inner{
-        position:relative;background:var(--dim);border-radius:10px;
-        padding:28px 32px;display:flex;align-items:center;justify-content:center;
-        gap:40px;flex-wrap:wrap;
-      }
-      .dm-label{
-        font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;
-        color:var(--white);white-space:nowrap;
-      }
-      .dm-links{display:flex;gap:28px;flex-wrap:wrap;align-items:center;}
-      .dm-link{
-        display:flex;align-items:center;gap:10px;text-decoration:none;
-        color:var(--white);font-family:'Bebas Neue',sans-serif;
-        font-size:28px;letter-spacing:2px;
-        transition:color .2s;
-      }
-      .dm-link:hover{color:var(--blue);}
-      .dm-link svg{flex-shrink:0;opacity:0.75;}
-      .dm-link:hover svg{opacity:1;}
-      .dm-divider{width:1px;height:32px;background:var(--border);}
-    </style>
-    <div class="dm-card-wrap">
-      <div class="dm-card-inner">
-        <span class="dm-label">Or DM us directly</span>
-        <div class="dm-links">
-          <a href="https://www.instagram.com/baez.ai.studio/" target="_blank" rel="noopener" class="dm-link">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            @baez.ai.studio
-          </a>
-          <div class="dm-divider"></div>
-          <a href="https://x.com/baezaistudio" target="_blank" rel="noopener" class="dm-link">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.737l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            @baezaistudio
-          </a>
-        </div>
-      </div>
+<section class="section alt" id="book" aria-labelledby="book-h">
+  <div class="wrap">
+    <span class="eyebrow">Book</span>
+    <h2 id="book-h">Book a call or <em>send a brief.</em></h2>
+    <p class="lede mb3">Pick a 15-minute slot on the calendar, or send the brief and Josh will reply within one business day.</p>
+    <div class="book-grid">
+      <div><div class="cal-embed">
+  <iframe src="https://cal.com/baezstudio/15min?embed=true&theme=dark&layout=month_view" loading="lazy" title="Book a 15-minute discovery call with Josh Baez" style="height:640px"></iframe>
+  <noscript><div class="cal-fallback"><p>Open the calendar at <a href="https://cal.com/baezstudio/15min">cal.com/baezstudio/15min</a>.</p></div></noscript>
+</div>
+<p class="form-note">Calendar not loading? <a href="https://cal.com/baezstudio/15min" target="_blank" rel="noopener">Open it in a new tab</a> or email <a href="mailto:josh@baez.studio">josh@baez.studio</a>.</p></div>
+      <form class="card" action="https://formspree.io/f/xnjrdwyv" method="POST" data-brief>
+  <input type="hidden" name="_subject" value="New project brief from baez.studio">
+  <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+  <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+  <div class="field"><label for="f-co">Company or brand</label><input id="f-co" name="company" autocomplete="organization"></div>
+  <fieldset>
+    <legend>What do you need?</legend>
+    <div class="choice">
+      <label><input type="radio" name="service" value="video" required> Cinematic AI Video</label>
+      <label><input type="radio" name="service" value="stack"> Custom AI Business Stack</label>
+      <label><input type="radio" name="service" value="hybrid"> Both / Hybrid Growth Retainer</label>
     </div>
-    <div class="book-frame">
-      <div id="book-inline"></div>
-    </div>
+  </fieldset>
+  <div class="cond" data-for="video hybrid">
+    <p class="mono">Video details</p>
+    <div class="field"><label for="f-vtype">Project type</label>
+      <select id="f-vtype" name="video_type"><option value="">Choose one</option><option>Single Shot (from $1,500)</option><option>Hook Pack (from $2,500)</option><option>Signature Brand Film (from $5,000)</option><option>Cinematic Video Retainer (from $7,500/mo)</option><option>Not sure yet</option></select></div>
+    <div class="field"><label for="f-plat">Where will it run?</label><input id="f-plat" name="platforms" placeholder="Meta, TikTok, YouTube, website, event screen…"></div>
+    <div class="field"><label for="f-date">Launch date or deadline</label><input id="f-date" name="deadline" placeholder="e.g. March 14, or flexible"></div>
   </div>
-
-  <script type="text/javascript">
-    Cal.ns["baez"]("inline", {
-      elementOrSelector: "#book-inline",
-      config: { "layout": "month_view" },
-      calLink: window.CAL_LINK || "baezstudio/15min"
-    });
-    Cal.ns["baez"]("ui", {
-      "theme": "dark",
-      "cssVarsPerTheme": {
-        "light": { "cal-brand": "#2B7FFF" },
-        "dark":  { "cal-brand": "#2B7FFF" }
-      },
-      "hideEventTypeDetails": false,
-      "layout": "month_view"
-    });
-  </script>
-
-  <div class="book-divider">Or send a brief</div>
-
-  <div class="contact-grid">
-    <div class="contact-mascot reveal">
-      <video autoplay loop muted playsinline preload="auto">
-        <source src="contact-mascot.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div>
-      <p class="section-label reveal">Ready When You Are</p>
-      <h2 class="section-title reveal">Start Your<br><em>Project.</em></h2>
-      <form class="form reveal" action="https://formspree.io/f/xnjrdwyv" method="POST">
-        <div class="field">
-          <label>Your Name</label>
-          <input type="text" name="name" placeholder="First Last" required>
-        </div>
-        <div class="field">
-          <label>Email</label>
-          <input type="email" name="email" placeholder="you@brand.com" required>
-        </div>
-        <div class="field">
-          <label>Package Interest</label>
-          <select name="package">
-            <option value="">Select a package</option>
-              <option value="single-shot">Single Shot ($1,500)</option>
-            <option value="Hook Pack">Hook Pack — From $2,500</option>
-            <option value="Brand Film">Brand Film — From $5,000</option>
-            <option value="Retainer">Retainer — From $7,500/mo</option>
-            <option value="Not sure">Not sure yet — help me choose</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>When Do You Need It?</label>
-          <input type="text" name="deadline" placeholder="Launch date, event, or 'no hard deadline'">
-        </div>
-        <div class="field">
-          <label>Tell Us About Your Project</label>
-          <textarea name="message" placeholder="Brand, vision, timeline..."></textarea>
-        </div>
-        <div class="form-actions">
-          <button type="submit" class="form-submit">
-            Send Brief
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-          <button type="button" class="form-book nav-cta" onclick="openBooking()">
-            <span class="icon-track">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </span>
-            Book a Call
-          </button>
-        </div>
-      </form>
+  <div class="cond" data-for="stack hybrid">
+    <p class="mono">Workflow details</p>
+    <div class="field"><label for="f-team">Team size</label>
+      <select id="f-team" name="team_size"><option value="">Choose one</option><option>1–9</option><option>10–49</option><option>50–249</option><option>250+</option></select></div>
+    <div class="field"><label for="f-tools">Tools you use today</label><input id="f-tools" name="tools" placeholder="Google Sheets, HubSpot, Mailchimp, Canva, Airtable…"></div>
+    <div class="field"><label for="f-hours">Hours per week lost to the task you want automated</label><input id="f-hours" name="hours_per_week" inputmode="numeric" placeholder="e.g. 12"></div>
+  </div>
+  <div class="field"><label for="f-msg">Tell us about the project</label><textarea id="f-msg" name="message" required placeholder="Goal, audience, references, budget range, anything under NDA."></textarea></div>
+  <div class="field"><label for="f-budget">Budget range</label>
+    <select id="f-budget" name="budget"><option value="">Prefer to discuss</option><option>Under $2,500</option><option>$2,500 – $5,000</option><option>$5,000 – $10,000</option><option>$10,000 – $20,000</option><option>$20,000+</option></select></div>
+  <button class="btn btn-primary" type="submit">Send project brief</button>
+  <p class="form-note">A reply within one business day, from Josh directly. Under NDA? Say so and nothing gets shared.</p>
+</form>
     </div>
   </div>
 </section>
 
-<!-- ══ FAQ ══ -->
-<section id="faq" class="pad" style="padding-top:80px;padding-bottom:120px;">
-  <style>
-    #faq .faq-header{max-width:880px;margin:0 0 56px;text-align:left;}
-    #faq .faq-wrap{max-width:880px;margin:0;}
-    #faq details{
-      border-top:1px solid var(--border);
-      padding:0;
-    }
-    #faq details:last-of-type{border-bottom:1px solid var(--border);}
-    #faq summary{
-      list-style:none;cursor:pointer;
-      padding:28px 0;
-      display:flex;align-items:center;justify-content:space-between;gap:24px;
-      font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.5px;
-      color:var(--white);
-      transition:color .2s;
-    }
-    #faq summary::-webkit-details-marker{display:none;}
-    #faq summary:hover{color:var(--blue);}
-    #faq summary::after{
-      content:'+';
-      font-family:'DM Mono',monospace;font-size:22px;font-weight:300;
-      color:var(--blue);
-      transition:transform .25s;
-      min-width:22px;text-align:center;
-    }
-    #faq details[open] summary::after{content:'−';}
-    #faq .faq-answer{
-      padding:0 0 28px;
-      font-size:15px;line-height:1.75;color:var(--text);
-      max-width:760px;
-    }
-    @media (max-width:640px){
-      #faq summary{font-size:18px;}
-    }
-  </style>
-
-  <div class="faq-header reveal">
-    <p class="section-label">Questions</p>
-    <h2 class="section-title">Asked &amp; <em>Answered.</em></h2>
-  </div>
-
-  <div class="faq-wrap reveal">
-
-    <details>
-      <summary>What does a cinematic AI launch video cost?</summary>
-      <div class="faq-answer">
-        Four packages. The <strong>Single Shot</strong> starts at $1,500: one polished video up to 30 seconds with original music, sound design, and two revision rounds, delivered in 5–7 business days. The <strong>Hook Pack</strong> starts at $2,500: one 30-second hero spot plus two cutdowns, built for social launches and paid campaigns. The <strong>Brand Film</strong> starts at $5,000: one 60–90 second hero film plus four short-form derivatives, the signature launch piece. The <strong>Retainer</strong> starts at $7,500/month for always-on production: up to 8 finished assets, ≈4 minutes of runtime.
-      </div>
-    </details>
-
-    <details>
-      <summary>How long does it take to produce?</summary>
-      <div class="faq-answer">
-        Single Shot: 5–7 business days. Hook Pack: 7–10 business days. Brand Film: 14–21 business days. Retainer clients get a first draft within 5 business days of brief lock, with same-week turnaround on urgent cuts. Launch dates are real constraints. If you have a hard deadline, say so upfront and we'll work the calendar backwards together.
-      </div>
-    </details>
-
-    <details>
-      <summary>What's the difference between an AI cinematic and traditional motion graphics?</summary>
-      <div class="faq-answer">
-        Motion graphics rely on stock footage, vector animation, or 3D rendering, which means long timelines, large teams, and costs that scale with shot count. AI cinematic production lets a single director generate photoreal scenes, characters, and environments from prompts and references, then composite them with sound design and (sometimes) live action. The result is closer to a short film than a brand ad, at roughly a tenth of the time and cost of a traditional cinematic shoot.
-      </div>
-    </details>
-
-    <details>
-      <summary>What kinds of businesses is BAEZ a good fit for?</summary>
-      <div class="faq-answer">
-        Any business with a story worth telling cinematically. BAEZ works best for brands launching something new, reviving an existing identity, kicking off a campaign, or releasing a game or project with rich lore. The studio is equally suited to small businesses, startups, agencies, and established brands. The common thread is wanting visuals that stop the scroll and earn attention. We're based in the Midwest and work in person with businesses around Ann Arbor, MI and Fort Wayne, IN.
-      </div>
-    </details>
-
-    <details>
-      <summary>Who have you worked with?</summary>
-      <div class="faq-answer">
-        We're a new studio, and we're not hiding it. That's exactly why founding clients get launch pricing and founder-level direction on every frame, in exchange for a testimonial and case-study rights. The rates on this page won't exist in a year. Judge the reel, not the tenure: the showreel above is the work.
-      </div>
-    </details>
-
-    <details>
-      <summary>What makes a strong launch video?</summary>
-      <div class="faq-answer">
-        Three things, in under 60 seconds: what this is, why it matters, what the viewer should do next. Cinematic films work because they earn attention through tone and craft instead of asking for it. The best launch films sell the <em>world</em> the brand or project lives in, not the feature set. This is especially true for game and web3 launches. People back things they believe in. The film's job is to make them believe.
-      </div>
-    </details>
-
-    <details>
-      <summary>How many revisions are included?</summary>
-      <div class="faq-answer">
-        Hook Pack and Brand Film each include three structured revision rounds: <strong>Direction</strong> (concept and structure), <strong>Refinement</strong> (shot-by-shot adjustments), and <strong>Polish</strong> (color, sound, final pass). Retainer projects include two revision rounds per asset. Revisions are baked into the timeline, never billed as extras.
-      </div>
-    </details>
-
-    <details>
-      <summary>What file formats and aspect ratios do you deliver?</summary>
-      <div class="faq-answer">
-        Every project ships as a 4K master plus platform-ready exports: Meta, TikTok, YouTube Shorts, X/Twitter, LinkedIn. Vertical (9:16), square (1:1), and horizontal (16:9) cuts are included. Captioned versions are available on request, useful for sound-off autoplay environments and accessibility.
-      </div>
-    </details>
-
-    <details>
-      <summary>Is BAEZ a good fit for web3 launches and NFT drops?</summary>
-      <div class="faq-answer">
-        Yes, web3 and crypto projects are a strong fit. Token launch trailers, NFT mint reveals, lore drops, and community films for crypto projects, DAOs, and on-chain studios. BAEZ understands launch-day timing pressure, the rhythms of an announcement thread, and how to ship inside calendar windows that don't move. If you have a mint date or token launch, say so upfront and the timeline gets built backwards from there.
-      </div>
-    </details>
-
-    <details>
-      <summary>Who owns the rights to the final video?</summary>
-      <div class="faq-answer">
-        You do. Full commercial usage rights to all finished deliverables. BAEZ retains the right to feature the work in its showreel and case studies unless we agree to a confidentiality arrangement in advance. If the project is under NDA or pre-launch, just flag it on the brief.
-      </div>
-    </details>
-
+<section class="section" aria-labelledby="faq-h">
+  <div class="wrap">
+    <span class="eyebrow">FAQ</span>
+    <h2 id="faq-h">Questions, <em>answered.</em></h2>
+    <div class="faq">
+<details><summary><h3>What does Baez Studio do?</h3></summary><div class="answer"><p>Baez Studio makes cinematic AI video for brands and builds custom AI business stacks that automate the spreadsheets, emails, newsletters, flyers and social posts behind growth. Both are directed by Josh Baez, a commercial editor with 15+ years of experience.</p></div></details>
+<details><summary><h3>How much does a cinematic AI video cost?</h3></summary><div class="answer"><p>A Single Shot starts at $1,500, a Hook Pack at $2,500, a Signature Brand Film at $5,000 and a Cinematic Video Retainer at $7,500 per month. Each price includes original sound, structured revisions and 4K masters with 9:16, 1:1 and 16:9 exports.</p></div></details>
+<details><summary><h3>How much does a custom AI business stack cost?</h3></summary><div class="answer"><p>Most clients start with a $750–$1,500 Workflow Audit, credited in full toward a build started within 30 days. Starter Stacks run $2,500–$6,500, Growth Operations Stacks $7,500–$18,000, and optional care plans $500–$1,500 per month.</p></div></details>
+<details><summary><h3>Who owns the videos, prompts and workflows?</h3></summary><div class="answer"><p>You do. Clients receive full commercial rights to finished video and 100% ownership of custom workflows, prompts, scripts and connected accounts on final payment, with no vendor lock-in.</p></div></details>
+<details><summary><h3>Is Baez Studio a new studio?</h3></summary><div class="answer"><p>The studio brand is recent; the craft is not. Josh Baez has worked in commercial, social and live-event production since 2008, including Beam Suntory and a confidential consumer brand in California, with campaigns that regularly reach six- and seven-figure view counts.</p></div></details>
+<details><summary><h3>Where is Baez Studio based?</h3></summary><div class="answer"><p>The studio works from two Midwest home bases, Ann Arbor, Michigan and Fort Wayne, Indiana, and delivers remotely to B2B, tech, consumer and gaming brands worldwide. In-person shoots and workshops are available in both regions.</p></div></details>
+</div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">BAEZ<span>.</span>AI<span>.</span>STUDIO</div>
-  <div class="footer-links">
-    <a href="https://www.instagram.com/baez.ai.studio/" target="_blank" rel="noopener" class="footer-link">Instagram</a>
-    <a href="https://x.com/baezaistudio" target="_blank" rel="noopener" class="footer-link">X / Twitter</a>
+<section class="section tight"><div class="wrap"><div class="cta-band">
+  <span class="eyebrow">Next step</span>
+  <h2>Book a 15-minute <em>discovery call.</em></h2>
+  <p class="lede">Bring the launch, the campaign or the spreadsheet that eats your week. You leave with a scope, a price range and a timeline, even if we never work together.</p>
+  <div class="btn-row"><a class="btn btn-primary" href="book/">Book a 15-Min Discovery Call →</a><a class="btn btn-ghost" href="mailto:josh@baez.studio">josh@baez.studio</a></div>
+</div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="./">BAEZ<span>.</span>AI<span>.</span>STUDIO</a>
+        <p class="mt2">Cinematic AI video and custom AI business stacks, directed by Josh Baez. 15+ years of commercial post-production. Ann Arbor, MI · Fort Wayne, IN · Worldwide.</p>
+        <p><a class="mail" href="mailto:josh@baez.studio">josh@baez.studio</a></p>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul>
+          <li><a href="video-production/">Cinematic AI Video</a></li>
+          <li><a href="ai-business-stacks/">AI Business Stacks</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="work/">Work</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Studio</h2>
+        <ul>
+          <li><a href="about/">About Josh</a></li>
+          <li><a href="locations/">Service Areas</a></li>
+          <li><a href="locations/ann-arbor/">Ann Arbor, MI</a></li>
+          <li><a href="locations/fort-wayne/">Fort Wayne, IN</a></li>
+          <li><a href="book/">Book a Call</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Follow</h2>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/josh-baez-1bab4430a" rel="me noopener" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/baez.ai.studio/" rel="me noopener" target="_blank">Instagram</a></li>
+          <li><a href="https://x.com/baezaistudio" rel="me noopener" target="_blank">X / Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Baez Studio (BAEZ.AI.STUDIO). All rights reserved.</span>
+      <span>Service-area studio · no public office address · remote-first worldwide</span>
+    </div>
   </div>
-  <div class="footer-copy">© 2026 BAEZ.AI.STUDIO</div>
 </footer>
-
-<script>
-// page load reveal
-window.addEventListener('load',()=>document.body.classList.add('loaded'));
-
-// hamburger menu
-function toggleMenu(){
-  const d=document.getElementById('drawer');
-  d.classList.toggle('open');
-}
-
-// showreel play/pause
-let reelPlaying=false;
-const reelBtnEl=document.getElementById('reel-btn');
-if(reelBtnEl)reelBtnEl.classList.add('is-paused');
-function toggleReel(){
-  const v=document.getElementById('reel-video');
-  const icon=document.getElementById('reel-icon');
-  const btn=document.getElementById('reel-btn');
-  if(reelPlaying){
-    v.pause();
-    icon.innerHTML='<path d="M8 5v14l11-7z"/>';
-    btn.classList.add('is-paused');
-  }else{
-    v.play();
-    icon.innerHTML='<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
-    btn.classList.remove('is-paused');
-  }
-  reelPlaying=!reelPlaying;
-}
-
-// feature carousel — clickable phase list + auto-advance media stage
-(function(){
-  const car=document.querySelector('.feat-carousel');
-  if(!car) return;
-  const items=car.querySelectorAll('.feat-item');
-  const slides=car.querySelectorAll('.feat-slide');
-  const total=items.length;
-  const DURATION=6500;
-  let active=0,timer=null,startTs=0;
-
-  function fillBar(i,pct){
-    const b=items[i].querySelector('.feat-progress span');
-    if(!b) return;
-    b.style.transition=pct===0?'none':'';
-    b.style.width=pct+'%';
-  }
-  function setActive(i,fromClick=false){
-    active=(i+total)%total;
-    items.forEach((el,idx)=>el.classList.toggle('is-active',idx===active));
-    slides.forEach((el,idx)=>el.classList.toggle('is-active',idx===active));
-    // reset all bars
-    items.forEach((el,idx)=>{
-      const b=el.querySelector('.feat-progress span');
-      if(b){b.style.transition='none';b.style.width='0%';}
-    });
-    // start the active bar animating
-    startTs=performance.now();
-    const bar=items[active].querySelector('.feat-progress span');
-    if(bar){
-      requestAnimationFrame(()=>{
-        bar.style.transition=`width ${DURATION}ms linear`;
-        bar.style.width='100%';
-      });
-    }
-    if(fromClick) restart();
-  }
-  function tick(){setActive((active+1)%total);}
-  function restart(){
-    if(timer) clearInterval(timer);
-    timer=setInterval(tick,DURATION);
-  }
-
-  items.forEach((el,idx)=>{
-    el.addEventListener('click',()=>setActive(idx,true));
-  });
-  car.addEventListener('mouseenter',()=>{if(timer)clearInterval(timer);});
-  car.addEventListener('mouseleave',restart);
-
-  setActive(0);
-  restart();
-})();
-
-// spotlight cards — cursor-tracked radial glow
-document.querySelectorAll('.pkg').forEach(card=>{
-  card.addEventListener('pointermove',e=>{
-    const r=card.getBoundingClientRect();
-    card.style.setProperty('--mouse-x',(e.clientX-r.left)+'px');
-    card.style.setProperty('--mouse-y',(e.clientY-r.top)+'px');
-  });
-});
-
-// intersection observer reveals
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
-},{threshold:0.1});
-// ── PACKAGE ACCORDION ──
-function toggleAcc(id) {
-  const wrap = document.getElementById(id);
-  const isOpen = wrap.classList.contains('is-open');
-  wrap.classList.toggle('is-open', !isOpen);
-}
-
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-// ── iOS AUTOPLAY FIX ──
-// iOS Safari's <video autoplay> attribute is unreliable, especially for
-// video below the fold at load time (e.g. the contact mascot) or after
-// the tab regains focus. Force-kick playback via JS as a backup.
-(function(){
-  const mascotVideos=[...document.querySelectorAll('video[autoplay]')];
-  if(!mascotVideos.length) return;
-  function kick(v){ v.play().catch(()=>{}); }
-  mascotVideos.forEach(v=>{
-    kick(v);
-    v.addEventListener('loadedmetadata',()=>kick(v),{once:true});
-    v.addEventListener('canplay',()=>kick(v),{once:true});
-  });
-  window.addEventListener('pageshow',()=>mascotVideos.forEach(kick));
-  document.addEventListener('visibilitychange',()=>{ if(!document.hidden) mascotVideos.forEach(kick); });
-  const videoObs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{ if(e.isIntersecting) kick(e.target); });
-  },{threshold:0.1});
-  mascotVideos.forEach(v=>videoObs.observe(v));
-})();
-</script>
-
-<script>
-(function(){
-  const canvas = document.getElementById('matrix-canvas');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const section = document.getElementById('intermission');
-
-  // Characters — katakana + hex for that cinematic/tech feel
-  const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ0123456789ABCDEF∑∆πΩ░▒▓';
-  const fontSize = 13;
-  let cols, drops, mouse = {x:-1, y:-1}, raf;
-
-  function resize() {
-    const rect = section.getBoundingClientRect();
-    canvas.width  = Math.round(rect.width  || document.documentElement.clientWidth);
-    canvas.height = Math.round(rect.height || 600);
-    cols  = Math.floor(canvas.width / fontSize);
-    drops = Array.from({length:cols}, () => Math.random() * -80);
-  }
-
-  section.addEventListener('mousemove', e => {
-    const r = section.getBoundingClientRect();
-    mouse.x = e.clientX - r.left;
-    mouse.y = e.clientY - r.top;
-  });
-  section.addEventListener('mouseleave', () => { mouse.x = -1; });
-
-  function draw() {
-    // Fade trail
-    ctx.fillStyle = 'rgba(8,10,15,0.12)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    const t = Date.now() * 0.0008;
-
-    for(let i = 0; i < cols; i++){
-      const char = chars[Math.floor(Math.random() * chars.length)];
-      let x = i * fontSize;
-      let y = drops[i] * fontSize;
-
-      // Mouse warp — push chars away from cursor
-      if(mouse.x > 0){
-        const dx = x - mouse.x, dy = y - mouse.y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if(dist < 100){
-          const f = (100 - dist) / 100;
-          x += (dx / dist) * f * 22;
-          y += (dy / dist) * f * 22;
-        }
-      }
-
-      // Colour: cycles between brand blue, cyan, teal
-      const hue = 195 + Math.sin(i * 0.15 + t) * 35;
-      const bright = 55 + Math.sin(i * 0.3 + t * 1.4) * 15;
-      const alpha = 0.25 + Math.abs(Math.sin(i * 0.2 + t)) * 0.6;
-      ctx.fillStyle = `hsla(${hue},85%,${bright}%,${alpha})`;
-      ctx.font = `${fontSize}px monospace`;
-      ctx.fillText(char, x, y);
-
-      // Bright leading head
-      if(drops[i] > 0 && drops[i] * fontSize < canvas.height){
-        ctx.fillStyle = `rgba(180,235,255,0.92)`;
-        ctx.fillText(char, x, y);
-      }
-
-      // Reset column
-      if(drops[i] * fontSize > canvas.height && Math.random() > 0.972){
-        drops[i] = 0;
-      }
-      drops[i] += 0.45;
-    }
-    raf = requestAnimationFrame(draw);
-  }
-
-  // Use getBoundingClientRect for reliable dimensions, retry until layout is ready
-  let _attempts = 0;
-  function tryStart() {
-    _attempts++;
-    const rect = section.getBoundingClientRect();
-    const w = rect.width || document.documentElement.clientWidth;
-    const h = rect.height || 600;
-    canvas.width  = Math.round(w);
-    canvas.height = Math.round(h);
-    cols  = Math.floor(w / fontSize);
-    drops = Array.from({length:cols}, () => Math.random() * -80);
-    if (canvas.width > 0 && canvas.height > 0) {
-      if (!raf) draw();
-    } else if (_attempts < 20) {
-      setTimeout(tryStart, 100);
-    }
-  }
-  // Start as soon as possible, with a rAF to ensure paint has occurred
-  requestAnimationFrame(() => setTimeout(tryStart, 0));
-
-  // Pause when scrolled out of view, resume when back in
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        if (!raf) draw();
-      } else if (raf) {
-        cancelAnimationFrame(raf);
-        raf = null;
-      }
-    });
-  }, {threshold: 0});
-  io.observe(section);
-
-  window.addEventListener('resize', resize);
-})();
-</script>
-
+<dialog class="reel" id="reel" aria-label="Showreel" data-embed="https://player.vimeo.com/video/1194564875?title=0&byline=0&portrait=0&dnt=1">
+  <div class="bar"><span class="mono">Baez Studio · Showreel</span><button class="btn btn-ghost btn-sm" type="button" data-close>Close</button></div>
+  <div class="ratio"></div>
+</dialog>
+<script src="assets/js/site.js?v=20261123" defer></script>
 </body>
 </html>
