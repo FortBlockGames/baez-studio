@@ -27,7 +27,7 @@ Styles: `assets/css/site.css` (design tokens on `:root`). Behaviour:
   an "Under NDA" card).
 - Showreel hosting: currently Vimeo, opened in a click-to-play modal. Moving to
   Mux or Bunny Stream HLS would mean swapping `data-embed` on the dialog.
-- Confirm `josh@baez.studio` receives mail.
+- Public contact is mediabyjosh@gmail.com for now; change `email` in `SITE` to josh@baez.studio once that Workspace inbox is active, and add an SPF TXT record at Porkbun.
 
 ## Pre-launch QA checklist
 

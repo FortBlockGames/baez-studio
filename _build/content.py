@@ -2,7 +2,7 @@
 
 SITE = {
     'url': 'https://baez.studio/',
-    'email': 'josh@baez.studio',
+    'email': 'mediabyjosh@gmail.com',  # switch to josh@baez.studio once that inbox is active
     'linkedin': 'https://www.linkedin.com/in/josh-baez-1bab4430a',
     'instagram': 'https://www.instagram.com/baez.ai.studio/',
     'x': 'https://x.com/baezaistudio',
