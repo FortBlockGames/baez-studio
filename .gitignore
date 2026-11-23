@@ -5,3 +5,4 @@ Thumbs.db
 client-acquisition/
 .~lock*
 contact-mascot-original.mp4
+__pycache__/
