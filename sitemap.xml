@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://baez.studio/</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://baez.studio/</loc><lastmod>2026-11-23</lastmod><priority>1.0</priority></url>
+  <url><loc>https://baez.studio/video-production/</loc><lastmod>2026-11-23</lastmod><priority>0.9</priority></url>
+  <url><loc>https://baez.studio/ai-business-stacks/</loc><lastmod>2026-11-23</lastmod><priority>0.9</priority></url>
+  <url><loc>https://baez.studio/work/</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://baez.studio/work/showreel-2026/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://baez.studio/work/cellar-reserve-spec/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://baez.studio/work/fly-mascot/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://baez.studio/work/studio-content-engine/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://baez.studio/locations/</loc><lastmod>2026-11-23</lastmod><priority>0.6</priority></url>
+  <url><loc>https://baez.studio/locations/ann-arbor/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://baez.studio/locations/fort-wayne/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://baez.studio/about/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://baez.studio/book/</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
 </urlset>

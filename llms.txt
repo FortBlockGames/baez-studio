@@ -1,0 +1,22 @@
+# Baez Studio
+
+> Baez Studio (BAEZ.AI.STUDIO) is a boutique studio led by Josh Baez, a creative producer and performance video editor with 15+ years of commercial post-production since 2008. It sells two services: cinematic AI video production (brand films, brand revivals, lore and game cinematics, paid-social Hook Packs, Remotion programmatic video; from $1,500 per project) and custom AI business stacks (custom ChatGPT/Gemini/Claude workflows connecting Google Sheets, CRM, email, newsletters, branded flyers and social publishing; audit $750–$1,500, builds $2,500–$18,000). Clients own 100% of deliverables and workflows. Based in Ann Arbor, MI and Fort Wayne, IN; serves clients worldwide. Contact: mediabyjosh@gmail.com.
+
+## Services
+
+- [Cinematic AI Video Production](https://baez.studio/video-production/): formats, process, before/after, pricing and FAQ
+- [Custom AI Business Stacks](https://baez.studio/ai-business-stacks/): workflow architecture, ROI example, data security, pricing and FAQ
+- [Pricing overview](https://baez.studio/#pricing): video packages, AI stack packages and the Hybrid Growth Retainer
+
+## Proof
+
+- [Work and case studies](https://baez.studio/work/): filterable portfolio
+- [Showreel 2026](https://baez.studio/work/showreel-2026/): 90-second showreel with scene breakdown
+- [Cellar Reserve spec ad](https://baez.studio/work/cellar-reserve-spec/): brief-to-4K-master breakdown (labelled spec)
+
+## Studio
+
+- [About Josh Baez](https://baez.studio/about/): founder background and method
+- [Ann Arbor, MI](https://baez.studio/locations/ann-arbor/): services for Ann Arbor startups, U-M spinouts and SaaS
+- [Fort Wayne, IN](https://baez.studio/locations/fort-wayne/): services for Northeast Indiana makers, healthcare and agencies
+- [Book a call](https://baez.studio/book/): 15-minute discovery call and project brief form
